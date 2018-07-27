@@ -1,0 +1,4 @@
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\Webkit.Dialog\bin\Debug\Webkit.Dialog.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\Webkit.Dialog\bin\Debug\Webkit.Dialog.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\Webkit.Dialog\obj\Debug\Webkit.Dialog.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\Webkit.Dialog\obj\Debug\Webkit.Dialog.pdb

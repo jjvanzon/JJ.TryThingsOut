@@ -1,0 +1,7 @@
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Data\bin\Debug\CustomerManagement.Data.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Data\bin\Debug\CustomerManagement.Data.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Data\bin\Debug\CustomerManagement.Shared.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Data\bin\Debug\CustomerManagement.Shared.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Data\obj\Debug\CustomerManagement.Data.csprojResolveAssemblyReference.cache
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Data\obj\Debug\CustomerManagement.Data.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Data\obj\Debug\CustomerManagement.Data.pdb

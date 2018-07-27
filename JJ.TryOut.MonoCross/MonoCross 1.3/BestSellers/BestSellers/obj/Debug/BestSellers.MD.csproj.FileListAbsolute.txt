@@ -1,0 +1,15 @@
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\bin\Debug\BestSellers.MD.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\bin\Debug\BestSellers.MD.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\bin\Debug\BestSellers.MD.dll.mdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\bin\Debug\BestSellers.MD.apk
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\bin\Debug\BestSellers.MD-Signed.apk
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\bin\Debug\MonoCross.Navigation.MD.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\bin\Debug\MonoCross.Navigation.MD.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\bin\Debug\MonoCross.Navigation.MD.xml
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\bin\Debug\MonoCross.Navigation.MD.dll.mdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\obj\Debug\BestSellers.MD.csprojResolveAssemblyReference.cache
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\obj\Debug\BestSellers.MD.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\obj\Debug\BestSellers.MD.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\obj\Debug\android\bin\BestSellers.MD.apk
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\obj\Debug\R.cs.flag
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\BestSellers\BestSellers\obj\Debug\uploadflags.txt

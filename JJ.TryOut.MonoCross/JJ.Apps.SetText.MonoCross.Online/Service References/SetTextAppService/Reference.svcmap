@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2bd8d734-8ef5-4c4a-ba2a-ee255e82e9de" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51116/SetTextAppService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SetTextAppService.xsd" MetadataType="Schema" ID="d0c206a0-bf29-4978-b4a5-3c56a50d7cb3" SourceId="1" SourceUrl="http://localhost:51116/SetTextAppService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SetTextAppService1.xsd" MetadataType="Schema" ID="cc35e986-a4bb-4f10-87aa-546fdf2789c8" SourceId="1" SourceUrl="http://localhost:51116/SetTextAppService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SetTextAppService2.xsd" MetadataType="Schema" ID="d74a1db9-89c0-487a-a25d-d8fb487bd4cd" SourceId="1" SourceUrl="http://localhost:51116/SetTextAppService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SetTextAppService3.xsd" MetadataType="Schema" ID="d53201a0-6929-418a-9154-a252b18b3c76" SourceId="1" SourceUrl="http://localhost:51116/SetTextAppService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SetTextAppService.disco" MetadataType="Disco" ID="7a7b6785-7c49-4f43-89ce-f3b74dc4adde" SourceId="1" SourceUrl="http://localhost:51116/SetTextAppService.svc?disco" />
+    <MetadataFile FileName="SetAppTextService.wsdl" MetadataType="Wsdl" ID="79396f18-14e4-4561-a068-b0f04b19c6ac" SourceId="1" SourceUrl="http://localhost:51116/SetTextAppService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

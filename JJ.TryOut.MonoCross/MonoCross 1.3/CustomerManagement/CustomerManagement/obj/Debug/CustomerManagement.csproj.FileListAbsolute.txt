@@ -1,0 +1,12 @@
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\bin\Debug\CustomerManagement.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\bin\Debug\CustomerManagement.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\bin\Debug\CustomerManagement.Data.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\bin\Debug\CustomerManagement.Shared.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\bin\Debug\MonoCross.Navigation.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\bin\Debug\MonoCross.Navigation.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\bin\Debug\MonoCross.Navigation.xml
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\bin\Debug\CustomerManagement.Shared.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\bin\Debug\CustomerManagement.Data.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\obj\Debug\CustomerManagement.csprojResolveAssemblyReference.cache
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\obj\Debug\CustomerManagement.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement\CustomerManagement\obj\Debug\CustomerManagement.pdb

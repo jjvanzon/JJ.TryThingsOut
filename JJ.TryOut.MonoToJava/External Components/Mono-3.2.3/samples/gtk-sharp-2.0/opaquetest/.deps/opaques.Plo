@@ -1,0 +1,270 @@
+opaques.lo opaques.o: opaques.c opaques.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib-object.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gboxed.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gtype.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/galloca.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gtypes.h \
+  C:/cygwin/tmp/build_deps/lib/glib-2.0/include/glibconfig.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmacros.h \
+  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stddef.h \
+  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/limits.h \
+  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/syslimits.h \
+  /usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/limits.h \
+  /usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/_mingw.h \
+  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/float.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/garray.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gasyncqueue.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gthread.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gerror.h \
+  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stdarg.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gquark.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gutils.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gatomic.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gbacktrace.h \
+  /usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/signal.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gbase64.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gbitlock.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gbookmarkfile.h \
+  /usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/time.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gcache.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/glist.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmem.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gslice.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gchecksum.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gcompletion.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gconvert.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gdataset.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gdate.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gdir.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gfileutils.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/ghash.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/ghook.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/ghostutils.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/giochannel.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmain.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gpoll.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gslist.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gstring.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gunicode.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gkeyfile.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmappedfile.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmarkup.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmessages.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gnode.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/goption.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gpattern.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gprimes.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gqsort.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gqueue.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/grand.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/grel.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gregex.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gscanner.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gsequence.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gshell.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gspawn.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gstrfuncs.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gtestutils.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gthreadpool.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gtimer.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gtree.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gurifuncs.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gvarianttype.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gvariant.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gwin32.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/genums.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gobject.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gvalue.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gparam.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gclosure.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gsignal.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gmarshal.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gparamspecs.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gsourceclosure.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gtypemodule.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gtypeplugin.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gvaluearray.h \
+  C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gvaluetypes.h \
+  /usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/stdio.h \
+  /usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/sys/types.h
+
+opaques.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib-object.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gboxed.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gtype.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/galloca.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gtypes.h:
+
+C:/cygwin/tmp/build_deps/lib/glib-2.0/include/glibconfig.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmacros.h:
+
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stddef.h:
+
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/limits.h:
+
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/syslimits.h:
+
+/usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/limits.h:
+
+/usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/_mingw.h:
+
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/float.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/garray.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gasyncqueue.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gthread.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gerror.h:
+
+/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stdarg.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gquark.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gutils.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gatomic.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gbacktrace.h:
+
+/usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/signal.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gbase64.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gbitlock.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gbookmarkfile.h:
+
+/usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/time.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gcache.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/glist.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmem.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gslice.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gchecksum.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gcompletion.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gconvert.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gdataset.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gdate.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gdir.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gfileutils.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/ghash.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/ghook.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/ghostutils.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/giochannel.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmain.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gpoll.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gslist.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gstring.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gunicode.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gkeyfile.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmappedfile.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmarkup.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gmessages.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gnode.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/goption.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gpattern.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gprimes.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gqsort.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gqueue.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/grand.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/grel.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gregex.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gscanner.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gsequence.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gshell.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gspawn.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gstrfuncs.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gtestutils.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gthreadpool.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gtimer.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gtree.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gurifuncs.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gvarianttype.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gvariant.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/glib/gwin32.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/genums.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gobject.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gvalue.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gparam.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gclosure.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gsignal.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gmarshal.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gparamspecs.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gsourceclosure.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gtypemodule.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gtypeplugin.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gvaluearray.h:
+
+C:/cygwin/tmp/build_deps/include/glib-2.0/gobject/gvaluetypes.h:
+
+/usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/stdio.h:
+
+/usr/lib/gcc/i686-pc-mingw32/3.4.4/../../../../i686-pc-mingw32/include/sys/types.h:

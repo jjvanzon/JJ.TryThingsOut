@@ -1,0 +1,23 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\MonoCross.Navigation\MXContainer.cs">
+    <Files>
+      <File FileName="Views\CategoryListView.cs" Line="1" Column="1" />
+      <File FileName="Views\BookListView.cs" Line="1" Column="1" />
+      <File FileName="Views\BookView.cs" Line="1" Column="1" />
+      <File FileName="..\BestSellers\App.cs" Line="1" Column="1" />
+      <File FileName="..\BestSellers\Model\Book.cs" Line="1" Column="1" />
+      <File FileName="..\BestSellers\Model\CategoryList.cs" Line="1" Column="1" />
+      <File FileName="..\BestSellers\Controllers\CategoryListController.cs" Line="1" Column="1" />
+      <File FileName="Main.cs" Line="1" Column="1" />
+      <File FileName="..\..\MonoCross.Navigation\MXContainer.cs" Line="251" Column="1" />
+      <File FileName="..\..\MonoCross.Navigation\MXView.cs" Line="1" Column="1" />
+      <File FileName="..\..\MonoCross.Navigation\MXViewPerspective.cs" Line="1" Column="1" />
+      <File FileName="..\..\MonoCross.Touch\MXTouchContainer.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

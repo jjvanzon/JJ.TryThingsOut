@@ -1,0 +1,77 @@
+ifndef TARGET
+	TARGET=./bin/Debug
+else
+	TARGET=./bin/$(TARGET)
+endif
+
+MCS=mcs
+ifndef (RELEASE)
+	MCSFLAGS=-debug --stacktrace
+endif
+
+LIBS=-lib:C:/mono/Mono-1.0/lib/mono/1.0 -lib:C:/mono/Mono-1.0/lib/mono/gtk-sharp
+
+
+PRJ2MAKE-SHARP_EXE=$(TARGET)/prj2make-sharp.exe
+PRJ2MAKE-SHARP_PDB=$(TARGET)/prj2make-sharp.exe
+PRJ2MAKE-SHARP_SRC=././MsPrjHelper.cs \
+	././cui/Main.cs \
+	././cui/MainOpts.cs \
+	././cui/AssemblyInfo.cs \
+	././cui/MainMod.cs \
+	././PrjHelper.cs \
+	././MdPrjHelper.cs \
+	././CsprojInfo.cs \
+	././PrjxInfo.cs \
+	././sharp_d_cmbx.cs \
+	././sharp_d_prjx.cs \
+	././csproj_ver2003.cs \
+	././pkgconfiginvoker.cs
+PRJ2MAKE-SHARP_RES=
+
+PRJ2MAKE-SHARP-GTK_EXE=$(TARGET)/prj2make-sharp-gtk.exe
+PRJ2MAKE-SHARP-GTK_PDB=$(TARGET)/prj2make-sharp-gtk.exe
+PRJ2MAKE-SHARP-GTK_SRC=././MsPrjHelper.cs \
+	././gui/MainOpts.cs \
+	././gui/Main.cs \
+	././gui/MainFRM.cs \
+	././gui/AssemblyInfo.cs \
+	././gui/AboutWindow.cs \
+	././cui/MainMod.cs \
+	././CsprojInfo.cs \
+	././PrjxInfo.cs \
+	././MdPrjHelper.cs \
+	././sharp_d_cmbx.cs \
+	././sharp_d_prjx.cs \
+	././PrjHelper.cs \
+	././csproj_ver2003.cs \
+	././pkgconfiginvoker.cs
+PRJ2MAKE-SHARP-GTK_RES=
+
+$(PRJ2MAKE-SHARP_EXE): $(PRJ2MAKE-SHARP_SRC) 
+	-mkdir -p $(TARGET)
+	$(MCS) $(MCSFLAGS) $(LIBS) -r:Mono.GetOptions.dll -target:exe -out:$(PRJ2MAKE-SHARP_EXE) $(PRJ2MAKE-SHARP_RES) $(PRJ2MAKE-SHARP_SRC)
+
+$(PRJ2MAKE-SHARP-GTK_EXE): $(PRJ2MAKE-SHARP-GTK_SRC) 
+	-mkdir -p $(TARGET)
+	$(MCS) $(MCSFLAGS) $(LIBS) -r:glade-sharp.dll -r:gtk-sharp.dll -r:glib-sharp.dll -r:Mono.GetOptions.dll -r:System.Xml.dll -target:exe -out:$(PRJ2MAKE-SHARP-GTK_EXE) $(PRJ2MAKE-SHARP-GTK_RES) $(PRJ2MAKE-SHARP-GTK_SRC)
+
+
+# common targets
+
+all:	$(PRJ2MAKE-SHARP_EXE) \
+	$(PRJ2MAKE-SHARP-GTK_EXE)
+
+clean:
+	-rm -f "$(PRJ2MAKE-SHARP_EXE)" 2> /dev/null
+	-rm -f "$(PRJ2MAKE-SHARP_PDB)" 2> /dev/null
+	-rm -f "$(PRJ2MAKE-SHARP-GTK_EXE)" 2> /dev/null
+	-rm -f "$(PRJ2MAKE-SHARP-GTK_PDB)" 2> /dev/null
+
+
+# project names as targets
+
+prj2make-sharp: $(PRJ2MAKE-SHARP_EXE)
+prj2make-sharp-gtk: $(PRJ2MAKE-SHARP-GTK_EXE)
+
+

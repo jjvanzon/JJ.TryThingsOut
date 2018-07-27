@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+   <noInheritable/>
+   <assemblyIdentity type="win32" name="Microsoft.VC80.CRT" version="8.0.50727.42" processorArchitecture="x86" publicKeyToken="1fc8b3b9a1e18e3b"/>
+   <file name="msvcr80.dll" hash="3ca5156e8212449db6c622c3d10f37d9adb12c66" hashalg="SHA1"/>
+   <file name="msvcp80.dll" hash="92cf8a9bb066aea821d324ca4695c69e55b27cff" hashalg="SHA1"/>
+   <file name="msvcm80.dll" hash="7daa93e1195940502491c987ff372190bf199395" hashalg="SHA1"/>
+</assembly>

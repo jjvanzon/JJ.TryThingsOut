@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\Try Android SDK\.metadata\.plugins\org.eclipse.jdt.core
+3321979548.index
+450223868.index

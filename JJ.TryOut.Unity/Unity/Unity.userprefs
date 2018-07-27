@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.Unity\Assets\ViewCode\SetTextViewCode.cs">
+    <Files>
+      <File FileName="..\..\..\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.Unity\Assets\ViewCode\SetTextViewCode.cs" Line="40" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.Unity\Assets\ViewCode\SetTextViewCode.cs" line="20" />
+      <Breakpoint file="D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.Unity\Assets\ViewCode\SetTextViewCode.cs" line="31" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

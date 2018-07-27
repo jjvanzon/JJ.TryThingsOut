@@ -1,0 +1,24 @@
+README for Mono prj2make#
+-------------------------------------------
+
+This is a GTK# application that runs on Linux and Windows (if
+configured with GTK#).  The app can read a solution file 
+produced with Visual Studio .NET and later can generate a 
+makefile suitable for compilation with csc.exe.
+
+Today it does both *.sln and *.cmbx in both Windows 
+(nmake.exe) and *NIX (gmake).  The user can choose between
+makefile output that uses mcs.exe -- preferred :D -- or
+csc.exe.
+
+The first objective is to handle the creation of solution
+files and all subprojects (*.csproj) they may contain.  It
+should do it for msc and csc.
+
+Next, I want to tackle combines form #Develop/MonoDevelop. 
+Same specifics as above with the corresponding targets and
+appropriate conventions. 
+
+Finally, I want to be able to do conversions from sln to
+cmbx and maybe, vice versa.
+

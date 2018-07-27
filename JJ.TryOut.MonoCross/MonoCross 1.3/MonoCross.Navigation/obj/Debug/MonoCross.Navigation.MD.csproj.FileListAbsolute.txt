@@ -1,0 +1,11 @@
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.MD.XML
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.MD.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.MD.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\obj\Debug\MonoCross.Navigation.MD.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\obj\Debug\MonoCross.Navigation.MD.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.MD.dll.mdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.MD.apk
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.MD-Signed.apk
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\obj\Debug\android\bin\MonoCross.Navigation.MD.apk
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\obj\Debug\R.cs.flag
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\obj\Debug\uploadflags.txt

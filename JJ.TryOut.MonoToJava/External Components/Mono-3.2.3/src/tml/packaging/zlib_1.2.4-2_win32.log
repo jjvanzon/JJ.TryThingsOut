@@ -1,0 +1,50 @@
++ UPSTREAM_ZIP=/c/tmp/downloads/zlib124-dll.zip
++ T=/tmp/zlib-6768
++ mkdir -p c:/devel/target/aae79679ba54e8d1974d5bd98f08e49a/bin c:/devel/target/aae79679ba54e8d1974d5bd98f08e49a/include c:/devel/target/aae79679ba54e8d1974d5bd98f08e49a/lib
++ mkdir /tmp/zlib-6768
++ cd /tmp/zlib-6768
++ unzip /c/tmp/downloads/zlib124-dll.zip
+Archive:  c:/tmp/downloads/zlib124-dll.zip
+  inflating: zlib-1.2.4/example.exe  
+  inflating: zlib-1.2.4/example.pdb  
+  inflating: zlib-1.2.4/example_d.exe  
+  inflating: zlib-1.2.4/example_d.pdb  
+  inflating: zlib-1.2.4/minigzip.exe  
+  inflating: zlib-1.2.4/minigzip.pdb  
+  inflating: zlib-1.2.4/minigzip_d.exe  
+  inflating: zlib-1.2.4/minigzip_d.pdb  
+  inflating: zlib-1.2.4/zconf.h      
+  inflating: zlib-1.2.4/zdll.exp     
+  inflating: zlib-1.2.4/zdll.lib     
+  inflating: zlib-1.2.4/zlib.h       
+  inflating: zlib-1.2.4/zlib.lib     
+  inflating: zlib-1.2.4/zlib.pdb     
+  inflating: zlib-1.2.4/zlib1.dll    
+  inflating: zlib-1.2.4/zlib1.pdb    
+  inflating: zlib-1.2.4/README-WIN32.txt  
+  inflating: zlib-1.2.4/ChangeLog    
+  inflating: zlib-1.2.4/DLL_FAQ.txt  
+  inflating: zlib-1.2.4/zlib.3.pdf   
++ cd zlib-1.2.4
++ dos2unix zlib.h
+zlib.h: done.
++ dos2unix zconf.h
+zconf.h: done.
++ patch -p0
+patching file zlib.h
+patching file zconf.h
++ pexports zlib1.dll
++ dlltool --input-def zlib.def --dllname zlib1.dll --output-lib libz.dll.a
++ cp zlib1.dll c:/devel/target/aae79679ba54e8d1974d5bd98f08e49a/bin
++ cp zdll.lib libz.dll.a zlib.def c:/devel/target/aae79679ba54e8d1974d5bd98f08e49a/lib
++ cp zlib.h zconf.h c:/devel/target/aae79679ba54e8d1974d5bd98f08e49a/include
++ rm -f /tmp/zlib_1.2.4-2_win32.zip /tmp/zlib-dev_1.2.4-2_win32.zip
++ cd /devel/target/aae79679ba54e8d1974d5bd98f08e49a
++ zip /tmp/zlib_1.2.4-2_win32.zip bin/zlib1.dll
+  adding: bin/zlib1.dll (200 bytes security) (deflated 54%)
++ zip -r -D /tmp/zlib-dev_1.2.4-2_win32.zip lib include
+  adding: lib/libz.dll.a (200 bytes security) (deflated 93%)
+  adding: lib/zdll.lib (200 bytes security) (deflated 82%)
+  adding: lib/zlib.def (200 bytes security) (deflated 59%)
+  adding: include/zconf.h (200 bytes security) (deflated 71%)
+  adding: include/zlib.h (200 bytes security) (deflated 73%)

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Combine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" fileversion="1" name="PEditGtk" description="">
+  <StartMode startupentry="PEditGtkSharp" single="True">
+    <Execute entry="PEditGtkSharp" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename=".\PEditGtkSharp\PEditGtkSharp.prjx" />
+  </Entries>
+  <Configurations active="Debug">
+    <Configuration name="Release">
+      <Entry name="PEditGtkSharp" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="PEditGtkSharp" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>

@@ -1,0 +1,90 @@
+Release Notes for Mono, Gtk# and XSP Combined Windows Installer. 
+By The Mono Team <mono@novell.com> Sep 15, 2013
+Based on the work of Francisco G. Martinez  (Paco)
+------------------------------------------------------------------------
+
+Check http://go-mono.com/archive/3.2.3/ for release details.
+
+General Description:
+
+This installation includes Mono 3.2.3  for Windows and the 
+Gtk# 1.0.10 and 2.12.11 for Windows.  It also includes a 
+built and configured version of XSP.
+
+Installer Changes:
+
+1.2.x:
+ -Library version updates: 
+   glib -> 2.12.3
+   gtk -> 2.10.3
+   gnome -> 2.16
+   libglade -> 2.6
+   glade -> 3
+ -Removed mono-tools since it depends on gtkhtml-sharp2, which has 
+  not been shipped on win32 yet
+
+1.1.13.4:
+ -removed wimp theme, as it comes with gtk+ named as MS-Windows
+
+1.1.13.2-1:
+ -Upgraded to GTK+ 2.8 and most Gnome 2.12 deps are included
+ -Upgraded to gtk# 2.8
+ -Upgraded Glade to 2.10 (Downloaded zip was labeled 2.12.1...?)
+ -MonoDoc browser is included
+  -gnome-sharp for gtk-sharp 1.0 have been added
+  -Many Gnome Deps were required for this.  So, until we have gecko-sharp
+   working in the installer, this is the way it goes.  Including Gnome deps
+   add around 40MB uncompressed to the installed files.
+ -Copied files in place of symbolic links for monodoc, gecko-sharp and boo
+ -Got the samples working with the current gtk-sharp (Bug #77292)
+ -sqlsharpgtk now uses the Mono App Guidelines for its file locations
+  -Had to recompile for some unknown reason...
+
+1.1.10.1:
+ -InnoSetup shell/batch file substitution has been cleaned up.
+ -Remove some unnecessary dll maps from the mono config file.
+ -Add libz development files.
+1.1.10:
+ -gtk-wimp theme now the default.  The old Default theme was renamed to
+ 'Raleigh'.
+
+Requirements:
+
+- This build runs on Windows 2000 or later.
+
+Known Issues:
+-Uploading changes in Monodoc causes a crash.  Still looking into this.
+-Generating the index in Monodoc causes an exception (chmod error)
+ but the index eventually gets generated
+-Icon View in GtkDemo crashes because of some missing themes (tried adding
+ themes, but the problem still occurs)
+
+Credits and Related Information:
+
+The Mono, Gtk# and XSP Combined Windows Installer was put together
+by Francisco T. Martinez under the recommendations and advice of the
+Mono community.  Special gratitude to Daniel Morgan, Miguel de Icaza,
+Mike Kestner, Lluis Sanchez, Gonzalo Paniagua Javier, Erik Dasque, Atsushi
+Enomoto, Urs Muff, Ivan Wong, John Luke, Joseph Hill, Todd Berman, 
+Jackson Harper, and Kornél Pál.
+
+The Mono Team now maintains the installer and is VERY grateful for the
+work Francisco (Paco) did to put the installer together.
+
+For Support and Questions you can visit the locations or email the 
+mailing list below:
+
+Mono Project Web Site URL:
+http://www.mono-project.com
+
+Mono Project Mailing List Subscription and Archive:
+http://www.mono-project.com/about/mailing-lists.html#maillists
+
+Gtk# Project Web Site URL:
+http://gtk-sharp.sourceforge.net
+
+Gtk# Project Mailing List Subscription and Archive:
+http://lists.ximian.com/mailman/listinfo/gtk-sharp-list
+
+Microsoft Windows is a registered trademark of Microsoft Corporation.
+

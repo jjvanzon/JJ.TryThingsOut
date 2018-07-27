@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70B1C02A-31B7-4CB0-8FBE-4BCC7E38D9CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JJ.Apps.SetText.MonoCross</RootNamespace>
+    <AssemblyName>JJ.Apps.SetText.MonoCross</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="Helpers\PersistenceHelper.cs" />
+    <Compile Include="SetTextController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\JJ.Business.SetText\JJ.Business.SetText.csproj">
+      <Project>{ae912326-cda3-4cba-b8db-e59b36e403b3}</Project>
+      <Name>JJ.Business.SetText</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\External Components\MonoCross 1.3\MonoCross.Navigation\MonoCross.Navigation.csproj">
+      <Project>{4618ccfc-5895-4c44-ad25-8bf312a96b86}</Project>
+      <Name>MonoCross.Navigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence.Xml\JJ.Framework.Persistence.Xml.csproj">
+      <Project>{3edf4c94-f84a-43b2-95a5-f47dc30f1a5c}</Project>
+      <Name>JJ.Framework.Persistence.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence\JJ.Framework.Persistence.csproj">
+      <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
+      <Name>JJ.Framework.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\JJ.Models.SetText.Persistence.Xml\JJ.Models.SetText.Persistence.Xml.csproj">
+      <Project>{292046bb-5667-4231-b8aa-bad57cd1b481}</Project>
+      <Name>JJ.Models.SetText.Persistence.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\JJ.Models.SetText.Persistence\JJ.Models.SetText.Persistence.csproj">
+      <Project>{06443309-668f-42fe-8996-d2c3ffa637f5}</Project>
+      <Name>JJ.Models.SetText.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\JJ.Models.SetText\JJ.Models.SetText.csproj">
+      <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
+      <Name>JJ.Models.SetText</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JJ.Apps.SetText\JJ.Apps.SetText.csproj">
+      <Project>{44b139ab-bdf0-414a-aa01-4b7e62adcf57}</Project>
+      <Name>JJ.Apps.SetText</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryEntityFramework.Tests", "TryEntityFramework.Tests\TryEntityFramework.Tests.csproj", "{755FF7AC-2F96-4AF8-B9CD-54E8309D51A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryEntityFramework.Model.EntityFrameworkMappings.Original", "TryEntityFramework.Model.EntityFrameworkMappings.Original\TryEntityFramework.Model.EntityFrameworkMappings.Original.csproj", "{20D930C4-70DD-4E33-B6C6-7FF12E13D26B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryEntityFramework.Model", "TryEntityFramework.Model\TryEntityFramework.Model.csproj", "{E3A9EBDD-865C-467B-9542-F95D4F494E22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryEntityFramework.Model.EntityFrameworkMappings", "TryEntityFramework.Model.EntityFrameworkMappings\TryEntityFramework.Model.EntityFrameworkMappings.csproj", "{3AEECAAD-4A88-4B1A-93B5-297199618B8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryEntityFramework.Model.EntityFrameworkMappings.Temp", "TryEntityFramework.Model.EntityFrameworkMappings.Temp\TryEntityFramework.Model.EntityFrameworkMappings.Temp.csproj", "{73C30B0F-5C0C-435F-98FF-EA5A24C967C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{755FF7AC-2F96-4AF8-B9CD-54E8309D51A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{755FF7AC-2F96-4AF8-B9CD-54E8309D51A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{755FF7AC-2F96-4AF8-B9CD-54E8309D51A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{755FF7AC-2F96-4AF8-B9CD-54E8309D51A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20D930C4-70DD-4E33-B6C6-7FF12E13D26B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D930C4-70DD-4E33-B6C6-7FF12E13D26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D930C4-70DD-4E33-B6C6-7FF12E13D26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D930C4-70DD-4E33-B6C6-7FF12E13D26B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A9EBDD-865C-467B-9542-F95D4F494E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A9EBDD-865C-467B-9542-F95D4F494E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A9EBDD-865C-467B-9542-F95D4F494E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A9EBDD-865C-467B-9542-F95D4F494E22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AEECAAD-4A88-4B1A-93B5-297199618B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AEECAAD-4A88-4B1A-93B5-297199618B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AEECAAD-4A88-4B1A-93B5-297199618B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AEECAAD-4A88-4B1A-93B5-297199618B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C30B0F-5C0C-435F-98FF-EA5A24C967C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C30B0F-5C0C-435F-98FF-EA5A24C967C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C30B0F-5C0C-435F-98FF-EA5A24C967C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C30B0F-5C0C-435F-98FF-EA5A24C967C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

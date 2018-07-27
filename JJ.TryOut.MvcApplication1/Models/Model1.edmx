@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="Model1TargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MvcApplication1.Models" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Shops" EntityType="MvcApplication1.Models.Shop" />
+          <EntitySet Name="Modules" EntityType="MvcApplication1.Models.Module" />
+          <EntitySet Name="Merks" EntityType="MvcApplication1.Models.Merk" />
+          <EntitySet Name="Artikels" EntityType="MvcApplication1.Models.Artikel" />
+          <AssociationSet Name="MerkArtikel" Association="MvcApplication1.Models.MerkArtikel">
+            <End Role="Merk" EntitySet="Merks" />
+            <End Role="Artikel" EntitySet="Artikels" />
+          </AssociationSet>
+          <AssociationSet Name="ShopModule" Association="MvcApplication1.Models.ShopModule">
+            <End Role="Shop" EntitySet="Shops" />
+            <End Role="Module" EntitySet="Modules" />
+          </AssociationSet>
+          <EntitySet Name="Categories" EntityType="MvcApplication1.Models.Categorie" />
+          <AssociationSet Name="CategorieArtikel" Association="MvcApplication1.Models.CategorieArtikel">
+            <End Role="Categorie" EntitySet="Categories" />
+            <End Role="Artikel" EntitySet="Artikels" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Shop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Modules" Relationship="MvcApplication1.Models.ShopModule" FromRole="Shop" ToRole="Module" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Shop" Relationship="MvcApplication1.Models.ShopModule" FromRole="Module" ToRole="Shop" />
+          <Property Type="String" Name="Naam" Nullable="false" />
+          <Property Type="Int32" Name="ModuleByteValue" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Merk">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Artikels" Relationship="MvcApplication1.Models.MerkArtikel" FromRole="Merk" ToRole="Artikel" />
+          <Property Type="String" Name="Naam" Nullable="false" />
+          <Property Type="String" Name="NaamCommercieel" Nullable="false" />
+          <Property Type="String" Name="AfbeeldingKlein" Nullable="false" />
+          <Property Type="String" Name="NaamInUrl" Nullable="false" />
+          <Property Type="Int32" Name="VolgNummer" Nullable="false" />
+          <Property Type="Boolean" Name="IsActief" Nullable="false" />
+          <Property Type="Int32" Name="IsActiefInModule" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Artikel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Merk" Relationship="MvcApplication1.Models.MerkArtikel" FromRole="Artikel" ToRole="Merk" />
+          <NavigationProperty Name="Categorie" Relationship="MvcApplication1.Models.CategorieArtikel" FromRole="Artikel" ToRole="Categorie" />
+          <Property Type="Boolean" Name="IsActief" Nullable="false" />
+          <Property Type="String" Name="NaamCommercieel" Nullable="false" />
+          <Property Type="Int16" Name="IsActiefInModule" Nullable="false" />
+          <Property Type="Boolean" Name="IsActiefInLosseGsm" Nullable="false" />
+          <Property Type="Boolean" Name="IsActiefInGsmAbo" Nullable="false" />
+        </EntityType>
+        <Association Name="MerkArtikel">
+          <End Type="MvcApplication1.Models.Merk" Role="Merk" Multiplicity="1" />
+          <End Type="MvcApplication1.Models.Artikel" Role="Artikel" Multiplicity="*" />
+        </Association>
+        <Association Name="ShopModule">
+          <End Type="MvcApplication1.Models.Shop" Role="Shop" Multiplicity="1" />
+          <End Type="MvcApplication1.Models.Module" Role="Module" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Categorie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Naam" Nullable="false" />
+          <NavigationProperty Name="Artikels" Relationship="MvcApplication1.Models.CategorieArtikel" FromRole="Categorie" ToRole="Artikel" />
+        </EntityType>
+        <Association Name="CategorieArtikel">
+          <End Type="MvcApplication1.Models.Categorie" Role="Categorie" Multiplicity="1" />
+          <End Type="MvcApplication1.Models.Artikel" Role="Artikel" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1TargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Model1" >
+        <EntityTypeShape EntityType="MvcApplication1.Models.Shop" Width="1.5" PointX="0.5" PointY="0.5" Height="1.1378792317708335" />
+        <EntityTypeShape EntityType="MvcApplication1.Models.Module" Width="1.5" PointX="1.125" PointY="2.125" Height="1.4162809244791665" />
+        <EntityTypeShape EntityType="MvcApplication1.Models.Merk" Width="1.5" PointX="4.25" PointY="0.5" Height="2.11228515625" />
+        <EntityTypeShape EntityType="MvcApplication1.Models.Artikel" Width="1.5" PointX="6.375" PointY="2.5" Height="1.9730843098958326" />
+        <AssociationConnector Association="MvcApplication1.Models.MerkArtikel">
+          <ConnectorPoint PointX="5.1875005000000005" PointY="2.61228515625" />
+          <ConnectorPoint PointX="5.1875005000000005" PointY="3.5426852330729162" />
+          <ConnectorPoint PointX="6.375" PointY="3.5426852330729162" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcApplication1.Models.ShopModule">
+          <ConnectorPoint PointX="1.5625" PointY="1.6378792317708335" />
+          <ConnectorPoint PointX="1.5625" PointY="2.125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MvcApplication1.Models.Categorie" Width="1.5" PointX="3.125" PointY="2.75" Height="1.277080078125" />
+        <AssociationConnector Association="MvcApplication1.Models.CategorieArtikel">
+          <ConnectorPoint PointX="4.625" PointY="3.3885400390625" />
+          <ConnectorPoint PointX="5.1041671666666675" PointY="3.3885400390624993" />
+          <ConnectorPoint PointX="5.2708338333333336" PointY="3.3885400390625" />
+          <ConnectorPoint PointX="6.375" PointY="3.3885400390625" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

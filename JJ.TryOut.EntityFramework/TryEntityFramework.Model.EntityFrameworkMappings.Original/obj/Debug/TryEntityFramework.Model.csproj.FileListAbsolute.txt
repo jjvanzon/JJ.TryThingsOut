@@ -1,0 +1,8 @@
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model\bin\Debug\TryEntityFramework.Model.dll.config
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model\bin\Debug\TryEntityFramework.Model.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model\bin\Debug\TryEntityFramework.Model.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model\bin\Debug\EntityFramework.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model\bin\Debug\EntityFramework.xml
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model\obj\Debug\TryEntityFramework.Model.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model\obj\Debug\TryEntityFramework.Model.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model\obj\Debug\TryEntityFramework.Model.csprojResolveAssemblyReference.cache

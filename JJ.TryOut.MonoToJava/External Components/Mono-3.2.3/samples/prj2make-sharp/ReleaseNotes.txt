@@ -1,0 +1,15 @@
+RELEASE NOTES for Prj2Make-Sharp ver 0.95 - Sunday, June 20, 2004
+-------------------------------------------------------------------------------
+
+  prj2make-sharp version 0.95 code name 'Moi'. This release fixes problem with 
+the generation of MonoDevelop solutions and project files when these are generated
+from MS Visual Studio .NET solutions using the prj2make-sharp input parameter
+--csproj2prjx. If you are using MonoDevelop release 0.4 you would probably want to
+use this new version of prj2make-sharp.
+
+This release was built and tested with Mono Beta 3 but, should work with Mono 
+Beta 2.
+
+Note: Once MonoDevelop release 0.5 becomes available you may resume importing 
+projects using the facilities available within the IDE.
+

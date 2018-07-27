@@ -1,0 +1,5 @@
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryMonoToJava\DotNet\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryMonoToJava\DotNet\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryMonoToJava\DotNet\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryMonoToJava\DotNet\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryMonoToJava\DotNet\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

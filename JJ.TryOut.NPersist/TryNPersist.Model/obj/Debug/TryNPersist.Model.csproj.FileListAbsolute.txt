@@ -1,0 +1,5 @@
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Model\bin\Debug\TryNPersist.Model.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Model\bin\Debug\TryNPersist.Model.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Model\obj\Debug\TryNPersist.Model.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Model\obj\Debug\TryNPersist.Model.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Model\obj\Debug\TryNPersist.Model.csprojResolveAssemblyReference.cache

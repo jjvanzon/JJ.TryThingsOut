@@ -1,0 +1,20 @@
+<Combine fileversion="1.0" name="prj2make-sharp" description="">
+  <StartMode startupentry="prj2make-sharp-gtk" single="True">
+    <Execute entry="prj2make-sharp-gtk" type="None" />
+    <Execute entry="prj2make-sharp" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./prj2make-sharp-gtk.prjx" />
+    <Entry filename="./prj2make-sharp.prjx" />
+  </Entries>
+  <Configurations active="Debug">
+    <Configuration name="Release">
+      <Entry name="prj2make-sharp-gtk" configurationname="Debug" build="False" />
+      <Entry name="prj2make-sharp" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="prj2make-sharp-gtk" configurationname="Debug" build="False" />
+      <Entry name="prj2make-sharp" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>

@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iOS", "iOS", "{0D066EA6-C311-4761-AED6-372643F65FE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoCross.Navigation.MT", "MonoCross.Navigation\MonoCross.Navigation.MT.csproj", "{0C3337B2-0B8A-4C0B-8330-3B81F5B96B9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoCross.Utilities.MT", "MonoCross.Utilities.MT.csproj", "{4EED28EE-8E66-4E60-A5C0-1CA4BA840688}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C3337B2-0B8A-4C0B-8330-3B81F5B96B9B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{0C3337B2-0B8A-4C0B-8330-3B81F5B96B9B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0C3337B2-0B8A-4C0B-8330-3B81F5B96B9B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{0C3337B2-0B8A-4C0B-8330-3B81F5B96B9B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{0C3337B2-0B8A-4C0B-8330-3B81F5B96B9B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0C3337B2-0B8A-4C0B-8330-3B81F5B96B9B}.Release|iPhone.Build.0 = Release|iPhone
+		{0C3337B2-0B8A-4C0B-8330-3B81F5B96B9B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{0C3337B2-0B8A-4C0B-8330-3B81F5B96B9B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{4EED28EE-8E66-4E60-A5C0-1CA4BA840688}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{4EED28EE-8E66-4E60-A5C0-1CA4BA840688}.Debug|iPhone.Build.0 = Debug|iPhone
+		{4EED28EE-8E66-4E60-A5C0-1CA4BA840688}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{4EED28EE-8E66-4E60-A5C0-1CA4BA840688}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{4EED28EE-8E66-4E60-A5C0-1CA4BA840688}.Release|iPhone.ActiveCfg = Release|iPhone
+		{4EED28EE-8E66-4E60-A5C0-1CA4BA840688}.Release|iPhone.Build.0 = Release|iPhone
+		{4EED28EE-8E66-4E60-A5C0-1CA4BA840688}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{4EED28EE-8E66-4E60-A5C0-1CA4BA840688}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C3337B2-0B8A-4C0B-8330-3B81F5B96B9B} = {0D066EA6-C311-4761-AED6-372643F65FE5}
+		{4EED28EE-8E66-4E60-A5C0-1CA4BA840688} = {0D066EA6-C311-4761-AED6-372643F65FE5}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MonoCross.Navigation\MonoCross.Navigation.MT.csproj
+	EndGlobalSection
+EndGlobal

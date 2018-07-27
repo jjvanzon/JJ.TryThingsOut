@@ -1,0 +1,74 @@
+!if !defined (TARGET)
+TARGET=.\bin\Debug
+!else
+TARGET=.\bin\$(TARGET)
+!endif
+
+MCS=mcs
+!if !defined(RELEASE)
+MCSFLAGS=-debug --stacktrace
+!endif
+
+PRJ2MAKESHARP_EXE=$(TARGET)\prj2makesharp.exe
+PRJ2MAKESHARP_PDB=$(TARGET)\prj2makesharp.exe
+PRJ2MAKESHARP_SRC=.\.\MsPrjHelper.cs \
+	.\.\cui\Main.cs \
+	.\.\cui\MainOpts.cs \
+	.\.\cui\AssemblyInfo.cs \
+	.\.\cui\MainMod.cs \
+	.\.\PrjHelper.cs \
+	.\.\MdPrjHelper.cs \
+	.\.\CsprojInfo.cs \
+	.\.\PrjxInfo.cs \
+	.\.\sharp_d_cmbx.cs \
+	.\.\sharp_d_prjx.cs \
+	.\.\csproj_ver2003.cs \
+	.\.\pkgconfiginvoker.cs
+PRJ2MAKESHARP_RES=
+
+PRJ2MAKESHARPGTK_EXE=prj2makesharpgtk.exe
+PRJ2MAKESHARPGTK_PDB=prj2makesharpgtk.exe
+PRJ2MAKESHARPGTK_SRC=.\.\MsPrjHelper.cs \
+	.\.\gui\MainOpts.cs \
+	.\.\gui\Main.cs \
+	.\.\gui\MainFRM.cs \
+	.\.\gui\AssemblyInfo.cs \
+	.\.\gui\AboutWindow.cs \
+	.\.\cui\MainMod.cs \
+	.\.\CsprojInfo.cs \
+	.\.\PrjxInfo.cs \
+	.\.\MdPrjHelper.cs \
+	.\.\sharp_d_cmbx.cs \
+	.\.\sharp_d_prjx.cs \
+	.\.\PrjHelper.cs \
+	.\.\csproj_ver2003.cs \
+	.\.\pkgconfiginvoker.cs
+
+PRJ2MAKESHARPGTK_RES=
+
+$(PRJ2MAKESHARP_EXE): $(PRJ2MAKESHARP_SRC) 
+	-md $(TARGET)
+	$(MCS) $(MCSFLAGS) -r:Mono.GetOptions.dll -target:exe -out:$(TARGET)\prj2make-sharp.exe $(PRJ2MAKESHARP_RES) $(PRJ2MAKESHARP_SRC)
+
+$(PRJ2MAKESHARPGTK_EXE): $(PRJ2MAKESHARPGTK_SRC) 
+	-md $(TARGET)
+	$(MCS) $(MCSFLAGS) -pkg:gtk-sharp -r:Mono.GetOptions.dll -r:System.Xml.dll -target:exe -out:$(TARGET)\prj2make-sharp-gtk.exe $(PRJ2MAKESHARPGTK_RES) $(PRJ2MAKESHARPGTK_SRC)
+
+
+# common targets
+
+all: $(PRJ2MAKESHARP_EXE) $(PRJ2MAKESHARPGTK_EXE)
+
+clean:
+	-del "$(TARGET)\prj2make-sharp.exe" 2> nul
+	-del "$(TARGET)\prj2make-sharp.pdb" 2> nul
+	-del "$(TARGET)\prj2make-sharp-gtk.exe" 2> nul
+	-del "$(TARGET)\prj2make-sharp-gtk.pdb" 2> nul
+
+
+# project names as targets
+
+prj2makesharp: $(PRJ2MAKESHARP_EXE)
+prj2makesharpgtk: $(PRJ2MAKESHARPGTK_EXE)
+
+

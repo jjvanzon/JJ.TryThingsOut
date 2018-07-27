@@ -1,0 +1,13 @@
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\bin\Debug\JJ.Apps.SetText.MonoCross.Online.Console.exe.config
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\obj\Debug\JJ.Apps.SetText.MonoCross.Online.Console.csprojResolveAssemblyReference.cache
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\bin\Debug\JJ.Apps.SetText.MonoCross.Online.Console.exe
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\bin\Debug\JJ.Apps.SetText.MonoCross.Online.Console.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\bin\Debug\JJ.Apps.SetText.MonoCross.Online.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\bin\Debug\MonoCross.Console.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\bin\Debug\MonoCross.Navigation.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\bin\Debug\MonoCross.Console.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\bin\Debug\MonoCross.Navigation.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\bin\Debug\MonoCross.Navigation.xml
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\bin\Debug\JJ.Apps.SetText.MonoCross.Online.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\obj\Debug\JJ.Apps.SetText.MonoCross.Online.Console.exe
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online.Console\obj\Debug\JJ.Apps.SetText.MonoCross.Online.Console.pdb

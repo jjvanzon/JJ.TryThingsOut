@@ -1,0 +1,5 @@
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Shared\bin\Debug\CustomerManagement.Shared.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Shared\bin\Debug\CustomerManagement.Shared.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Shared\obj\Debug\CustomerManagement.Shared.csprojResolveAssemblyReference.cache
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Shared\obj\Debug\CustomerManagement.Shared.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\CustomerManagement.Shared\obj\Debug\CustomerManagement.Shared.pdb

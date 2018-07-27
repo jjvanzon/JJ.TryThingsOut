@@ -1,0 +1,9 @@
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online\obj\Debug\JJ.Apps.SetText.MonoCross.Online.csprojResolveAssemblyReference.cache
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online\bin\Debug\JJ.Apps.SetText.MonoCross.Online.dll.config
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online\bin\Debug\JJ.Apps.SetText.MonoCross.Online.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online\bin\Debug\JJ.Apps.SetText.MonoCross.Online.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online\bin\Debug\MonoCross.Navigation.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online\bin\Debug\MonoCross.Navigation.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online\bin\Debug\MonoCross.Navigation.xml
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online\obj\Debug\JJ.Apps.SetText.MonoCross.Online.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.MonoCross.Online\obj\Debug\JJ.Apps.SetText.MonoCross.Online.pdb

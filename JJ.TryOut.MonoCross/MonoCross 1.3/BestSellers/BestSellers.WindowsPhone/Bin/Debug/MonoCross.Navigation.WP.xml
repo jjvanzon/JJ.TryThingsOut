@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MonoCross.Navigation.WP</name>
+    </assembly>
+    <members>
+        <member name="T:MonoCross.Navigation.ModelEventHandler">
+            <summary>
+            Delegate type for handling model events from the view
+            </summary>
+        </member>
+        <member name="T:MonoCross.Navigation.IMXView">
+            <summary>
+            Interface that marks a class as being a View
+            </summary>
+        </member>
+        <member name="M:MonoCross.Navigation.IMXView.SetModel(System.Object)">
+            <summary>
+            Sets the model for the view. An InvalidCastException may be thrown if a model of the wrong type is set
+            </summary>
+        </member>
+        <member name="M:MonoCross.Navigation.IMXView.Render">
+            <summary>
+            Displays the view
+            </summary>
+        </member>
+        <member name="P:MonoCross.Navigation.IMXView.ModelType">
+            <summary>
+            The type of the model displayed by this view
+            </summary>
+        </member>
+        <member name="T:MonoCross.Navigation.MXView`1">
+            <summary>
+            Base class for helping to implement Views that display models of type T. 
+            You can chooses to either inherit from this base class or re-implement the IMXView from scratch. 
+            Alternatively your view class can have a member that inherits from this class and is delegated to
+            for the IMXView implementation (Bridge Pattern).
+            </summary>
+            <typeparam name="T">The type of Model that the view displays</typeparam>
+        </member>
+        <member name="M:MonoCross.Navigation.MXView`1.Render">
+            <summary>
+            This implementaion does nothing but fire the event.
+            If you plan to override this method you should call the base implementation after
+            you have done your Render().
+            </summary>
+        </member>
+        <member name="F:MonoCross.Navigation.MXContainer.CancelLoad">
+            <summary>
+            The cancel load.
+            </summary>
+        </member>
+        <member name="F:MonoCross.Navigation.MXContainer.ThreadedLoad">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MonoCross.Navigation.MXContainer.OnControllerLoadBegin(MonoCross.Navigation.IMXController)">
+            <summary>
+            Raises the controller load begin event.
+            </summary>
+        </member>
+        <member name="M:MonoCross.Navigation.MXContainer.OnControllerLoadFailed(MonoCross.Navigation.IMXController,System.Exception)">
+            <summary>
+            Raises the controller load failed event.
+            </summary>
+        </member>
+        <member name="M:MonoCross.Navigation.MXContainer.OnControllerLoadComplete(MonoCross.Navigation.IMXView,MonoCross.Navigation.IMXController,MonoCross.Navigation.MXViewPerspective)">
+            <summary>
+            Raises the load complete event after the Controller has completed loading its Model, the View may be populated
+            and the derived classs should check if it exists and do something with it if needed for the platform, either free it,
+            pop off the views in a stack above it or whatever makes sense to the platform  
+            </summary>
+            <param name='controller'>
+            Controller.
+            </param>
+            <param name='viewPerspective'>
+            View perspective.
+            </param>
+        </member>
+        <member name="P:MonoCross.Navigation.MXContainer.App">
+            <summary>
+            Initializes the specified target factory instance.
+            </summary>
+            <param name="newInstance">A <see cref="!:T"/> representing the target factory value.</param>
+            
+        </member>
+    </members>
+</doc>

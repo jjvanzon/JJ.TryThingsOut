@@ -1,0 +1,20 @@
+# Makefile for PEditGtkSharp
+# by Paco Martinez
+# 2004-12-09 16:35:15
+
+CSC=mcs
+CSCFLAGS=-debug+
+LIBS=-r:System.dll -r:System.Xml.dll -pkg:gtk-sharp-2.0
+SOURCES=driver.cs MainFrm.cs PEditGtkSharpDoc.cs PEditGtkSharpAbout.cs PEditGtkSharpView.cs AssemblyInfo.cs
+BASENAME=PEditGtkSharp
+
+all: $(BASENAME)
+
+
+$(BASENAME): $(SOURCES)
+	-mkdir bin
+	$(CSC) $(CSCFLAGS) -out:bin/$(BASENAME).exe -target:exe $(LIBS) $(SOURCES)
+	
+clean:
+	-rm ./bin/$(BASENAME).exe
+	-rm ./bin/$(BASENAME).exe.mdb

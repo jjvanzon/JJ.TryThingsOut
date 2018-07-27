@@ -1,0 +1,9 @@
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Navigation/bin/Debug/MonoCross.Navigation.MD.dll.mdb
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Navigation/bin/Debug/MonoCross.Navigation.MD.dll
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Navigation/bin/Debug/MonoCross.Navigation.MD.apk
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Navigation/obj/Debug/android/bin/MonoCross.Navigation.MD.apk
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Navigation/obj/Debug/R.cs.flag
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Navigation/bin/Debug/MonoCross.Navigation.MD-Signed.apk
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Navigation/obj/Debug/uploadflags.txt
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Navigation/obj/Debug/MonoCross.Navigation.MD.dll
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Navigation/obj/Debug/MonoCross.Navigation.MD.dll.mdb

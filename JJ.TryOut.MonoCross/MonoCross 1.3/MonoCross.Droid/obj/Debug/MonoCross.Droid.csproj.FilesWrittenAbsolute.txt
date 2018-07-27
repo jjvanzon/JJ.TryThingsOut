@@ -1,0 +1,9 @@
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Droid/bin/Debug/MonoCross.Droid.dll.mdb
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Droid/bin/Debug/MonoCross.Droid.dll
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Droid/bin/Debug/MonoCross.Droid.apk
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Droid/obj/Debug/android/bin/MonoCross.Droid.apk
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Droid/obj/Debug/R.cs.flag
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Droid/bin/Debug/MonoCross.Droid-Signed.apk
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Droid/obj/Debug/uploadflags.txt
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Droid/obj/Debug/MonoCross.Droid.dll
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/MonoCross.Droid/obj/Debug/MonoCross.Droid.dll.mdb

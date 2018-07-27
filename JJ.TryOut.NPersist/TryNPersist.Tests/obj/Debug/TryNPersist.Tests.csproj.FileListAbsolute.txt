@@ -1,0 +1,16 @@
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\TryNPersist.Tests.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\TryNPersist.Tests.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\Puzzle.NAspect.Framework.NET3.5.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\Puzzle.NCore.Framework.NET3.5.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\Puzzle.NPath.Framework.NET3.5.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\Puzzle.NPersist.Framework.NET3.5.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\TryNPersist.Model.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\Puzzle.NAspect.Framework.NET3.5.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\Puzzle.NCore.Framework.NET3.5.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\Puzzle.NPath.Framework.NET3.5.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\Puzzle.NPersist.Framework.NET3.5.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\Puzzle.NPersist.Framework.NET3.5.xml
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\bin\Debug\TryNPersist.Model.pdb
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\obj\Debug\TryNPersist.Tests.csprojResolveAssemblyReference.cache
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\obj\Debug\TryNPersist.Tests.dll
+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryNPersist\TryNPersist.Tests\obj\Debug\TryNPersist.Tests.pdb

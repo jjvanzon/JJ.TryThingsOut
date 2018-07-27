@@ -1,0 +1,5 @@
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers.Droid/bin/Debug/BestSellers.Droid.dll
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers.Droid/bin/Debug/MonoCross.Droid.dll
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers.Droid/bin/Debug/MonoCross.Navigation.MD.dll
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers.Droid/bin/Debug/Android.Dialog.dll
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers.Droid/bin/Debug/BestSellers.MD.dll

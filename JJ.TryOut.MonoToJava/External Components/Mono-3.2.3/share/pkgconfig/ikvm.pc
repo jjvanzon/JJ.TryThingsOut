@@ -1,0 +1,7 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+Name: IKVM.NET
+Description: An implementation of Java for Mono and the Microsoft .NET Framework.
+Version: 0.46.0.1
+Libs: -r:${libdir}/mono/ikvm/IKVM.Runtime.dll -r:${libdir}/mono/ikvm/IKVM.OpenJDK.ClassLibrary.dll

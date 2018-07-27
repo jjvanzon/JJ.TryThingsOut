@@ -1,0 +1,9 @@
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers/bin/Debug/BestSellers.MD.dll.mdb
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers/bin/Debug/BestSellers.MD.dll
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers/bin/Debug/BestSellers.MD.apk
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers/obj/Debug/android/bin/BestSellers.MD.apk
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers/obj/Debug/R.cs.flag
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers/bin/Debug/BestSellers.MD-Signed.apk
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers/obj/Debug/uploadflags.txt
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers/obj/Debug/BestSellers.MD.dll
+/Users/scottolson/Documents/Projects/iFactr/ifactr-trunk/trunk/Framework/core/MonoCross/BestSellers/BestSellers/obj/Debug/BestSellers.MD.dll.mdb

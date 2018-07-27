@@ -1,0 +1,10 @@
+\\psf\Home\Documents\Projects\iFactr\ifactr-trunk\trunk\Framework\core\MonoCross\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.dll
+\\psf\Home\Documents\Projects\iFactr\ifactr-trunk\trunk\Framework\core\MonoCross\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.pdb
+\\psf\Home\Documents\Projects\iFactr\ifactr-trunk\trunk\Framework\core\MonoCross\MonoCross.Navigation\obj\Debug\MonoCross.Navigation.dll
+\\psf\Home\Documents\Projects\iFactr\ifactr-trunk\trunk\Framework\core\MonoCross\MonoCross.Navigation\obj\Debug\MonoCross.Navigation.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.XML
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\bin\Debug\MonoCross.Navigation.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\obj\Debug\MonoCross.Navigation.csprojResolveAssemblyReference.cache
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\obj\Debug\MonoCross.Navigation.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\External Components\MonoCross 1.3\MonoCross.Navigation\obj\Debug\MonoCross.Navigation.pdb

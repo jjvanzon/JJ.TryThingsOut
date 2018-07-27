@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryMonoToJava\Java\AndroidApp\.metadata\.plugins\org.eclipse.jdt.core
+3986976113.index
+2431014901.index
+450223868.index
+2756982755.index

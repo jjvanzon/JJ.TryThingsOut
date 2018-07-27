@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="D:/JJ/Dev/1. Products/2. Code/3. Try Things Out/TryMonoToJava/Java/Libraries/ClassLibrary1.jar"/>
+	<classpathentry kind="lib" path="D:/JJ/Dev/1. Products/2. Code/3. Try Things Out/TryMonoToJava/Java/Libraries/mscorlib.jar"/>
+	<classpathentry kind="lib" path="D:/JJ/Dev/1. Products/2. Code/3. Try Things Out/TryMonoToJava/Java/Libraries/atk-sharp.jar"/>
+	<classpathentry kind="lib" path="D:/JJ/Dev/1. Products/2. Code/3. Try Things Out/TryMonoToJava/Java/Libraries/glib-sharp.jar"/>
+	<classpathentry kind="lib" path="D:/JJ/Dev/1. Products/2. Code/3. Try Things Out/TryMonoToJava/Java/Libraries/gtk-sharp.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,19 @@
+INDEX VERSION 1.126+D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryMonoToJava\Java\NormalApp\.metadata\.plugins\org.eclipse.jdt.core
+1299022128.index
+163172794.index
+1995173708.index
+2059864370.index
+305854171.index
+4108727661.index
+3974580528.index
+1697886153.index
+1264861391.index
+30765161.index
+3806735698.index
+3065916431.index
+1498219845.index
+4155206848.index
+1115467115.index
+4041092966.index
+3133528496.index
+1761567284.index
