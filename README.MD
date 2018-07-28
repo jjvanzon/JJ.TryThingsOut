@@ -1,4 +1,4 @@
-# JJ.TryOut
+# JJ.TryThingsOut
 
 *Jan-Joost van Zon, 2018-07-28*
 
