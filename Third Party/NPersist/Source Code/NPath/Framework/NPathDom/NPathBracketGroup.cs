@@ -18,8 +18,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual IValue Expression
 		{
-			get => expression;
-		    set => expression = value;
+			get { return expression; }
+			set { expression = value; }
 		}
 
 		#endregion

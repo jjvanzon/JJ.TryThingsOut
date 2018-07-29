@@ -30,18 +30,36 @@ namespace Puzzle.NAspect.Framework
             this.rawParameterIndex = rawParameterIndex;
         }
 
-        public string Name => parameterInfo.Name;
+        public string Name
+        {
+            get { return parameterInfo.Name; }
+        }
 
-        public int Index => parameterInfo.Index;
+        public int Index
+        {
+            get { return parameterInfo.Index; }
+        }
 
-        public Type Type => parameterInfo.Type;
+        public Type Type
+        {
+            get { return parameterInfo.Type; }
+        }
 
-        public ParameterType ParameterType => parameterInfo.ParameterType;
-
+        public ParameterType ParameterType
+        {
+            get { return parameterInfo.ParameterType; }
+        }
+        
         public object Value
         {
-            get => rawParameters[rawParameterIndex];
-            set => rawParameters[rawParameterIndex] = value;
+            get
+            {
+                return rawParameters[rawParameterIndex];
+            }
+            set
+            {
+                rawParameters[rawParameterIndex] = value;
+            }
         }
     }
 }

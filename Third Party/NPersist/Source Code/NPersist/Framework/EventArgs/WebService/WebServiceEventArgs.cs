@@ -37,32 +37,32 @@ namespace Puzzle.NPersist.Framework.EventArguments
 
 		public string Url
 		{
-			get => m_Url;
-		    set => m_Url = value;
+			get { return m_Url; }
+			set { m_Url = value; }
 		}
 
 		public string Method
 		{
-			get => m_Method;
-		    set => m_Method = value;
+			get { return m_Method; }
+			set { m_Method = value; }
 		}
 
 		public string DomainKey
 		{
-			get => m_DomainKey;
-		    set => m_DomainKey = value;
+			get { return m_DomainKey; }
+			set { m_DomainKey = value; }
 		}
 
 		public bool UseCompression
 		{
-			get => m_UseCompression;
-		    set => m_UseCompression = value;
+			get { return m_UseCompression; }
+			set { m_UseCompression = value; }
 		}
 
 		public Hashtable Parameters
 		{
-			get => m_Parameters;
-		    set => m_Parameters = value;
+			get { return m_Parameters; }
+			set { m_Parameters = value; }
 		}
 	}
 }

@@ -94,8 +94,8 @@ namespace Puzzle.NAspect.Framework
         /// </summary>
         public EngineConfiguration Configuration
         {
-            get => configuration;
-            set => configuration = value;
+            get { return configuration; }
+            set { configuration = value; }
         }
 
         #endregion
@@ -114,8 +114,8 @@ namespace Puzzle.NAspect.Framework
         /// </example>
         public ILogManager LogManager
         {
-            get => logManager;
-            set => logManager = value;
+            get { return logManager; }
+            set { logManager = value; }
         }
 
         #endregion
@@ -230,8 +230,10 @@ namespace Puzzle.NAspect.Framework
         /// </summary>
         /// <param name="type">Type to proxify</param>
         /// <returns>The proxy type</returns>
-        public Type CreateProxyType(Type type) => CreateProxyTypeInfo(type).Type;
-
+        public Type CreateProxyType(Type type)
+        {
+            return CreateProxyTypeInfo(type).Type;
+        }
         private ProxyTypeInfo CreateProxyTypeInfo(Type type)
         {
             bool wasProxied = false;

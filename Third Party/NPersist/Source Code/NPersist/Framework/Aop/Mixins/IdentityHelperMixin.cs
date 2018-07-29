@@ -25,9 +25,12 @@ namespace Puzzle.NPersist.Framework.Aop.Mixins
 
 		#region IProxyAware Members
 
-		public void SetProxy(Puzzle.NAspect.Framework.IAopProxy target) => this.target = target;
+		public void SetProxy(Puzzle.NAspect.Framework.IAopProxy target)
+		{
+			this.target = target ;
+		}
 
-	    #endregion
+		#endregion
 
 		public void Reset()
 		{
@@ -39,23 +42,41 @@ namespace Puzzle.NPersist.Framework.Aop.Mixins
 		}
 
 		private string identity;
-        public string GetIdentity() => identity;
+        public string GetIdentity()
+        {
+            return identity;
+        }
 
-	    public void SetIdentity(string identity) => this.identity = identity;
+        public void SetIdentity(string identity)
+        {
+            this.identity = identity;
+        }
 
-	    public bool HasIdentityKeyParts() => this.identityKeyParts.Count > 0;
+        public bool HasIdentityKeyParts()
+        {
+            return this.identityKeyParts.Count > 0;
+        }
 
-	    private IList identityKeyParts = new ArrayList(1);
+        private IList identityKeyParts = new ArrayList(1);
 
-        public IList GetIdentityKeyParts() => identityKeyParts;
+        public IList GetIdentityKeyParts()
+		{
+            return identityKeyParts; 
+		}
 
-	    public bool HasKeyStruct() => this.hasKeyStruct;
+        public bool HasKeyStruct()
+        {
+            return this.hasKeyStruct;
+        }
 
-	    private bool hasKeyStruct;
+        private bool hasKeyStruct;
         private KeyStruct keyStruct;
-		public KeyStruct GetKeyStruct() => this.keyStruct;
+		public KeyStruct GetKeyStruct()
+		{
+			return this.keyStruct;
+		}
 
-	    public void SetKeyStruct(KeyStruct value)
+		public void SetKeyStruct(KeyStruct value)
 		{
 			this.keyStruct = value;
             this.hasKeyStruct = true;
@@ -64,9 +85,12 @@ namespace Puzzle.NPersist.Framework.Aop.Mixins
 		private bool hasTransactionGuid = false;
 		private Guid transactionGuid = Guid.Empty;
 
-		public Guid GetTransactionGuid() => transactionGuid;
+		public Guid GetTransactionGuid()
+		{
+			return transactionGuid;
+		}
 
-	    public void SetTransactionGuid(Guid value)
+		public void SetTransactionGuid(Guid value)
 		{
 			IContextChild contextChild = this.target as IContextChild;
 			if (contextChild != null)

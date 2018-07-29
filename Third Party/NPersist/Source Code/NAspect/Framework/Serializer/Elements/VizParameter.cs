@@ -37,8 +37,8 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// </summary>
         public virtual string Name
         {
-            get => name;
-            set => name = value;
+            get { return name; }
+            set { name = value; }
         }
 
         #endregion
@@ -52,8 +52,8 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// </summary>
         public virtual string ParameterTypeName
         {
-            get => parameterTypeName;
-            set => parameterTypeName = value;
+            get { return parameterTypeName; }
+            set { parameterTypeName = value; }
         }
 
         #endregion
@@ -67,8 +67,8 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// </summary>
         public virtual VizParameterDirection Direction
         {
-            get => direction;
-            set => direction = value;
+            get { return direction; }
+            set { direction = value; }
         }
 
         #endregion

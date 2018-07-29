@@ -26,6 +26,10 @@ namespace Puzzle.NPersist.Framework.Persistence
 
 		private IObjectCache transactionalObjectCache = new ObjectCache() ;
 
-		public virtual IObjectCache GetObjectCache() => this.transactionalObjectCache;
+		public virtual IObjectCache GetObjectCache()
+		{
+			return this.transactionalObjectCache;			
+		}
+
 	}
 }

@@ -30,8 +30,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public string Key
 		{
-			get => this.key;
-		    set => this.key = value;
+			get { return this.key; }
+			set { this.key = value; }
 		}
 		
 		#endregion		
@@ -42,8 +42,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public string Identity
 		{
-			get => this.identity;
-		    set => this.identity = value;
+			get { return this.identity; }
+			set { this.identity = value; }
 		}
 		
 		#endregion		
@@ -54,8 +54,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public string Type
 		{
-			get => this.type;
-		    set => this.type = value;
+			get { return this.type; }
+			set { this.type = value; }
 		}
 		
 		#endregion
@@ -66,8 +66,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public Hashtable PropertyValues
 		{
-			get => this.propertyValues;
-		    set => this.propertyValues = value;
+			get { return this.propertyValues; }
+			set { this.propertyValues = value; }
 		}
 		
 		#endregion
@@ -78,8 +78,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public Hashtable NullValueStatuses
 		{
-			get => this.nullValueStatuses;
-		    set => this.nullValueStatuses = value;
+			get { return this.nullValueStatuses; }
+			set { this.nullValueStatuses = value; }
 		}
 		
 		#endregion
@@ -90,8 +90,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public DateTime LoadedTime
 		{
-			get => this.loadedTime;
-		    set => this.loadedTime = value;
+			get { return this.loadedTime; }
+			set { this.loadedTime = value; }
 		}
 		
 		#endregion
@@ -102,8 +102,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public long UseCount
 		{
-			get => this.useCount;
-		    set => this.useCount = value;
+			get { return this.useCount; }
+			set { this.useCount = value; }
 		}
 
 		public void IncUseCount()

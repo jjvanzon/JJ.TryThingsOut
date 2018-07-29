@@ -28,8 +28,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public string NewTableName
 		{
-			get => this.newTableName;
-		    set => this.newTableName = value;
+			get { return this.newTableName; }
+			set { this.newTableName = value; }
 		}
 		
 		#endregion

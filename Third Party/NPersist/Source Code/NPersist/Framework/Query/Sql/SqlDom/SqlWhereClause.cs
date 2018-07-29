@@ -27,8 +27,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlSearchCondition SqlSearchCondition
 		{
-			get => this.sqlSearchCondition;
-		    set => this.sqlSearchCondition = value;
+			get { return this.sqlSearchCondition; }
+			set { this.sqlSearchCondition = value; }
 		}
 		
 		#endregion
@@ -39,8 +39,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlOldOuterJoin SqlOldOuterJoin
 		{
-			get => this.sqlOldOuterJoin;
-		    set => this.sqlOldOuterJoin = value;
+			get { return this.sqlOldOuterJoin; }
+			set { this.sqlOldOuterJoin = value; }
 		}
 		
 		#endregion
@@ -49,15 +49,18 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlSearchCondition NextSqlSearchCondition 
 		{
-			get => this.sqlSearchCondition;
-		    set => this.sqlSearchCondition  = value;
+			get { return this.sqlSearchCondition ; }
+			set { this.sqlSearchCondition  = value; }
 		}
 		
 		#endregion
 
-		public SqlSearchCondition GetSqlSearchCondition() => GetSqlSearchCondition(false);
+		public SqlSearchCondition GetSqlSearchCondition()
+		{
+			return GetSqlSearchCondition(false);
+		}
 
-	    public SqlSearchCondition GetSqlSearchCondition(bool orNext)
+		public SqlSearchCondition GetSqlSearchCondition(bool orNext)
 		{
 			if (this.sqlSearchCondition == null)
 			{

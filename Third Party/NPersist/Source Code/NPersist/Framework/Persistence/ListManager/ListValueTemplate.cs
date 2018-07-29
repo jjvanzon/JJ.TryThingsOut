@@ -20,8 +20,14 @@ namespace Puzzle.NPersist.Framework.Persistence
         private ArrayList propertyMaps = new ArrayList ();
         public ArrayList PropertyMaps
         {
-            get => this.propertyMaps;
-            set => this.propertyMaps = value;
+            get
+            {
+                return this.propertyMaps;
+            }
+            set
+            {
+                this.propertyMaps = value;
+            }
         }                        
         #endregion
 	}

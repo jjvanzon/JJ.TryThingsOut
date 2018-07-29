@@ -28,8 +28,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlTable SqlTable 
 		{
-			get => this.sqlTable;
-		    set => this.sqlTable  = value;
+			get { return this.sqlTable ; }
+			set { this.sqlTable  = value; }
 		}
 		
 		#endregion

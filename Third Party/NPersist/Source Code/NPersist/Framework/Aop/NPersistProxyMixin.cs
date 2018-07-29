@@ -27,8 +27,14 @@ namespace Puzzle.NPersist.Framework.Aop
 		{
 		}
 
-		public IInterceptor GetInterceptor() => interceptor;
+		public IInterceptor GetInterceptor()
+		{
+			return interceptor;
+		}
 
-	    public void SetInterceptor(IInterceptor value) => interceptor = value;
+		public void SetInterceptor(IInterceptor value)
+		{
+			interceptor = value;
+		}
 	}
 }

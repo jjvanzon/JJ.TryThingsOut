@@ -36,17 +36,23 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public override AutoIncreaserStrategy AutoIncreaserStrategy
 		{
-			get => this.autoIncreaserStrategy;
-		    set => this.autoIncreaserStrategy = value;
+			get { return this.autoIncreaserStrategy; }
+			set { this.autoIncreaserStrategy = value; }
 		}
 		
 		#endregion
 
-		protected override ISqlVisitor GetVisitor() => new SqlOracleVisitor();
+		protected override ISqlVisitor GetVisitor()
+		{
+			return new SqlOracleVisitor();
+		}
 
-	    protected override string GetParameterName(IPropertyMap propertyMap) => GetParameterName(propertyMap, "");
+		protected override string GetParameterName(IPropertyMap propertyMap)
+		{
+			return GetParameterName(propertyMap, "");			
+		}
 
-	    protected override string GetParameterName(IPropertyMap propertyMap, string prefix)
+		protected override string GetParameterName(IPropertyMap propertyMap, string prefix)
 		{
 			string name = prefix;
 			name = name + propertyMap.Name;
@@ -54,9 +60,12 @@ namespace Puzzle.NPersist.Framework.Persistence
 			return name;
 		}
 
-		protected override string GetParameterName(IClassMap classMap) => GetParameterName(classMap, "");
+		protected override string GetParameterName(IClassMap classMap)
+		{
+			return GetParameterName(classMap, "");			
+		}
 
-	    protected override string GetParameterName(IClassMap classMap, string prefix)
+		protected override string GetParameterName(IClassMap classMap, string prefix)
 		{
 			string name = prefix;
 			name = name + classMap.Name;
@@ -64,9 +73,12 @@ namespace Puzzle.NPersist.Framework.Persistence
 			return name;
 		}
 
-		protected override string GetParameterName(IPropertyMap propertyMap, IColumnMap columnMap) => GetParameterName(propertyMap, columnMap, "");
+		protected override string GetParameterName(IPropertyMap propertyMap, IColumnMap columnMap)
+		{
+			return GetParameterName(propertyMap, columnMap, "");			
+		}
 
-	    protected override string GetParameterName(IPropertyMap propertyMap, IColumnMap columnMap, string prefix)
+		protected override string GetParameterName(IPropertyMap propertyMap, IColumnMap columnMap, string prefix)
 		{
 			string name = prefix;
 			name = name + propertyMap.Name;

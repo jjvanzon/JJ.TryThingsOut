@@ -21,7 +21,10 @@ namespace Puzzle.NCore.Framework.Compression
 
         private string compressionKey = "<compressed />";
 
-        public string Compress(string dataToCompress) => compressionKey + CompressorUtil.CompressToBase64(dataToCompress);
+        public string Compress(string dataToCompress)
+        {
+            return compressionKey + CompressorUtil.CompressToBase64(dataToCompress);
+        }
 
         public string Decompress(string dataToDecompress)
         {

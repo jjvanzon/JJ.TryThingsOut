@@ -20,9 +20,15 @@ namespace Puzzle.NCore.Framework.Text.PatternMatchers
     {
         private Regex regEx = null;
 
-        public RegexPatternMatcher() => PatternChanged += new EventHandler(RegexPatternMatcher_PatternChanged);
+        public RegexPatternMatcher()
+        {
+            PatternChanged += new EventHandler(RegexPatternMatcher_PatternChanged);
+        }
 
-        public RegexPatternMatcher(string pattern) : this() => Pattern = pattern;
+        public RegexPatternMatcher(string pattern) : this()
+        {
+            Pattern = pattern;
+        }
 
         #region PUBLIC PROPERTY PATTERN (+PATTERNCHANGED EVENT)
 
@@ -33,7 +39,7 @@ namespace Puzzle.NCore.Framework.Text.PatternMatchers
         /// </summary>
         public virtual string Pattern
         {
-            get => pattern;
+            get { return pattern; }
             set
             {
                 //Ignore same value

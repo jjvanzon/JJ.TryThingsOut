@@ -19,11 +19,18 @@ namespace Puzzle.NPersist.Framework.Mapping
 	public class ColumnMap : MapBase, IColumnMap
 	{
 				
-		public override void Accept(IMapVisitor visitor) => visitor.Visit(this);
+		public override void Accept(IMapVisitor visitor)
+		{
+			visitor.Visit(this);
+		}
 
-	    public override IMap GetParent() => m_TableMap;
+		
+		public override IMap GetParent()
+		{
+			return m_TableMap; 
+		}
 
-	    private ITableMap m_TableMap;
+		private ITableMap m_TableMap;
 		private string m_name = "";
 		private DbType m_DataType = DbType.String;
 		private int m_Length = 0;
@@ -48,13 +55,17 @@ namespace Puzzle.NPersist.Framework.Mapping
 		{
 		}
 
-		public ColumnMap(string name) : base() => m_name = name;
+		public ColumnMap(string name) : base()
+		{
+			m_name = name;
+		}
 
-	    [XmlIgnore()]
+
+		[XmlIgnore()]
 		public virtual ITableMap TableMap
 		{
-			get => m_TableMap;
-	        set
+			get { return m_TableMap; }
+			set
 			{
 				if (m_TableMap != null)
 				{
@@ -68,30 +79,33 @@ namespace Puzzle.NPersist.Framework.Mapping
 			}
 		}
 
-		public virtual void SetTableMap(ITableMap value) => m_TableMap = value;
-
-	    public override string Name
+		public virtual void SetTableMap(ITableMap value)
 		{
-			get => m_name;
-	        set => m_name = value;
-	    }
+			m_TableMap = value;
+		}
+
+		public override string Name
+		{
+			get { return m_name; }
+			set { m_name = value; }
+		}
 
 		public virtual DbType DataType
 		{
-			get => m_DataType;
-		    set => m_DataType = value;
+			get { return m_DataType; }
+			set { m_DataType = value; }
 		}
 
 		public virtual int Length
 		{
-			get => m_Length;
-		    set => m_Length = value;
+			get { return m_Length; }
+			set { m_Length = value; }
 		}
 
 		public virtual bool IsAutoIncrease
 		{
-			get => m_IsAutoIncrease;
-		    set
+			get { return m_IsAutoIncrease; }
+			set
 			{
 				m_IsAutoIncrease = value;
 				if (m_IsAutoIncrease)
@@ -115,74 +129,74 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual string Format
 		{
-			get => m_Format;
-		    set => m_Format = value;
+			get { return m_Format; }
+			set { m_Format = value; }
 		}
 
 		public virtual bool AllowNulls
 		{
-			get => m_AllowNulls;
-		    set => m_AllowNulls = value;
+			get { return m_AllowNulls; }
+			set { m_AllowNulls = value; }
 		}
 
 		public virtual bool IsPrimaryKey
 		{
-			get => m_IsKey;
-		    set => m_IsKey = value;
+			get { return m_IsKey; }
+			set { m_IsKey = value; }
 		}
 
 		public virtual bool IsForeignKey
 		{
-			get => m_IsForeignKey;
-		    set => m_IsForeignKey = value;
+			get { return m_IsForeignKey; }
+			set { m_IsForeignKey = value; }
 		}
 
 		public virtual int Increment
 		{
-			get => m_Increment;
-		    set => m_Increment = value;
+			get { return m_Increment; }
+			set { m_Increment = value; }
 		}
 
 		public virtual int Seed
 		{
-			get => m_Seed;
-		    set => m_Seed = value;
+			get { return m_Seed; }
+			set { m_Seed = value; }
 		}
 
 		public virtual string DefaultValue
 		{
-			get => m_DefaultValue;
-		    set => m_DefaultValue = value;
+			get { return m_DefaultValue; }
+			set { m_DefaultValue = value; }
 		}
 
 		public virtual int Precision
 		{
-			get => m_Precision;
-		    set => m_Precision = value;
+			get { return m_Precision; }
+			set { m_Precision = value; }
 		}
 
 		public virtual int Scale
 		{
-			get => m_Scale;
-		    set => m_Scale = value;
+			get { return m_Scale; }
+			set { m_Scale = value; }
 		}
 
 		public virtual string ForeignKeyName
 		{
-			get => m_ForeignKeyName;
-		    set => m_ForeignKeyName = value;
+			get { return m_ForeignKeyName; }
+			set { m_ForeignKeyName = value; }
 		}
 
 		public virtual string PrimaryKeyColumn
 		{
-			get => m_PrimaryKeyColumn;
-		    set => m_PrimaryKeyColumn = value;
+			get { return m_PrimaryKeyColumn; }
+			set { m_PrimaryKeyColumn = value; }
 		}
 
 		public virtual string PrimaryKeyTable
 		{
-			get => m_PrimaryKeyTable;
-		    set => m_PrimaryKeyTable = value;
+			get { return m_PrimaryKeyTable; }
+			set { m_PrimaryKeyTable = value; }
 		}
 
 		public virtual IColumnMap MustGetPrimaryKeyColumnMap()
@@ -234,20 +248,20 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual string Sequence
 		{
-			get => m_Sequence;
-		    set => m_Sequence = value;
+			get { return m_Sequence; }
+			set { m_Sequence = value; }
 		}
 
 		public virtual bool IsFixedLength
 		{
-			get => m_IsFixedLength;
-		    set => m_IsFixedLength = value;
+			get { return m_IsFixedLength; }
+			set { m_IsFixedLength = value; }
 		}
 
 		public virtual string SpecificDataType
 		{
-			get => m_SpecificDataType;
-		    set => m_SpecificDataType = value;
+			get { return m_SpecificDataType; }
+			set { m_SpecificDataType = value; }
 		}
 
 		public virtual void UpdateName(string newName)
@@ -439,9 +453,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return true;
 		}
 
-		public override void DeepMerge(IMap mapObject) => Copy(mapObject);
+		public override void DeepMerge(IMap mapObject)
+		{
+			Copy(mapObject);
+		}
 
-	    public override void Copy(IMap mapObject)
+		public override void Copy(IMap mapObject)
 		{
 			IColumnMap columnMap = (IColumnMap) mapObject;
 			columnMap.AllowNulls = this.AllowNulls;
@@ -551,6 +568,9 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return true;
 		}
 
-		public override string GetKey() => m_TableMap.SourceMap.DomainMap.Name + "." + m_TableMap.SourceMap.Name + "." + m_TableMap.Name + "." + this.Name;
+		public override string GetKey()
+		{
+			return m_TableMap.SourceMap.DomainMap.Name + "." + m_TableMap.SourceMap.Name + "." + m_TableMap.Name + "." + this.Name;
+		}
 	}
 }

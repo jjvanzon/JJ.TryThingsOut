@@ -13,14 +13,17 @@ namespace Puzzle.NPersist.Framework.Persistence
 {
 	public class SqlEngineMSSqlServer : SqlEngineBase
 	{
-		protected override ISqlVisitor GetVisitor() => new SqlSqlServerVisitor();
+		protected override ISqlVisitor GetVisitor()
+		{
+			return new SqlSqlServerVisitor();
+		}
 
-	    private string selectNewIdentity = "SELECT Scope_Identity();";
+		private string selectNewIdentity = "SELECT Scope_Identity();";
 		
 		public override string SelectNewIdentity
 		{
-			get => this.selectNewIdentity;
-		    set => this.selectNewIdentity = value;
+			get { return this.selectNewIdentity; }
+			set { this.selectNewIdentity = value; }
 		}
 
 	}

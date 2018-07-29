@@ -17,6 +17,9 @@ namespace Puzzle.NPersist.Framework.IdentityGeneration
 		{
 		}
 
-		public object GenerateIdentity() => System.Guid.NewGuid();
+		public object GenerateIdentity()
+		{
+			return System.Guid.NewGuid();
+		}
 	}
 }

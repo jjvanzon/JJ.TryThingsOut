@@ -25,7 +25,10 @@ namespace Puzzle.NAspect.Framework.Utils
         /// </summary>
         /// <param name="method">a method,property or ctor</param>
         /// <returns>string based representation of the method signature</returns>
-        public static string GetMethodSignature(MethodBase method) => method.ToString();
+        public static string GetMethodSignature(MethodBase method)
+        {
+            return method.ToString();
+        }
 
         #endregion
 

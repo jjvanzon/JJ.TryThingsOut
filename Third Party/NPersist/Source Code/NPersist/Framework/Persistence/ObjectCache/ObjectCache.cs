@@ -30,8 +30,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public Hashtable LoadedObjects
 		{
-			get => this.loadedObjects;
-		    set => this.loadedObjects = value;
+			get { return this.loadedObjects; }
+			set { this.loadedObjects = value; }
 		}
 		
 		#endregion
@@ -42,8 +42,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public Hashtable UnloadedObjects
 		{
-			get => this.unLoadedObjects;
-		    set => this.unLoadedObjects = value;
+			get { return this.unLoadedObjects; }
+			set { this.unLoadedObjects = value; }
 		}
 		
 		#endregion
@@ -54,8 +54,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public IList AllObjects
 		{
-			get => this.allObjects;
-		    set => this.allObjects = value;
+			get { return this.allObjects; }
+			set { this.allObjects = value; }
 		}
 		
 		#endregion

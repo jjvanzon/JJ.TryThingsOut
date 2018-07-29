@@ -27,7 +27,10 @@ namespace Puzzle.NCore.Framework.Text
         public TokenTreeNode[] ChildNodes = null;
         public PatternMatchReference FirstExpression = null;
 
-        public TokenTreeNode() => ChildNodes = new TokenTreeNode[256];
+        public TokenTreeNode()
+        {
+            ChildNodes = new TokenTreeNode[256];
+        }
 
         public override string ToString()
         {

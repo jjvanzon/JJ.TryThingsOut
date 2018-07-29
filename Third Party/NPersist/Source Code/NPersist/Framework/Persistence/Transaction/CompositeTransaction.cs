@@ -50,8 +50,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public IList Transactions
 		{
-			get => this.transactions;
-		    set => this.transactions = value;
+			get { return this.transactions; }
+			set { this.transactions = value; }
 		}
 		
 		#endregion
@@ -91,23 +91,29 @@ namespace Puzzle.NPersist.Framework.Persistence
 				throw new ExceptionLimitExceededException("Exceptions were encountered during rollback! One or more databases are potentially in a corrupt state!");
 		}
 
-        public override IDbConnection Connection => throw new IAmOpenSourcePleaseImplementMeException();
-
-	    public override IDbTransaction DbTransaction
+        public override IDbConnection Connection
 		{
-			get => throw new IAmOpenSourcePleaseImplementMeException();
-	        set => throw new IAmOpenSourcePleaseImplementMeException();
-	    }
+			get { throw new IAmOpenSourcePleaseImplementMeException(); }
+		}
+
+        public override IDbTransaction DbTransaction
+		{
+			get { throw new IAmOpenSourcePleaseImplementMeException(); }
+			set { throw new IAmOpenSourcePleaseImplementMeException(); }
+		}
 
         public override IDataSource DataSource
 		{
-			get => throw new IAmOpenSourcePleaseImplementMeException();
-            set => throw new IAmOpenSourcePleaseImplementMeException();
-        }
+			get { throw new IAmOpenSourcePleaseImplementMeException(); }
+			set { throw new IAmOpenSourcePleaseImplementMeException(); }
+		}
 
-        public override IsolationLevel IsolationLevel => throw new IAmOpenSourcePleaseImplementMeException();
+        public override IsolationLevel IsolationLevel
+		{
+			get { throw new IAmOpenSourcePleaseImplementMeException(); }
+		}
 
-	    public override void Dispose()
+		public override void Dispose()
 		{
 			foreach (ITransaction transaction in this.transactions)
 			{

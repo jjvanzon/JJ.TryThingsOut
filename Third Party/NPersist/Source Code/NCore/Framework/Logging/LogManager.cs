@@ -25,8 +25,8 @@ namespace Puzzle.NCore.Framework.Logging
 
         public IList Loggers
         {
-            get => loggers;
-            set => loggers = value;
+            get { return loggers; }
+            set { loggers = value; }
         }
 
         #endregion
@@ -243,8 +243,14 @@ namespace Puzzle.NCore.Framework.Logging
         private object data;
         public object Data
         {
-            get => this.data;
-            set => this.data = value;
+            get
+            {
+                return this.data;
+            }
+            set
+            {
+                this.data = value;
+            }
         }
         #endregion
 
@@ -252,8 +258,14 @@ namespace Puzzle.NCore.Framework.Logging
         private object[] values;
         public object[] Values
         {
-            get => this.values;
-            set => this.values = value;
+            get
+            {
+                return this.values;
+            }
+            set
+            {
+                this.values = value;
+            }
         }
         #endregion
         public LogMessage(object data, params object[] values)
@@ -262,6 +274,9 @@ namespace Puzzle.NCore.Framework.Logging
             this.values = values;
         }
 
-        public override string ToString() => string.Format(data.ToString(), values);
+        public override string ToString()
+        {
+            return string.Format(data.ToString(), values);
+        }
     }
 }

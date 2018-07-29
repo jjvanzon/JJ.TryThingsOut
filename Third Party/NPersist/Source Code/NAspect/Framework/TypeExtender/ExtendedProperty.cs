@@ -14,8 +14,14 @@ namespace Puzzle.NAspect.Framework
         /// </summary>        
         public string FieldName
         {
-            get => this.fieldName;
-            set => this.fieldName = value;
+            get
+            {
+                return this.fieldName;
+            }
+            set
+            {
+                this.fieldName = value;
+            }
         }
         #endregion
 
@@ -27,8 +33,14 @@ namespace Puzzle.NAspect.Framework
         /// </summary>
         public Type Type
         {
-            get => this.type;
-            set => this.type = value;
+            get
+            {
+                return this.type;
+            }
+            set
+            {
+                this.type = value;
+            }
         }
         #endregion
 

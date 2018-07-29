@@ -44,26 +44,26 @@ namespace Puzzle.NPersist.Framework.Persistence
 
 		public XmlDocument XmlDocument
 		{
-			get => this.xmlDocument;
-		    set => this.xmlDocument = value;
+			get { return this.xmlDocument; }
+			set { this.xmlDocument = value; }
 		}
 
 		public string FileName
 		{
-			get => this.fileName;
-		    set => this.fileName = value;
+			get { return this.fileName; }
+			set { this.fileName = value; }
 		}
 
 		public DateTime LastUpdated
 		{
-			get => this.lastUpdated;
-		    set => this.lastUpdated = value;
+			get { return this.lastUpdated; }
+			set { this.lastUpdated = value; }
 		}
 
 		public bool NewFile
 		{
-			get => this.newFile;
-		    set => this.newFile = value;
+			get { return this.newFile; }
+			set { this.newFile = value; }
 		}
 
 	}

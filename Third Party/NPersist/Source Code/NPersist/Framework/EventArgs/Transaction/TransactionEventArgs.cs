@@ -50,26 +50,26 @@ namespace Puzzle.NPersist.Framework.EventArguments
 
 		public ITransaction Transaction
 		{
-			get => m_Transaction;
-		    set => m_Transaction = value;
+			get { return m_Transaction; }
+			set { m_Transaction = value; }
 		}
 
 		public IDataSource DataSource
 		{
-			get => m_DataSource;
-		    set => m_DataSource = value;
+			get { return m_DataSource; }
+			set { m_DataSource = value; }
 		}
 
 		public IsolationLevel IsolationLevel
 		{
-			get => m_IsolationLevel;
-		    set => m_IsolationLevel = value;
+			get { return m_IsolationLevel; }
+			set { m_IsolationLevel = value; }
 		}
 
 		public bool AutoPersistAllOnCommit
 		{
-			get => m_AutoPersistAllOnCommit;
-		    set => m_AutoPersistAllOnCommit = value;
+			get { return m_AutoPersistAllOnCommit; }
+			set { m_AutoPersistAllOnCommit = value; }			
 		}
 		
 

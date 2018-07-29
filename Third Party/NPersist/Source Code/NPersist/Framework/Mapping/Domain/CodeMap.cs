@@ -25,16 +25,19 @@ namespace Puzzle.NPersist.Framework.Mapping
 		{
 		}
 
-		public override void Accept(IMapVisitor mapVisitor) => mapVisitor.Visit(this);
+		public override void Accept(IMapVisitor mapVisitor)
+		{
+			mapVisitor.Visit(this);
+		}
 
-	    #region Property  Code
+		#region Property  Code
 		
 		private string code = "";
 		
 		public string Code
 		{
-			get => this.code;
-		    set => this.code = value;
+			get { return this.code; }
+			set { this.code = value; }
 		}
 		
 		#endregion
@@ -45,8 +48,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 		
 		public CodeLanguage CodeLanguage
 		{
-			get => this.codeLanguage;
-		    set => this.codeLanguage = value;
+			get { return this.codeLanguage; }
+			set { this.codeLanguage = value; }
 		}
 		
 		#endregion
@@ -87,9 +90,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return true;
 		}
 
-		public override void DeepMerge(IMap mapObject) => Copy(mapObject);
+		public override void DeepMerge(IMap mapObject)
+		{
+			Copy(mapObject);
+		}
 
-	    public override void Copy(IMap mapObject)
+		public override void Copy(IMap mapObject)
 		{
 			ICodeMap codeMap = (ICodeMap) mapObject;
 			codeMap.Code  = this.Code;

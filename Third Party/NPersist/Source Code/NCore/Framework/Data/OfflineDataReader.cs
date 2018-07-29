@@ -68,7 +68,10 @@ namespace Puzzle.NCore.Framework.Data
             MoveFirst();
         }
 
-        public void MoveFirst() => Position = -1;
+        public void MoveFirst()
+        {
+            Position = -1;
+        }
 
         #region Public Property Position
 
@@ -76,31 +79,43 @@ namespace Puzzle.NCore.Framework.Data
 
         public int Position
         {
-            get => position;
-            set => position = value;
+            get { return position; }
+            set { position = value; }
         }
 
         #endregion
 
         #region Public Property RecordsAffected
 
-        public int RecordsAffected => throw new IAmOpenSourcePleaseImplementMeException();
+        public int RecordsAffected
+        {
+            get { throw new IAmOpenSourcePleaseImplementMeException(); }
+        }
 
         #endregion
 
         #region Public Property IsClosed		
 
-        public bool IsClosed => throw new IAmOpenSourcePleaseImplementMeException();
+        public bool IsClosed
+        {
+            get { throw new IAmOpenSourcePleaseImplementMeException(); }
+        }
 
         #endregion
 
         #region Public Property Count
 
-        public int Count => records.Count;
+        public int Count
+        {
+            get { return records.Count; }
+        }
 
         #endregion
 
-        public bool NextResult() => throw new IAmOpenSourcePleaseImplementMeException("NextResult is not implemented");
+        public bool NextResult()
+        {
+            throw new IAmOpenSourcePleaseImplementMeException("NextResult is not implemented");
+        }
 
         public void Close()
         {
@@ -113,9 +128,15 @@ namespace Puzzle.NCore.Framework.Data
             return Position < Count;
         }
 
-        public int Depth => 0;
+        public int Depth
+        {
+            get { return 0; }
+        }
 
-        public DataTable GetSchemaTable() => schemaTable;
+        public DataTable GetSchemaTable()
+        {
+            return schemaTable;
+        }
 
         public void Dispose()
         {
@@ -147,7 +168,10 @@ namespace Puzzle.NCore.Framework.Data
             throw new ApplicationException("Column with name " + name + " not found");
         }
 
-        object IDataRecord.this[int i] => GetValue(i);
+        object IDataRecord.this[int i]
+        {
+            get { return GetValue(i); }
+        }
 
         public object GetValue(int i)
         {
@@ -161,7 +185,11 @@ namespace Puzzle.NCore.Framework.Data
             return fields[i] == DBNull.Value;
         }
 
-        public long GetBytes(int i, long fieldOffset, byte[] buffer, int bufferoffset, int length) => 0;
+        public long GetBytes(int i, long fieldOffset, byte[] buffer, int bufferoffset, int length)
+        {
+            // TODO:  Add ICacheDataReader.GetBytes implementation
+            return 0;
+        }
 
         public byte GetByte(int i)
         {
@@ -169,7 +197,10 @@ namespace Puzzle.NCore.Framework.Data
             return (byte) fields[i];
         }
 
-        public Type GetFieldType(int i) => (Type) schemaTable.Rows[i]["DataType"];
+        public Type GetFieldType(int i)
+        {
+            return (Type) schemaTable.Rows[i]["DataType"];
+        }
 
         public decimal GetDecimal(int i)
         {
@@ -177,11 +208,21 @@ namespace Puzzle.NCore.Framework.Data
             return (decimal) fields[i];
         }
 
-        public int GetValues(object[] values) => 0;
+        public int GetValues(object[] values)
+        {
+            // TODO:  Add ICacheDataReader.GetValues implementation
+            return 0;
+        }
 
-        public string GetName(int i) => (string) schemaTable.Rows[i]["ColumnName"];
+        public string GetName(int i)
+        {
+            return (string) schemaTable.Rows[i]["ColumnName"];
+        }
 
-        public int FieldCount => schemaTable.Rows.Count;
+        public int FieldCount
+        {
+            get { return schemaTable.Rows.Count; }
+        }
 
         public long GetInt64(int i)
         {
@@ -221,7 +262,11 @@ namespace Puzzle.NCore.Framework.Data
 			return -1; //schemaTable.Columns.IndexOf(name);
         }
 
-        public string GetDataTypeName(int i) => null;
+        public string GetDataTypeName(int i)
+        {
+            // TODO:  Add ICacheDataReader.GetDataTypeName implementation
+            return null;
+        }
 
         public float GetFloat(int i)
         {
@@ -229,9 +274,17 @@ namespace Puzzle.NCore.Framework.Data
             return (float) fields[i];
         }
 
-        public IDataReader GetData(int i) => null;
+        public IDataReader GetData(int i)
+        {
+            // TODO:  Add ICacheDataReader.GetData implementation
+            return null;
+        }
 
-        public long GetChars(int i, long fieldoffset, char[] buffer, int bufferoffset, int length) => 0;
+        public long GetChars(int i, long fieldoffset, char[] buffer, int bufferoffset, int length)
+        {
+            // TODO:  Add ICacheDataReader.GetChars implementation
+            return 0;
+        }
 
         public string GetString(int i)
         {

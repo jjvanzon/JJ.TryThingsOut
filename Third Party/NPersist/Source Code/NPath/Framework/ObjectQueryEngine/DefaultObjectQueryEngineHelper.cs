@@ -23,9 +23,15 @@ namespace Puzzle.NPath.Framework
             
         }
 
-        public bool GetNullValueStatus(object target, string property) => false;
+        public bool GetNullValueStatus(object target, string property)
+        {
+            return false;
+        }
 
-        public object EvalParameter(object item, Puzzle.NPath.Framework.CodeDom.NPathParameter parameter) => null;
+        public object EvalParameter(object item, Puzzle.NPath.Framework.CodeDom.NPathParameter parameter)
+        {
+            return null;
+        }
 
         #endregion
     }

@@ -22,13 +22,23 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 	{
 		#region Constructors
 
-		private SqlDeleteStatement() : base() => SetupClauses();
+		private SqlDeleteStatement() : base()
+		{
+			SetupClauses();
+		}
 
-	    public SqlDeleteStatement(ISourceMap sourceMap) : base(sourceMap) => SetupClauses();
+		public SqlDeleteStatement(ISourceMap sourceMap) : base(sourceMap)
+		{
+			SetupClauses();
+		}
 
-	    public SqlDeleteStatement(string databaseName) : base(databaseName) => SetupClauses();
+		public SqlDeleteStatement(string databaseName) : base(databaseName)
+		{
+			SetupClauses();
+		}
 
-	    private void SetupClauses()
+		
+		private void SetupClauses()
 		{
 			this.sqlDeleteClause = new SqlDeleteClause(this);
 			this.sqlFromClause = new SqlFromClause(this);
@@ -43,8 +53,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlDeleteClause SqlDeleteClause
 		{
-			get => this.sqlDeleteClause;
-		    set => this.sqlDeleteClause = value;
+			get { return this.sqlDeleteClause; }
+			set { this.sqlDeleteClause = value; }
 		}
 		
 		#endregion
@@ -55,8 +65,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlFromClause SqlFromClause
 		{
-			get => this.sqlFromClause;
-		    set => this.sqlFromClause = value;
+			get { return this.sqlFromClause; }
+			set { this.sqlFromClause = value; }
 		}
 		
 		#endregion
@@ -67,8 +77,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlWhereClause SqlWhereClause
 		{
-			get => this.sqlWhereClause;
-		    set => this.sqlWhereClause = value;
+			get { return this.sqlWhereClause; }
+			set { this.sqlWhereClause = value; }
 		}
 		
 		#endregion

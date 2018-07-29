@@ -18,8 +18,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual string Path
 		{
-			get => path;
-		    set
+			get { return path; }
+			set
 			{
 				value = value.Replace("@", ""); //ignore escape chars
 				path = value;
@@ -35,8 +35,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual bool IsNegative
 		{
-			get => isNegative;
-		    set => isNegative = value;
+			get { return isNegative; }
+			set { isNegative = value; }
 		}
 
 		#endregion
@@ -47,8 +47,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public NPathPropertyPathReferenceLocation ReferenceLocation
 		{
-			get => this.referenceLocation;
-		    set => this.referenceLocation = value;
+			get { return this.referenceLocation; }
+			set { this.referenceLocation = value; }
 		}
 
 		#endregion

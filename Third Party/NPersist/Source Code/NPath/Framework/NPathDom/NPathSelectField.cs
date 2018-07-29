@@ -18,8 +18,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual IValue Expression
 		{
-			get => expression;
-		    set => expression = value;
+			get { return expression; }
+			set { expression = value; }
 		}
 
 		#endregion
@@ -30,8 +30,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual string Alias
 		{
-			get => alias;
-		    set => alias = value;
+			get { return alias; }
+			set { alias = value; }
 		}
 
 		#endregion

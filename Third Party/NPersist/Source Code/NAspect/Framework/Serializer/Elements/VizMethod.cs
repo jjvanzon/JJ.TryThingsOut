@@ -18,8 +18,8 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// </summary>
         public virtual string Name
         {
-            get => name;
-            set => name = value;
+            get { return name; }
+            set { name = value; }
         }
 
         #endregion
@@ -31,7 +31,10 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// <summary>
         /// 
         /// </summary>
-        public virtual List<VizParameter> Parameters => parameters;
+        public virtual List<VizParameter> Parameters
+        {
+            get { return parameters; }
+        }
 
         #endregion
 
@@ -42,7 +45,10 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// <summary>
         /// 
         /// </summary>
-        public virtual List<VizInterceptor> Interceptors => interceptors;
+        public virtual List<VizInterceptor> Interceptors
+        {
+            get { return interceptors; }
+        }
 
         #endregion
 
@@ -55,8 +61,8 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// </summary>
         public virtual VizType OwnerType
         {
-            get => ownerType;
-            set => ownerType = value;
+            get { return ownerType; }
+            set { ownerType = value; }
         }
 
         #endregion
@@ -65,19 +71,28 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// 
         /// </summary>
         /// <returns></returns>
-        public virtual string GetProxyText() => "hello";
+        public virtual string GetProxyText()
+        {
+            return "hello";
+        }
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public virtual string GetRealText() => "hello";
+        public virtual string GetRealText()
+        {
+            return "hello";
+        }
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public virtual string GetCallSample() => "hello";
+        public virtual string GetCallSample()
+        {
+            return "hello";
+        }
 
         /// <summary>
         /// 
@@ -100,7 +115,10 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// 
         /// </summary>
         /// <returns></returns>
-        public override string ToString() => Name;
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     /// <summary>
@@ -118,8 +136,8 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// </summary>
         public virtual string ReturnType
         {
-            get => returnType;
-            set => returnType = value;
+            get { return returnType; }
+            set { returnType = value; }
         }
 
         #endregion
@@ -135,8 +153,8 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// </summary>
         public virtual VizMixin Mixin
         {
-            get => mixin;
-            set => mixin = value;
+            get { return mixin; }
+            set { mixin = value; }
         }
 
         #endregion
@@ -145,7 +163,10 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// 
         /// </summary>
         /// <returns></returns>
-        public override string GetProxyText() => string.Format("{0}.{1} ({2})", OwnerType.Name, Name, GetParamTypes());
+        public override string GetProxyText()
+        {
+            return string.Format("{0}.{1} ({2})", OwnerType.Name, Name, GetParamTypes());
+        }
 
         /// <summary>
         /// 
@@ -163,12 +184,18 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// 
         /// </summary>
         /// <returns></returns>
-        public override string ToString() => string.Format("{1} ({2}) : {0}", ReturnType, Name, GetParamTypes());
+        public override string ToString()
+        {
+            return string.Format("{1} ({2}) : {0}", ReturnType, Name, GetParamTypes());
+        }
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public override string GetCallSample() => string.Format("My{0}Obj.{1} ({2})", OwnerType.BaseName, Name, GetParamTypes());
+        public override string GetCallSample()
+        {
+            return string.Format("My{0}Obj.{1} ({2})", OwnerType.BaseName, Name, GetParamTypes());
+        }
     }
 }

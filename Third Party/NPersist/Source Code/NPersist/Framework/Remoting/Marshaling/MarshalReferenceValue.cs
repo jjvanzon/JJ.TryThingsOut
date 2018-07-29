@@ -28,14 +28,14 @@ namespace Puzzle.NPersist.Framework.Remoting.Marshaling
 
 		[XmlArrayItem(typeof(MarshalProperty))] public ArrayList ReferenceProperties
 		{
-			get => this.referenceProperties;
-		    set => this.referenceProperties = value;
+			get { return this.referenceProperties; }
+			set { this.referenceProperties = value; }
 		}
 
 		[XmlArrayItem(typeof(MarshalReference))] public ArrayList ReferenceReferences
 		{
-			get => this.referenceReferences;
-		    set => this.referenceReferences = value;
+			get { return this.referenceReferences; }
+			set { this.referenceReferences = value; }
 		}
 
 		public MarshalProperty GetReferenceProperty(string name)

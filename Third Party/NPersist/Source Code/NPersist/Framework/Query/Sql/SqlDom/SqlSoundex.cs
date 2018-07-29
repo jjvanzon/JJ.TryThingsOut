@@ -18,7 +18,12 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
     /// </summary>
     public class SqlSoundexFunction : SqlFunction
     {
-        public SqlSoundexFunction(SqlExpression sqlExpression) => this.sqlExpression = sqlExpression;
+        public SqlSoundexFunction(SqlExpression sqlExpression)
+        {
+            this.sqlExpression = sqlExpression;
+        }
+
+      
 
         public override void Accept(ISqlVisitor visitor)
         {
@@ -32,8 +37,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 
         public SqlExpression SqlExpression
         {
-            get => this.sqlExpression;
-            set => this.sqlExpression = value;
+            get { return this.sqlExpression; }
+            set { this.sqlExpression = value; }
         }
 
         #endregion

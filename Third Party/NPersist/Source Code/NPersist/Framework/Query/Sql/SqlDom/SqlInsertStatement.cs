@@ -22,15 +22,28 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 	{
 		#region Constructors
 
-		private SqlInsertStatement() : base() => SetupClauses();
+		private SqlInsertStatement() : base()
+		{
+			SetupClauses();
+		}
 
-	    public SqlInsertStatement(ISourceMap sourceMap) : base(sourceMap) => SetupClauses();
+		public SqlInsertStatement(ISourceMap sourceMap) : base(sourceMap)
+		{
+			SetupClauses();
+		}
 
-	    public SqlInsertStatement(string databaseName) : base(databaseName) => SetupClauses();
+		public SqlInsertStatement(string databaseName) : base(databaseName)
+		{
+			SetupClauses();
+		}
 
-	    private void SetupClauses() => this.sqlInsertClause = new SqlInsertClause(this);
 
-	    #endregion
+		private void SetupClauses()
+		{
+			this.sqlInsertClause = new SqlInsertClause(this);
+		}
+
+		#endregion
 
 		#region Property  SqlInsertClause
 		
@@ -38,8 +51,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlInsertClause SqlInsertClause
 		{
-			get => this.sqlInsertClause;
-		    set => this.sqlInsertClause = value;
+			get { return this.sqlInsertClause; }
+			set { this.sqlInsertClause = value; }
 		}
 		
 		#endregion
@@ -50,8 +63,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public bool DefaultValues
 		{
-			get => this.defaultValues;
-		    set => this.defaultValues = value;
+			get { return this.defaultValues; }
+			set { this.defaultValues = value; }
 		}
 		
 		#endregion
@@ -62,8 +75,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public IList SqlColumnList
 		{
-			get => this.sqlColumnList;
-		    set => this.sqlColumnList = value;
+			get { return this.sqlColumnList; }
+			set { this.sqlColumnList = value; }
 		}
 		
 		#endregion
@@ -74,15 +87,18 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public IList ValueList
 		{
-			get => this.valueList;
-		    set => this.valueList = value;
+			get { return this.valueList; }
+			set { this.valueList = value; }
 		}
 		
 		#endregion
 
-		public void AddSqlColumnAndValue(SqlColumnAlias sqlColumnAlias, SqlExpression sqlExpression) => AddSqlColumnAndValue(sqlColumnAlias.SqlColumn, sqlExpression);
+		public void AddSqlColumnAndValue(SqlColumnAlias sqlColumnAlias, SqlExpression sqlExpression)
+		{
+			AddSqlColumnAndValue(sqlColumnAlias.SqlColumn, sqlExpression);
+		}
 
-	    public void AddSqlColumnAndValue(SqlColumn sqlColumn, SqlExpression sqlExpression)
+		public void AddSqlColumnAndValue(SqlColumn sqlColumn, SqlExpression sqlExpression)
 		{
 			this.sqlColumnList.Add(sqlColumn);
 			this.valueList.Add(sqlExpression);

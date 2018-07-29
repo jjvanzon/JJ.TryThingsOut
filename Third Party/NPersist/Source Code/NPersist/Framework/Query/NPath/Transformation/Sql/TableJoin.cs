@@ -39,56 +39,56 @@ namespace Puzzle.NPersist.Framework.NPath.Sql {
 		private JoinType joinType = JoinType.InnerJoin;
 
 		public JoinTree JoinTree {
-			get => this.joinTree;
-		    set {
+			get { return this.joinTree; }
+			set {
 				this.joinTree = value;
 				value.TableJoins.Add(this);
 			}
 		}
 
 		public TableJoin Parent {
-			get => this.parent;
-		    set {
+			get { return this.parent; }
+			set {
 				this.parent = value;
 				value.children.Add(this);
 			}
 		}
 		
 		public ArrayList Children {
-			get => this.children;
-		    set => this.children = value;
+			get { return this.children; }
+			set { this.children = value; }
 		}
 
 		public IPropertyMap PropertyMap {
-			get => this.propertyMap;
-		    set => this.propertyMap = value;
+			get { return this.propertyMap; }
+			set { this.propertyMap = value; }
 		}
 	
 		public ITableMap TableMap {
-			get => this.tableMap;
-		    set => this.tableMap = value;
+			get { return this.tableMap; }
+			set { this.tableMap = value; }
 		}
 
 		public ITableMap BaseTableMap
 		{
-			get => this.baseTableMap;
-		    set => this.baseTableMap = value;
+			get { return this.baseTableMap; }
+			set { this.baseTableMap = value; }
 		}
 		
 		public ArrayList ColumnMaps {
-			get => this.columnMaps;
-		    set => this.columnMaps = value;
+			get { return this.columnMaps; }
+			set { this.columnMaps = value; }
 		}
 
 		public ArrayList BaseColumnMaps
 		{
-			get => this.baseColumnMaps;
-		    set => this.baseColumnMaps = value;
+			get { return this.baseColumnMaps; }
+			set { this.baseColumnMaps = value; }
 		}
 
 		public JoinType JoinType {
-			get => this.joinType;
-		    set => this.joinType = value;
+			get { return this.joinType; }
+			set { this.joinType = value; }
 		}
 
 

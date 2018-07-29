@@ -40,26 +40,37 @@ namespace Puzzle.NPersist.Framework.EventArguments
 			m_IsNull = isNull;
 		}
 
-		public object EventObject => m_EventObject;
-
-	    public string PropertyName => m_PropertyName;
-
-	    public object NewValue
+		public object EventObject
 		{
 			//[DebuggerHidden()]
 			//[DebuggerStepThrough()]
-			get => m_NewValue;
-	        //[DebuggerHidden()]
+			get { return m_EventObject; }
+		}
+
+		public string PropertyName
+		{
+			get { return m_PropertyName; }
+		}
+
+		public object NewValue
+		{
+			//[DebuggerHidden()]
 			//[DebuggerStepThrough()]
-			set => m_NewValue = value;
-	    }
+			get { return m_NewValue; }
+			//[DebuggerHidden()]
+			//[DebuggerStepThrough()]
+			set { m_NewValue = value; }
+		}
 
 		public object Value
 		{
-			get => m_Value;
-		    set => m_Value = value;
+			get { return m_Value; }
+			set { m_Value = value; }
 		}
 
-		public bool IsNull => m_IsNull;
+		public bool IsNull
+		{
+			get { return m_IsNull; }
+		}
 	}
 }

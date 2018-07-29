@@ -24,18 +24,36 @@ namespace Puzzle.NPersist.Framework.Linq
         string selectClause = "select *";
         public string SelectClause
         {
-            get => selectClause;
-            set => selectClause = value;
+            get
+            {
+                return selectClause;
+            }
+            set
+            {
+                selectClause = value;
+            }
         }
 
-        public string FromClause => "from " + this.GetType().GetGenericArguments()[0].Name;
+        public string FromClause
+        {
+            get
+            {
+                return "from " + this.GetType().GetGenericArguments()[0].Name;
+            }
+        }
 
         #region Property WhereClause
         private string whereClause = "";
         public virtual string WhereClause
         {
-            get => this.whereClause;
-            set => this.whereClause = value;
+            get
+            {
+                return this.whereClause;
+            }
+            set
+            {
+                this.whereClause = value;
+            }
         }
         #endregion
 
@@ -51,7 +69,10 @@ namespace Puzzle.NPersist.Framework.Linq
             return (selectClause + fromClause + whereClause + orderByClause).Trim () ;
         }
 
-        private string AddSpaces(string source) => (source + " ").TrimStart();
+        private string AddSpaces(string source)
+        {
+            return (source + " ").TrimStart();
+        }
 
         private void ApplyLoadSpan()
         {
@@ -69,8 +90,14 @@ namespace Puzzle.NPersist.Framework.Linq
         private string orderByClause = "";
         public virtual string OrderByClause
         {
-            get => this.orderByClause;
-            set => this.orderByClause = value;
+            get
+            {
+                return this.orderByClause;
+            }
+            set
+            {
+                this.orderByClause = value;
+            }
         }
         #endregion
 

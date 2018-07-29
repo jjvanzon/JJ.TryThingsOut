@@ -18,16 +18,19 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 	/// </summary>
 	public class SqlCompareOperator : SqlNodeBase
 	{
-		public SqlCompareOperator(SqlCompareOperatorType sqlCompareOperatorType) => this.sqlCompareOperatorType = sqlCompareOperatorType;
+		public SqlCompareOperator(SqlCompareOperatorType sqlCompareOperatorType)
+		{
+			this.sqlCompareOperatorType = sqlCompareOperatorType;
+		}
 
-	    #region Property  SqlCompareOperatorType
+		#region Property  SqlCompareOperatorType
 		
 		private SqlCompareOperatorType sqlCompareOperatorType;
 		
 		public SqlCompareOperatorType SqlCompareOperatorType
 		{
-			get => this.sqlCompareOperatorType;
-		    set => this.sqlCompareOperatorType = value;
+			get { return this.sqlCompareOperatorType; }
+			set { this.sqlCompareOperatorType = value; }
 		}
 		
 		#endregion

@@ -20,8 +20,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual IList SelectFields
 		{
-			get => selectFields;
-		    set => selectFields = value;
+			get { return selectFields; }
+			set { selectFields = value; }
 		}
 
 		#endregion
@@ -30,42 +30,45 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public bool Distinct
 		{
-			get => this.distinct;
-		    set => this.distinct = value;
+			get { return this.distinct; }
+			set { this.distinct = value; }
 		}
 
 		private bool hasTop;
 
 		public bool HasTop
 		{
-			get => this.hasTop;
-		    set => this.hasTop = value;
+			get { return this.hasTop; }
+			set { this.hasTop = value; }
 		}
 
 		private long top;
 
 		public long Top
 		{
-			get => this.top;
-		    set => this.top = value;
+			get { return this.top; }
+			set { this.top = value; }
 		}
 
 		private bool percent;
 
 		public bool Percent
 		{
-			get => this.percent;
-		    set => this.percent = value;
+			get { return this.percent; }
+			set { this.percent = value; }
 		}
 
 		private bool withTies;
 
 		public bool WithTies
 		{
-			get => this.withTies;
-		    set => this.withTies = value;
+			get { return this.withTies; }
+			set { this.withTies = value; }
 		}
 
-		public NPathSelectClause() => selectFields = new ArrayList();
+		public NPathSelectClause()
+		{
+			selectFields = new ArrayList();
+		}
 	}
 }

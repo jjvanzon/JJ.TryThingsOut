@@ -18,8 +18,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual IValue LeftOperand
 		{
-			get => leftOperand;
-		    set => leftOperand = value;
+			get { return leftOperand; }
+			set { leftOperand = value; }
 		}
 
 		#endregion
@@ -30,8 +30,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual IValue RightOperand
 		{
-			get => rightOperand;
-		    set => rightOperand = value;
+			get { return rightOperand; }
+			set { rightOperand = value; }
 		}
 
 		#endregion
@@ -42,8 +42,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual string Operator
 		{
-			get => _operator;
-		    set => _operator = value;
+			get { return _operator; }
+			set { _operator = value; }
 		}
 
 		#endregion

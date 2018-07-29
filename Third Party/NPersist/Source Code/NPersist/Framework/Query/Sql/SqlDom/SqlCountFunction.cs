@@ -44,8 +44,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlExpression SqlExpression
 		{
-			get => this.sqlExpression;
-		    set => this.sqlExpression = value;
+			get { return this.sqlExpression; }
+			set { this.sqlExpression = value; }
 		}
 		
 		#endregion
@@ -56,8 +56,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public bool Distinct
 		{
-			get => this.distinct;
-		    set => this.distinct = value;
+			get { return this.distinct; }
+			set { this.distinct = value; }
 		}
 		
 		#endregion

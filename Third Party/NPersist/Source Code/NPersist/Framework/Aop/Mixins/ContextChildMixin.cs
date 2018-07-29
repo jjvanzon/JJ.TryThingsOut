@@ -23,9 +23,12 @@ namespace Puzzle.NPersist.Framework.Aop.Mixins
 
         #region IProxyAware Members
 
-        public void SetProxy(Puzzle.NAspect.Framework.IAopProxy target) => this.target = target;
+        public void SetProxy(Puzzle.NAspect.Framework.IAopProxy target)
+        {
+            this.target = target ;
+        }
 
-	    #endregion
+        #endregion
 
         #region IContextChild Members
 

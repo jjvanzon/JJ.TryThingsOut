@@ -89,9 +89,12 @@ namespace Puzzle.NPersist.Framework.BaseClasses
             }
         }
 
-        public void AddIndex(PropertyDescriptor property) => throw new Exception("The method or operation is not implemented.");
+        public void AddIndex(PropertyDescriptor property)
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
 
-	    public object AddNew()
+        public object AddNew()
         {
             T entity = list.Context.CreateObject<T>();
             this.Add(entity);
@@ -100,35 +103,93 @@ namespace Puzzle.NPersist.Framework.BaseClasses
             return entity;
         }
 
-        public bool AllowEdit => true;
+        public bool AllowEdit
+        {
+            get
+            {
+                return true;
+            }
+        }
 
-	    public bool AllowNew => true;
+        public bool AllowNew
+        {
+            get
+            {
+                return true;
+            }
+        }
 
-	    public bool AllowRemove => true;
+        public bool AllowRemove
+        {
+            get
+            {
+                return true;
+            }
+        }
 
-	    public void ApplySort(PropertyDescriptor property, ListSortDirection direction) => throw new Exception("The method or operation is not implemented.");
+        public void ApplySort(PropertyDescriptor property, ListSortDirection direction)
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
 
-	    public int Find(PropertyDescriptor property, object key) => throw new Exception("The method or operation is not implemented.");
+        public int Find(PropertyDescriptor property, object key)
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
 
-	    public bool IsSorted => throw new Exception("The method or operation is not implemented.");
+        public bool IsSorted
+        {
+            get { throw new Exception("The method or operation is not implemented."); }
+        }
 
-	    public event ListChangedEventHandler ListChanged;
+        public event ListChangedEventHandler ListChanged;
 
-        public void RemoveIndex(PropertyDescriptor property) => throw new Exception("The method or operation is not implemented.");
+        public void RemoveIndex(PropertyDescriptor property)
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
 
-	    public void RemoveSort() => throw new Exception("The method or operation is not implemented.");
+        public void RemoveSort()
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
 
-	    public ListSortDirection SortDirection => throw new Exception("The method or operation is not implemented.");
+        public ListSortDirection SortDirection
+        {
+            get { throw new Exception("The method or operation is not implemented."); }
+        }
 
-	    public PropertyDescriptor SortProperty => throw new Exception("The method or operation is not implemented.");
+        public PropertyDescriptor SortProperty
+        {
+            get { throw new Exception("The method or operation is not implemented."); }
+        }
 
-	    public bool SupportsChangeNotification => true;
+        public bool SupportsChangeNotification
+        {
+            get
+            {
+                return true;
+            }
+        }
 
-	    public bool SupportsSearching => false;
+        public bool SupportsSearching
+        {
+            get
+            {
+                return false;
+            }
+        }
 
-	    public bool SupportsSorting => false;
+        public bool SupportsSorting
+        {
+            get
+            {
+                return false;
+            }
 
-	    protected virtual void HookPropertyChanged(T item)
+        }
+
+        protected virtual void HookPropertyChanged(T item)
         {
             INotifyPropertyChanged notificationItem = item as INotifyPropertyChanged;
             if (notificationItem != null)
@@ -189,9 +250,12 @@ namespace Puzzle.NPersist.Framework.BaseClasses
             }
         }
 
-        private void ResetBindings() => OnListChanged(ListChangedType.Reset, -1);
+        private void ResetBindings()
+        {
+            OnListChanged(ListChangedType.Reset, -1);
+        }
 
-	    protected virtual void UnhookPropertyChanged(T item)
+        protected virtual void UnhookPropertyChanged(T item)
         {
             INotifyPropertyChanged notificationItem = item as INotifyPropertyChanged;
             if ((notificationItem != null) && (this.propertyChangedEventHandler != null))
@@ -249,8 +313,11 @@ namespace Puzzle.NPersist.Framework.BaseClasses
         private PropertyDescriptorCollection itemTypeProperties;
         private PropertyChangedEventHandler propertyChangedEventHandler;
 
-        public bool RaisesItemChangedEvents => true;
+        public bool RaisesItemChangedEvents
+        {
+            get { return true; }
+        }
 
-	    #endregion
+        #endregion
     }
 }

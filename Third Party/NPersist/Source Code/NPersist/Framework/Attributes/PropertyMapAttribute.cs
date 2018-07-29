@@ -88,260 +88,464 @@ namespace Puzzle.NPersist.Framework.Attributes
 		
 		public virtual string ValidateMethod
 		{
-			get => m_ValidateMethod;
-		    set => m_ValidateMethod = value;
+			get
+			{
+				return m_ValidateMethod;
+			}
+			set
+			{
+				m_ValidateMethod = value;
+			}
 		}
 
 
 		public virtual string FieldName
 		{
-			get => m_FieldName;
-		    set => m_FieldName = value;
+			get
+			{
+				return m_FieldName;
+			}
+			set
+			{
+				m_FieldName = value;
+			}
 		}
 
 		public virtual bool IsNullable
 		{
-			get => m_IsNullable;
-		    set => m_IsNullable = value;
+			get
+			{
+				return m_IsNullable;
+			}
+			set
+			{
+				m_IsNullable = value;
+			}
 		}
 
 		public virtual bool IsAssignedBySource
 		{
-			get => m_IsAssignedBySource;
-		    set => m_IsAssignedBySource = value;
+			get
+			{
+				return m_IsAssignedBySource;
+			}
+			set
+			{
+				m_IsAssignedBySource = value;
+			}
 		}
 		public virtual int MaxLength
 		{
-			get => m_MaxLength;
-		    set => m_MaxLength = value;
+			get
+			{
+				return m_MaxLength;
+			}
+			set
+			{
+				m_MaxLength = value;
+			}
 		}
 
 		public virtual int MinLength
 		{
-			get => m_MinLength;
-		    set => m_MinLength = value;
+			get { return m_MinLength; }
+			set { m_MinLength = value; }
 		}
 
 		public virtual string MaxValue
 		{
-			get => m_MaxValue;
-		    set => m_MaxValue = value;
+			get { return m_MaxValue; }
+			set { m_MaxValue = value; }
 		}
 
 		public virtual string MinValue
 		{
-			get => m_MinValue;
-		    set => m_MinValue = value;
+			get { return m_MinValue; }
+			set { m_MinValue = value; }
 		}
 
 		public virtual string DataType
 		{
-			get => m_DataType;
-		    set => m_DataType = value;
+			get
+			{
+				return m_DataType;
+			}
+			set
+			{
+				m_DataType = value;
+			}
 		}
 
 		public virtual string ItemType
 		{
-			get => m_ItemType;
-		    set => m_ItemType = value;
+			get
+			{
+				return m_ItemType;
+			}
+			set
+			{
+				m_ItemType = value;
+			}
 		}
 
 		public virtual bool IsCollection
 		{
-			get => m_IsCollection;
-		    set => m_IsCollection = value;
+			get
+			{
+				return m_IsCollection;
+			}
+			set
+			{
+				m_IsCollection = value;
+			}
 		}
 
 		public virtual string Source
 		{
-			get => m_Source;
-		    set => m_Source = value;
+			get
+			{
+				return m_Source;
+			}
+			set
+			{
+				m_Source = value;
+			}
 		}
 
 		public virtual string Table
 		{
-			get => m_Table;
-		    set => m_Table = value;
+			get
+			{
+				return m_Table;
+			}
+			set
+			{
+				m_Table = value;
+			}
 		}
 
 		public virtual string Columns
 		{
-			get => m_Columns;
-		    set => m_Columns = value;
+			get
+			{
+				return m_Columns;
+			}
+			set
+			{
+				m_Columns = value;
+			}
 		}
 
 		public virtual string IdColumns
 		{
-			get => m_IdColumns;
-		    set => m_IdColumns = value;
+			get
+			{
+				return m_IdColumns;
+			}
+			set
+			{
+				m_IdColumns = value;
+			}
 		}
 
 		public virtual string Inverse
 		{
-			get => m_Inverse;
-		    set => m_Inverse = value;
+			get
+			{
+				return m_Inverse;
+			}
+			set
+			{
+				m_Inverse = value;
+			}
 		}
 
 		public virtual bool IsIdentity
 		{
-			get => m_IsIdentity;
-		    set => m_IsIdentity = value;
+			get
+			{
+				return m_IsIdentity;
+			}
+			set
+			{
+				m_IsIdentity = value;
+			}
 		}
 
 		public int IdentityIndex
 		{
-			get => m_IdentityIndex;
-		    set => m_IdentityIndex = value;
+			get
+			{
+				return m_IdentityIndex;
+			}
+			set
+			{
+				m_IdentityIndex = value;
+			}
 		}
 
 		public virtual bool IsKey
 		{
-			get => m_IsKey;
-		    set => m_IsKey = value;
+			get
+			{
+				return m_IsKey;
+			}
+			set
+			{
+				m_IsKey = value;
+			}
 		}
 
 		public int KeyIndex
 		{
-			get => m_KeyIndex;
-		    set => m_KeyIndex = value;
+			get
+			{
+				return m_KeyIndex;
+			}
+			set
+			{
+				m_KeyIndex = value;
+			}
 		}
 
 		public string IdentityGenerator
 		{
-			get => m_IdentityGenerator;
-		    set => m_IdentityGenerator = value;
+			get
+			{
+				return m_IdentityGenerator;
+			}
+			set
+			{
+				m_IdentityGenerator = value;
+			}
 		}
 
 		public virtual bool LazyLoad
 		{
-			get => m_LazyLoad;
-		    set => m_LazyLoad = value;
+			get
+			{
+				return m_LazyLoad;
+			}
+			set
+			{
+				m_LazyLoad = value;
+			}
 		}
 
 		public virtual bool IsReadOnly
 		{
-			get => m_IsReadOnly;
-		    set => m_IsReadOnly = value;
+			get
+			{
+				return m_IsReadOnly;
+			}
+			set
+			{
+				m_IsReadOnly = value;
+			}
 		}
 
 		public virtual bool IsSlave
 		{
-			get => m_IsSlave;
-		    set => m_IsSlave = value;
+			get
+			{
+				return m_IsSlave;
+			}
+			set
+			{
+				m_IsSlave = value;
+			}
 		}
 
 		public virtual string NullSubstitute
 		{
-			get => m_NullSubstitute;
-		    set => m_NullSubstitute = value;
+			get
+			{
+				return m_NullSubstitute;
+			}
+			set
+			{
+				m_NullSubstitute = value;
+			}
 		}
 
 		public virtual bool NoInverseManagement
 		{
-			get => m_NoInverseManagement;
-		    set => m_NoInverseManagement = value;
+			get
+			{
+				return m_NoInverseManagement;
+			}
+			set
+			{
+				m_NoInverseManagement = value;
+			}
 		}
 
 		public virtual bool InheritInverseMappings
 		{
-			get => m_InheritInverseMappings;
-		    set => m_InheritInverseMappings = value;
+			get
+			{
+				return m_InheritInverseMappings;
+			}
+			set
+			{
+				m_InheritInverseMappings = value;
+			}
 		}
 
 		public virtual bool CascadingCreate
 		{
-			get => m_CascadingCreate;
-		    set => m_CascadingCreate = value;
+			get
+			{
+				return m_CascadingCreate;
+			}
+			set
+			{
+				m_CascadingCreate = value;
+			}
 		}
 
 		public virtual bool CascadingDelete
 		{
-			get => m_CascadingDelete;
-		    set => m_CascadingDelete = value;
+			get
+			{
+				return m_CascadingDelete;
+			}
+			set
+			{
+				m_CascadingDelete = value;
+			}
 		}
 
 		public virtual ReferenceType ReferenceType
 		{
-			get => m_ReferenceType;
-		    set => m_ReferenceType = value;
+			get
+			{
+				return m_ReferenceType;
+			}
+			set
+			{
+				m_ReferenceType = value;
+			}
 		}
 
 		public ReferenceQualifier ReferenceQualifier
 		{
-			get => this.m_ReferenceQualifier;
-		    set => this.m_ReferenceQualifier = value;
+			get { return this.m_ReferenceQualifier; }
+			set { this.m_ReferenceQualifier = value; }
 		}
 
 		public virtual OptimisticConcurrencyBehaviorType UpdateOptimisticConcurrencyBehavior
 		{
-			get => m_UpdateOptimisticConcurrencyBehavior;
-		    set => m_UpdateOptimisticConcurrencyBehavior = value;
+			get
+			{
+				return m_UpdateOptimisticConcurrencyBehavior;
+			}
+			set
+			{
+				m_UpdateOptimisticConcurrencyBehavior = value;
+			}
 		}
 
 		public virtual OptimisticConcurrencyBehaviorType DeleteOptimisticConcurrencyBehavior
 		{
-			get => m_DeleteOptimisticConcurrencyBehavior;
-		    set => m_DeleteOptimisticConcurrencyBehavior = value;
+			get
+			{
+				return m_DeleteOptimisticConcurrencyBehavior;
+			}
+			set
+			{
+				m_DeleteOptimisticConcurrencyBehavior = value;
+			}
 		}
 
 		public virtual PropertySpecialBehaviorType OnCreateBehavior
 		{
-			get => m_OnCreateBehavior;
-		    set => m_OnCreateBehavior = value;
+			get
+			{
+				return m_OnCreateBehavior;
+			}
+			set
+			{
+				m_OnCreateBehavior = value;
+			}
 		}
 
 		public virtual PropertySpecialBehaviorType OnPersistBehavior
 		{
-			get => m_OnPersistBehavior;
-		    set => m_OnPersistBehavior = value;
+			get
+			{
+				return m_OnPersistBehavior;
+			}
+			set
+			{
+				m_OnPersistBehavior = value;
+			}
 		}
 
 		public virtual string OrderBy
 		{
-			get => m_OrderBy;
-		    set => m_OrderBy = value;
+			get
+			{
+				return m_OrderBy;
+			}
+			set
+			{
+				m_OrderBy = value;
+			}
 		}
 
 		public virtual MergeBehaviorType MergeBehavior
 		{
-			get => m_MergeBehavior;
-		    set => m_MergeBehavior = value;
+			get
+			{
+				return m_MergeBehavior;
+			}
+			set
+			{
+				m_MergeBehavior = value;
+			}
 		}
 
 		public virtual RefreshBehaviorType RefreshBehavior
 		{
-			get => m_RefreshBehavior;
-		    set => m_RefreshBehavior = value;
+			get
+			{
+				return m_RefreshBehavior;
+			}
+			set
+			{
+				m_RefreshBehavior = value;
+			}
 		}
 
 		public virtual LoadBehavior ListCountLoadBehavior
 		{
-			get => m_ListCountLoadBehavior;
-		    set => m_ListCountLoadBehavior = value;
+			get { return m_ListCountLoadBehavior; }
+			set { m_ListCountLoadBehavior = value; }
 		}
 		
 		public ValidationMode ValidationMode
 		{
-			get => this.m_ValidationMode;
-		    set => this.m_ValidationMode = value;
+			get { return this.m_ValidationMode; }
+			set { this.m_ValidationMode = value; }
 		}
 		
 		public long TimeToLive
 		{
-			get => this.m_TimeToLive;
-		    set => this.m_TimeToLive = value;
+			get { return this.m_TimeToLive; }
+			set { this.m_TimeToLive = value; }
 		}
 		
 		public TimeToLiveBehavior TimeToLiveBehavior
 		{
-			get => this.m_TimeToLiveBehavior;
-		    set => this.m_TimeToLiveBehavior = value;
+			get { return this.m_TimeToLiveBehavior; }
+			set { this.m_TimeToLiveBehavior = value; }
 		}
 
 		public virtual string CommitRegions
 		{
-			get => commitRegions;
-		    set => commitRegions = value;
+			get { return commitRegions; }
+			set { commitRegions = value; }
 		}
 
 		#endregion
@@ -350,8 +554,8 @@ namespace Puzzle.NPersist.Framework.Attributes
 
 		public virtual string SourceProperty
 		{
-			get => m_SourceProperty;
-		    set => m_SourceProperty = value;
+			get { return m_SourceProperty; }
+			set { m_SourceProperty = value; }
 		}
 
 		#endregion
@@ -360,26 +564,26 @@ namespace Puzzle.NPersist.Framework.Attributes
 		
 		public virtual string DocSource
 		{
-			get => m_DocSource;
-		    set => m_DocSource = value;
+			get { return m_DocSource; }
+			set { m_DocSource = value; }
 		}
 
 		public virtual string DocAttribute
 		{
-			get => m_DocAttribute;
-		    set => m_DocAttribute = value;
+			get { return m_DocAttribute; }
+			set { m_DocAttribute = value; }
 		}
 
 		public virtual string DocElement
 		{
-			get => m_DocElement;
-		    set => m_DocElement = value;
+			get { return m_DocElement; }
+			set { m_DocElement = value; }
 		}
 		
 		public virtual DocPropertyMapMode DocPropertyMapMode
 		{
-			get => m_DocPropertyMapMode;
-		    set => m_DocPropertyMapMode = value;
+			get { return m_DocPropertyMapMode; }
+			set { m_DocPropertyMapMode = value; }
 		}
 
 		#endregion
@@ -405,9 +609,12 @@ namespace Puzzle.NPersist.Framework.Attributes
 			return columns;
 		}
 
-		public virtual string[] GetColumns() => m_Columns.Split(",".ToCharArray());
+		public virtual string[] GetColumns()
+		{
+			return m_Columns.Split(",".ToCharArray());
+		}
 
-	    public virtual string GetIdColumn()
+		public virtual string GetIdColumn()
 		{
 			foreach (string column in GetIdColumns())
 				return column.Trim();
@@ -428,6 +635,10 @@ namespace Puzzle.NPersist.Framework.Attributes
 			return columns;
 		}
 
-		public virtual string[] GetIdColumns() => m_IdColumns.Split(",".ToCharArray());
+		public virtual string[] GetIdColumns()
+		{
+			return m_IdColumns.Split(",".ToCharArray());
+		}
+
 	}
 }

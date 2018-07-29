@@ -20,8 +20,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual DateTime Value
 		{
-			get => value;
-		    set => this.value = value;
+			get { return value; }
+			set { this.value = value; }
 		}
 
 		#endregion

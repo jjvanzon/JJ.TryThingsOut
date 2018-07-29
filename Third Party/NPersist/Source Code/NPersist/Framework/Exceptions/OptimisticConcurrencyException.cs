@@ -56,8 +56,8 @@ namespace Puzzle.NPersist.Framework.Exceptions
 		
 		public object CachedValue
 		{
-			get => this.cachedValue;
-		    set => this.cachedValue = value;
+			get { return this.cachedValue; }
+			set { this.cachedValue = value; }
 		}
 		
 		#endregion
@@ -68,8 +68,8 @@ namespace Puzzle.NPersist.Framework.Exceptions
 		
 		public object FreshValue
 		{
-			get => this.freshValue;
-		    set => this.freshValue = value;
+			get { return this.freshValue; }
+			set { this.freshValue = value; }
 		}
 		
 		#endregion

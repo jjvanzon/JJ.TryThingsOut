@@ -20,21 +20,34 @@ namespace Puzzle.NPersist.Framework.Persistence
 {
 	public class TopologicalNode
 	{
-        public TopologicalNode(object obj) => this.obj = obj;
+        public TopologicalNode(object obj)
+        {
+            this.obj = obj;
+        }
 
-	    private object obj;
+        private object obj;
 
-        public object Obj => obj;
+        public object Obj
+        {
+            get { return obj; }
+        }
 
-	    private IList waitFor = new ArrayList();
+        private IList waitFor = new ArrayList();
 
-        public IList WaitFor => this.waitFor;
+        public IList WaitFor 
+        {
+            get { return this.waitFor; }
+        }
 
-	    private IList waiting = new ArrayList();
+        private IList waiting = new ArrayList();
 
-        public IList Waiting => this.waiting;
+        public IList Waiting 
+        {
+            get { return this.waiting; }
+        }
 
-	    public void AddWaitFor(TopologicalNode waitForNode)
+
+        public void AddWaitFor(TopologicalNode waitForNode)
         {
             this.waitFor.Add(waitForNode);
             waitForNode.Waiting.Add(this);

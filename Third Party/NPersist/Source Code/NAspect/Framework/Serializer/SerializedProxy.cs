@@ -18,8 +18,8 @@ namespace Puzzle.NAspect.Debug.Serialization
         /// </summary>
         public virtual VizType ProxyType
         {
-            get => proxyType;
-            set => proxyType = value;
+            get { return proxyType; }
+            set { proxyType = value; }
         }
 
         #endregion

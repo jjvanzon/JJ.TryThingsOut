@@ -29,8 +29,14 @@ namespace Puzzle.NPersist.Framework.Aop.Mixins
 		}
 
 		
-		public IObjectClone GetObjectClone() => objectClone;
+		public IObjectClone GetObjectClone()
+		{
+			return objectClone;
+		}
 
-	    public void SetObjectClone(IObjectClone value) => objectClone = value;
+		public void SetObjectClone(IObjectClone value)
+		{
+			objectClone = value;
+		}
 	}
 }

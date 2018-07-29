@@ -52,8 +52,8 @@ namespace Puzzle.NPersist.Framework.Remoting.WebService.Client.RemotingWebServic
 		
 		public IContext Context
 		{
-			get => this.context;
-		    set => this.context = value;
+			get { return this.context; }
+			set { this.context = value; }
 		}
 		
 		#endregion
@@ -98,11 +98,14 @@ namespace Puzzle.NPersist.Framework.Remoting.WebService.Client.RemotingWebServic
 		}
         
 		/// <remarks/>
-		public System.IAsyncResult BeginGetMap(string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) => this.BeginInvoke("GetMap", new object[] {
-		    domainKey,
-		    useCompression}, callback, asyncState);
-
-	    /// <remarks/>
+		public System.IAsyncResult BeginGetMap(string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) 
+		{
+			return this.BeginInvoke("GetMap", new object[] {
+															   domainKey,
+															   useCompression}, callback, asyncState);
+		}
+        
+		/// <remarks/>
 		public string EndGetMap(System.IAsyncResult asyncResult) 
 		{
 			object[] results = this.EndInvoke(asyncResult);
@@ -148,13 +151,16 @@ namespace Puzzle.NPersist.Framework.Remoting.WebService.Client.RemotingWebServic
 		}
         
 		/// <remarks/>
-		public System.IAsyncResult BeginLoadObject(string type, string identity, string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) => this.BeginInvoke("LoadObject", new object[] {
-		    type,
-		    identity,
-		    domainKey,
-		    useCompression}, callback, asyncState);
-
-	    /// <remarks/>
+		public System.IAsyncResult BeginLoadObject(string type, string identity, string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) 
+		{
+			return this.BeginInvoke("LoadObject", new object[] {
+																   type,
+																   identity,
+																   domainKey,
+																   useCompression}, callback, asyncState);
+		}
+        
+		/// <remarks/>
 		public string EndLoadObject(System.IAsyncResult asyncResult) 
 		{
 			object[] results = this.EndInvoke(asyncResult);
@@ -204,14 +210,17 @@ namespace Puzzle.NPersist.Framework.Remoting.WebService.Client.RemotingWebServic
 		}
         
 		/// <remarks/>
-		public System.IAsyncResult BeginLoadObjectByKey(string type, string keyPropertyName, string keyValue, string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) => this.BeginInvoke("LoadObjectByKey", new object[] {
-		    type,
-		    keyPropertyName,
-		    keyValue,
-		    domainKey,
-		    useCompression}, callback, asyncState);
-
-	    /// <remarks/>
+		public System.IAsyncResult BeginLoadObjectByKey(string type, string keyPropertyName, string keyValue, string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) 
+		{
+			return this.BeginInvoke("LoadObjectByKey", new object[] {
+																		type,
+																		keyPropertyName,
+																		keyValue,
+																		domainKey,
+																		useCompression}, callback, asyncState);
+		}
+        
+		/// <remarks/>
 		public string EndLoadObjectByKey(System.IAsyncResult asyncResult) 
 		{
 			object[] results = this.EndInvoke(asyncResult);
@@ -254,12 +263,16 @@ namespace Puzzle.NPersist.Framework.Remoting.WebService.Client.RemotingWebServic
 		}
         
 		/// <remarks/>
-		public System.IAsyncResult BeginCommitUnitOfWork(string obj, string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) => this.BeginInvoke("CommitUnitOfWork", new object[] {
-		    obj,
-		    domainKey,
-		    useCompression}, callback, asyncState);
+		public System.IAsyncResult BeginCommitUnitOfWork(string obj, string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) 
+		{
 
-	    /// <remarks/>
+			return this.BeginInvoke("CommitUnitOfWork", new object[] {
+																		 obj,
+																		 domainKey,
+																		 useCompression}, callback, asyncState);
+		}
+        
+		/// <remarks/>
 		public string EndCommitUnitOfWork(System.IAsyncResult asyncResult) 
 		{
 			object[] results = this.EndInvoke(asyncResult);
@@ -307,13 +320,16 @@ namespace Puzzle.NPersist.Framework.Remoting.WebService.Client.RemotingWebServic
 		}
         
 		/// <remarks/>
-		public System.IAsyncResult BeginLoadProperty(string obj, string propertyName, string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) => this.BeginInvoke("LoadProperty", new object[] {
-		    obj,
-		    propertyName,
-		    domainKey,
-		    useCompression}, callback, asyncState);
-
-	    /// <remarks/>
+		public System.IAsyncResult BeginLoadProperty(string obj, string propertyName, string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) 
+		{
+			return this.BeginInvoke("LoadProperty", new object[] {
+																	 obj,
+																	 propertyName,
+																	 domainKey,
+																	 useCompression}, callback, asyncState);
+		}
+        
+		/// <remarks/>
 		public string EndLoadProperty(System.IAsyncResult asyncResult) 
 		{
 			object[] results = this.EndInvoke(asyncResult);
@@ -357,12 +373,15 @@ namespace Puzzle.NPersist.Framework.Remoting.WebService.Client.RemotingWebServic
 		}
         
 		/// <remarks/>
-		public System.IAsyncResult BeginLoadObjects(string query, string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) => this.BeginInvoke("LoadObjects", new object[] {
-		    query,
-		    domainKey,
-		    useCompression}, callback, asyncState);
-
-	    /// <remarks/>
+		public System.IAsyncResult BeginLoadObjects(string query, string domainKey, bool useCompression, System.AsyncCallback callback, object asyncState) 
+		{
+			return this.BeginInvoke("LoadObjects", new object[] {
+																	query,
+																	domainKey,
+																	useCompression}, callback, asyncState);
+		}
+        
+		/// <remarks/>
 		public string EndLoadObjects(System.IAsyncResult asyncResult) 
 		{
 			object[] results = this.EndInvoke(asyncResult);

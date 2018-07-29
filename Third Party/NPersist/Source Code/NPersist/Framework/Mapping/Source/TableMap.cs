@@ -18,11 +18,18 @@ namespace Puzzle.NPersist.Framework.Mapping
 	public class TableMap : MapBase, ITableMap
 	{
 				
-		public override void Accept(IMapVisitor visitor) => visitor.Visit(this);
+		public override void Accept(IMapVisitor visitor)
+		{
+			visitor.Visit(this);
+		}
 
-	    public override IMap GetParent() => m_SourceMap;
+		
+		public override IMap GetParent()
+		{
+			return m_SourceMap; 
+		}
 
-	    private ArrayList m_ColumnMaps = new ArrayList();
+		private ArrayList m_ColumnMaps = new ArrayList();
 		private ISourceMap m_SourceMap;
 		private string m_name = "";
 		private bool m_IsView = false;
@@ -32,13 +39,18 @@ namespace Puzzle.NPersist.Framework.Mapping
 		{
 		}
 
-		public TableMap(string name) : base() => m_name = name;
+		public TableMap(string name) : base()
+		{
+			m_name = name;
+		}
 
-	    [XmlIgnore()]
+
+
+		[XmlIgnore()]
 		public virtual ISourceMap SourceMap
 		{
-			get => m_SourceMap;
-	        set
+			get { return m_SourceMap; }
+			set
 			{
 				if (m_SourceMap != null)
 				{
@@ -64,8 +76,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 		[XmlArrayItem(typeof (ColumnMap))]
 		public virtual ArrayList ColumnMaps
 		{
-			get => m_ColumnMaps;
-		    set => m_ColumnMaps = value;
+			get { return m_ColumnMaps; }
+			set { m_ColumnMaps = value; }
 		}
 
 		public virtual IColumnMap MustGetColumnMap(string findName)
@@ -103,14 +115,14 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public override string Name
 		{
-			get => m_name;
-		    set => m_name = value;
+			get { return m_name; }
+			set { m_name = value; }
 		}
 
 		public virtual bool IsView
 		{
-			get => m_IsView;
-		    set => m_IsView = value;
+			get { return m_IsView; }
+			set { m_IsView = value; }
 		}
 
 		public virtual ArrayList GetPrimaryKeyColumnMaps()
@@ -208,8 +220,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
         public int LockIndex 
         {
-            get => m_LockIndex;
-            set => m_LockIndex = value;
+            get { return m_LockIndex; }
+            set { m_LockIndex = value; }
         }
 
         public int GetLockIndex()
@@ -350,9 +362,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 
 
-		public override string GetKey() => m_SourceMap.DomainMap.Name + "." + m_SourceMap.Name + "." + this.Name;
+		public override string GetKey()
+		{
+			return m_SourceMap.DomainMap.Name + "." + m_SourceMap.Name + "." + this.Name;
+		}
 
-	    public override void Fixate()
+		public override void Fixate()
 		{
 			base.Fixate();
 			foreach (IColumnMap columnMap in m_ColumnMaps)

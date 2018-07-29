@@ -18,8 +18,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual string Path
 		{
-			get => path;
-		    set => path = value;
+			get { return path; }
+			set { path = value; }
 		}
 
 		#endregion
@@ -30,8 +30,8 @@ namespace Puzzle.NPath.Framework.CodeDom
 
 		public virtual NPathBracketGroup Filter
 		{
-			get => filter;
-		    set => filter = value;
+			get { return filter; }
+			set { filter = value; }
 		}
 
 		#endregion

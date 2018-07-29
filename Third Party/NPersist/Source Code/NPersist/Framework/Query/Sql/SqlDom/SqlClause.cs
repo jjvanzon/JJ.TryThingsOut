@@ -18,8 +18,12 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 	/// </summary>
 	public abstract class SqlClause : SqlNodeBase
 	{
-		protected SqlClause(SqlStatement sqlStatement) => this.Parent = sqlStatement;
+		protected SqlClause(SqlStatement sqlStatement)
+		{
+			this.Parent = sqlStatement;
+		}
+				
+		public SqlStatement SqlStatement { get { return this.Parent as SqlStatement; } }
 
-	    public SqlStatement SqlStatement => this.Parent as SqlStatement;
 	}
 }

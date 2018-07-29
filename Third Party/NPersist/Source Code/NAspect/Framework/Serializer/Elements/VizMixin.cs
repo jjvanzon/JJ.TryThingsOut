@@ -17,8 +17,8 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// </summary>
         public virtual string TypeName
         {
-            get => typeName;
-            set => typeName = value;
+            get { return typeName; }
+            set { typeName = value; }
         }
 
         #endregion
@@ -32,8 +32,8 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// </summary>
         public virtual string FullTypeName
         {
-            get => fullTypeName;
-            set => fullTypeName = value;
+            get { return fullTypeName; }
+            set { fullTypeName = value; }
         }
 
         #endregion

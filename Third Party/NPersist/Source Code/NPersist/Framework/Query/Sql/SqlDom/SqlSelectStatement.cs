@@ -22,21 +22,30 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 	{
 		#region Constructors
 
-		private SqlSelectStatement() : base() => SetupClauses();
+		private SqlSelectStatement() : base()
+		{
+			SetupClauses();
+		}
 
-	    public SqlSelectStatement(ISourceMap sourceMap) : base(sourceMap) => SetupClauses();
+		public SqlSelectStatement(ISourceMap sourceMap) : base(sourceMap)
+		{
+			SetupClauses();
+		}
 
-	    public SqlSelectStatement(string databaseName) : base(databaseName) => SetupClauses();
+		public SqlSelectStatement(string databaseName) : base(databaseName)
+		{
+			SetupClauses();
+		}
 
-	    public SqlSelectStatement(SqlPredicate parent) : base()
+		public SqlSelectStatement(SqlPredicate parent) : base()
 		{
 			this.Parent = parent;
 			SetupClauses();
 		}
 
-		public SqlPredicate SqlPredicate => this.Parent as SqlPredicate;
+		public SqlPredicate SqlPredicate { get { return this.Parent as SqlPredicate; } }
 
-	    private void SetupClauses()
+		private void SetupClauses()
 		{
 			this.sqlSelectClause = new SqlSelectClause(this);
 			this.sqlIntoClause = new SqlIntoClause(this);
@@ -55,8 +64,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlSelectClause SqlSelectClause
 		{
-			get => this.sqlSelectClause;
-		    set => this.sqlSelectClause = value;
+			get { return this.sqlSelectClause; }
+			set { this.sqlSelectClause = value; }
 		}
 		
 		#endregion
@@ -67,8 +76,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlIntoClause SqlIntoClause
 		{
-			get => this.sqlIntoClause;
-		    set => this.sqlIntoClause = value;
+			get { return this.sqlIntoClause; }
+			set { this.sqlIntoClause = value; }
 		}
 		
 		#endregion
@@ -79,8 +88,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlFromClause SqlFromClause
 		{
-			get => this.sqlFromClause;
-		    set => this.sqlFromClause = value;
+			get { return this.sqlFromClause; }
+			set { this.sqlFromClause = value; }
 		}
 		
 		#endregion
@@ -91,8 +100,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlWhereClause SqlWhereClause
 		{
-			get => this.sqlWhereClause;
-		    set => this.sqlWhereClause = value;
+			get { return this.sqlWhereClause; }
+			set { this.sqlWhereClause = value; }
 		}
 		
 		#endregion
@@ -103,8 +112,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlGroupByClause SqlGroupByClause
 		{
-			get => this.sqlGroupByClause;
-		    set => this.sqlGroupByClause = value;
+			get { return this.sqlGroupByClause; }
+			set { this.sqlGroupByClause = value; }
 		}
 		
 		#endregion
@@ -115,8 +124,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlHavingClause SqlHavingClause
 		{
-			get => this.sqlHavingClause;
-		    set => this.sqlHavingClause = value;
+			get { return this.sqlHavingClause; }
+			set { this.sqlHavingClause = value; }
 		}
 		
 		#endregion
@@ -127,8 +136,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlOrderByClause SqlOrderByClause
 		{
-			get => this.sqlOrderByClause;
-		    set => this.sqlOrderByClause = value;
+			get { return this.sqlOrderByClause; }
+			set { this.sqlOrderByClause = value; }
 		}
 		
 		#endregion
@@ -139,8 +148,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public bool Distinct
 		{
-			get => this.distinct;
-		    set => this.distinct = value;
+			get { return this.distinct; }
+			set { this.distinct = value; }
 		}
 		
 		#endregion
@@ -151,8 +160,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public long Top
 		{
-			get => this.top;
-		    set => this.top = value;
+			get { return this.top; }
+			set { this.top = value; }
 		}
 		
 		#endregion
@@ -163,8 +172,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public bool Percent
 		{
-			get => this.percent;
-		    set => this.percent = value;
+			get { return this.percent; }
+			set { this.percent = value; }
 		}
 		
 		#endregion
@@ -175,8 +184,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public bool WithTies
 		{
-			get => this.withTies;
-		    set => this.withTies = value;
+			get { return this.withTies; }
+			set { this.withTies = value; }
 		}
 		
 		#endregion

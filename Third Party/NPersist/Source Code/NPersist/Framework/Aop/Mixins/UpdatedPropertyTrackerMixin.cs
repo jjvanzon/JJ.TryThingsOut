@@ -34,8 +34,14 @@ namespace Puzzle.NPersist.Framework.Aop.Mixins
 			return (bool)status[propertyName];
 		}
 
-		public void SetUpdatedStatus(string propertyName, bool value) => status[propertyName] = value;
+		public void SetUpdatedStatus(string propertyName, bool value)
+		{
+			status[propertyName] = value;
+		}
 
-	    public void ClearUpdatedStatuses() => status.Clear();
+		public void ClearUpdatedStatuses()
+		{		
+			status.Clear() ;
+		}
 	}
 }

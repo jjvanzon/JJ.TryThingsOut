@@ -30,34 +30,34 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public InverseActionType ActionType
 		{
-			get => this.actionType;
-		    set => this.actionType = value;
+			get { return this.actionType; }
+			set { this.actionType = value; }
 		}
 
 		
 		public object Obj
 		{
-			get => this.obj;
-		    set => this.obj = value;
+			get { return this.obj; }
+			set { this.obj = value; }
 		}
 
 		
 		public string PropertyName
 		{
-			get => this.propertyName;
-		    set => this.propertyName = value;
+			get { return this.propertyName; }
+			set { this.propertyName = value; }
 		}
 		
 		public object Value
 		{
-			get => this.value;
-		    set => this.value = value;
+			get { return this.value; }
+			set { this.value = value; }
 		}
 		
 		public object Master
 		{
-			get => this.master;
-		    set => this.master = value;
+			get { return this.master; }
+			set { this.master = value; }
 		}
 	}
 }

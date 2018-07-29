@@ -42,9 +42,12 @@ namespace Puzzle.NPersist.Framework.Persistence
 
 		private IList exceptions = new ArrayList();
 
-		public IList Exceptions => exceptions;
+		public IList Exceptions
+		{
+			get { return exceptions; }
+		}
 
-	    public virtual void RegisterCreated(object obj)
+        public virtual void RegisterCreated(object obj)
 		{
             LogMessage message = new LogMessage("Registering object as up for creation");
             LogMessage verbose = new LogMessage("Type: {0}" ,obj.GetType());
@@ -311,9 +314,12 @@ namespace Puzzle.NPersist.Framework.Persistence
 			m_listRemoved.Clear() ;
 		}
 
-		public virtual void CommitSpeciallyUpdated() => m_hashSpeciallyUpdated.Clear();
+		public virtual void CommitSpeciallyUpdated()
+		{
+			m_hashSpeciallyUpdated.Clear() ;
+		}
 
-	    protected virtual void CommitPersisted(object obj, bool isInserted)
+		protected virtual void CommitPersisted(object obj, bool isInserted)
 		{
 			IObjectManager om = this.Context.ObjectManager;
 			IListManager lm = this.Context.ListManager;
@@ -791,9 +797,12 @@ namespace Puzzle.NPersist.Framework.Persistence
             return tableMaps;
         }
 
-		protected virtual void InsertCreated(int exceptionLimit) => InsertCreated(null, exceptionLimit);
+		protected virtual void InsertCreated(int exceptionLimit)
+		{
+			InsertCreated(null, exceptionLimit);
+		}
 
-	    protected virtual void InsertCreated(object forObj, int exceptionLimit)
+		protected virtual void InsertCreated(object forObj, int exceptionLimit)
 		{
             this.Context.LogManager.Debug(this, "Inserting objects that are up for creation");	 // do not localize			
 
@@ -923,9 +932,12 @@ namespace Puzzle.NPersist.Framework.Persistence
 			}
 		}
 
-		protected virtual void UpdateDirty(int exceptionLimit) => UpdateDirty(null, exceptionLimit);
+		protected virtual void UpdateDirty(int exceptionLimit)
+		{
+			UpdateDirty(null, exceptionLimit);
+		}
 
-	    protected virtual void UpdateDirty(object forObj, int exceptionLimit)
+		protected virtual void UpdateDirty(object forObj, int exceptionLimit)
 		{
 			this.Context.LogManager.Debug(this, "Updating dirty objects"); // do not localize				
 
@@ -1029,9 +1041,12 @@ namespace Puzzle.NPersist.Framework.Persistence
 			}
 		}
 
-		protected virtual void UpdateStillDirty(int exceptionLimit) => UpdateStillDirty(null, exceptionLimit);
+		protected virtual void UpdateStillDirty(int exceptionLimit)
+		{
+			UpdateStillDirty(null, exceptionLimit);
+		}
 
-	    protected virtual void UpdateStillDirty(object forObj, int exceptionLimit)
+		protected virtual void UpdateStillDirty(object forObj, int exceptionLimit)
 		{
 			this.Context.LogManager.Debug(this, "Updating still dirty objects"); // do not localize				
 
@@ -1134,9 +1149,12 @@ namespace Puzzle.NPersist.Framework.Persistence
 			}
 		}
 
-		protected virtual void RemoveDeleted(int exceptionLimit) => RemoveDeleted(null, exceptionLimit);
+		protected virtual void RemoveDeleted(int exceptionLimit)
+		{
+			RemoveDeleted(null, exceptionLimit);
+		}
 
-	    protected virtual void RemoveDeleted(object forObj, int exceptionLimit)
+		protected virtual void RemoveDeleted(object forObj, int exceptionLimit)
 		{
 			this.Context.LogManager.Debug(this, "Removing objects that are up for deletion"); // do not localize			
 	
@@ -1378,13 +1396,22 @@ namespace Puzzle.NPersist.Framework.Persistence
             return true;
 		}
 
-		public ArrayList GetCreatedObjects() => m_listCreated;
+		public ArrayList GetCreatedObjects()
+		{
+			return m_listCreated;
+		}
 
-	    public ArrayList GetDeletedObjects() => m_listDeleted;
+		public ArrayList GetDeletedObjects()
+		{
+			return m_listDeleted;
+		}
 
-	    public ArrayList GetDirtyObjects() => m_listDirty;
+		public ArrayList GetDirtyObjects()
+		{
+			return m_listDirty;
+		}
 
-	    private void ExamineDeletedObjects()
+        private void ExamineDeletedObjects()
         {
             m_topologicalDelete.Graph.Clear();
             IObjectManager om = this.Context.ObjectManager;

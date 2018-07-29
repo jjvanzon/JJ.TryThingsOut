@@ -37,14 +37,14 @@ namespace Puzzle.NPersist.Framework.NPath.Sql
 
 		public JoinTree JoinTree
 		{
-			get => this.joinTree;
-		    set => this.joinTree = value;
+			get { return this.joinTree; }
+			set { this.joinTree = value; }
 		}
 
 		public SqlEmitter SqlEmitter
 		{
-			get => this.sqlEmitter;
-		    set => this.sqlEmitter = value;
+			get { return this.sqlEmitter; }
+			set { this.sqlEmitter = value; }
 		}
 
 		public virtual SqlTableAlias GetClassTable(string className)
@@ -220,11 +220,17 @@ namespace Puzzle.NPersist.Framework.NPath.Sql
 			return sqlEmitter.GetTableAlias(classMap.MustGetTableMap(), classMap)  ;
 		}
 
-		public virtual SqlColumnAlias GetPropertyColumnAlias(SqlTableAlias tableAlias, string propertyPath, IColumnMap columnMap, string suggestion) => sqlEmitter.GetColumnAlias(tableAlias, columnMap, propertyPath, GetAliasSuggestionFromPropertyPath(propertyPath, suggestion));
+		public virtual SqlColumnAlias GetPropertyColumnAlias(SqlTableAlias tableAlias, string propertyPath, IColumnMap columnMap, string suggestion)
+		{	
+			return sqlEmitter.GetColumnAlias(tableAlias, columnMap, propertyPath, GetAliasSuggestionFromPropertyPath(propertyPath, suggestion))  ;
+		}
 
-	    public virtual SqlColumnAlias GetPropertyColumnAlias(SqlTableAlias tableAlias, IPropertyMap propertyMap, string propertyPath, string suggestion) => sqlEmitter.GetColumnAlias(tableAlias, propertyMap.GetColumnMap(), propertyPath, GetAliasSuggestionFromPropertyPath(propertyPath, suggestion));
+		public virtual SqlColumnAlias GetPropertyColumnAlias(SqlTableAlias tableAlias, IPropertyMap propertyMap, string propertyPath, string suggestion)
+		{	
+			return sqlEmitter.GetColumnAlias(tableAlias, propertyMap.GetColumnMap(), propertyPath, GetAliasSuggestionFromPropertyPath(propertyPath, suggestion))  ;
+		}
 
-	    public virtual string GetAliasSuggestionFromPropertyPath(string propertyPath, string suggestion)
+		public virtual string GetAliasSuggestionFromPropertyPath(string propertyPath, string suggestion)
 		{
 			if (suggestion.Length < 1)
 				suggestion = propertyPath;
@@ -286,9 +292,12 @@ namespace Puzzle.NPersist.Framework.NPath.Sql
 		}
 
 
-		public string[] GetPathPropertyNames(string propertyPath) => propertyPath.Split('.');
+		public string[] GetPathPropertyNames(string propertyPath)
+		{
+			return propertyPath.Split('.');			
+		}
 
-	    public virtual void TraverseSpan(string span, Hashtable selectedColumns, ArrayList columnOrder, string suggestion)
+		public virtual void TraverseSpan(string span, Hashtable selectedColumns, ArrayList columnOrder, string suggestion)
 		{	
 			string special = "";
 			ArrayList propertyMaps = GetPathPropertyMaps(span, ref special);
@@ -559,6 +568,17 @@ namespace Puzzle.NPersist.Framework.NPath.Sql
 			return result;
 		}
 
-		protected virtual bool HasNullableColumn(IPropertyMap propertyMap) => propertyMap.GetIsNullable();
+		protected virtual bool HasNullableColumn(IPropertyMap propertyMap)
+		{
+			return propertyMap.GetIsNullable();
+//			foreach (IColumnMap columnMap in propertyMap.GetAllColumnMaps())
+//			{
+//				if (columnMap.AllowNulls)
+//				{
+//					return true;
+//				}				
+//			}
+//			return false;
+		}
 	}
 }

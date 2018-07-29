@@ -18,8 +18,8 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// </summary>
         public virtual string Name
         {
-            get => name;
-            set => name = value;
+            get { return name; }
+            set { name = value; }
         }
 
         #endregion
@@ -31,7 +31,10 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// <summary>
         /// 
         /// </summary>
-        public virtual List<VizMixin> Mixins => mixins;
+        public virtual List<VizMixin> Mixins
+        {
+            get { return mixins; }
+        }
 
         #endregion
 
@@ -42,7 +45,10 @@ namespace Puzzle.NAspect.Debug.Serialization.Elements
         /// <summary>
         /// 
         /// </summary>
-        public virtual List<VizPointcut> Pointcuts => pointcuts;
+        public virtual List<VizPointcut> Pointcuts
+        {
+            get { return pointcuts; }
+        }
 
         #endregion
     }

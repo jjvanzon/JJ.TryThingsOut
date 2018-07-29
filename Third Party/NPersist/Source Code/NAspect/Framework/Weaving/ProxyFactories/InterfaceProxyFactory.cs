@@ -60,7 +60,11 @@ namespace Puzzle.NAspect.Framework
         private Engine engine;
         private ArrayList wrapperMethods = new ArrayList();
 
-        private InterfaceProxyFactory(Engine engine) => this.engine = engine;
+        private InterfaceProxyFactory(Engine engine)
+        {
+            this.engine = engine;
+        }
+
 
         private AssemblyBuilder GetAssemblyBuilder()
         {
@@ -114,7 +118,10 @@ namespace Puzzle.NAspect.Framework
 
         private FieldBuilder that;
 
-        private void BuildWrappedInstanceField(TypeBuilder typeBuilder, Type basetype) => that = typeBuilder.DefineField("__wrappedInstanceField", basetype, FieldAttributes.Private);
+        private void BuildWrappedInstanceField(TypeBuilder typeBuilder, Type basetype)
+        {
+            that = typeBuilder.DefineField("__wrappedInstanceField", basetype, FieldAttributes.Private);
+        }
 
         private void BuildLookupTables(Type proxyType, IList aspects)
         {
@@ -442,7 +449,9 @@ namespace Puzzle.NAspect.Framework
 
         private void BuildMixinUnproxiedMethod(string wrapperName, TypeBuilder typeBuilder, MethodInfo method,
                                                FieldBuilder field)
-            => BuildMixinWrapperMethod(wrapperName, typeBuilder, method, field);
+        {
+            BuildMixinWrapperMethod(wrapperName, typeBuilder, method, field);
+        }
 
         private void BuildMixinWrapperMethod(string wrapperName, TypeBuilder typeBuilder, MethodInfo method,
                                              FieldBuilder field)

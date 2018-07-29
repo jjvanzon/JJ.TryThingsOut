@@ -36,16 +36,17 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 
 		}
 
-		public SqlStatement SqlStatement => this.Parent as SqlStatement;
+		public SqlStatement SqlStatement { get { return this.Parent as SqlStatement; } }
+		
 
-	    #region Property  DbType
+		#region Property  DbType
 		
 		private DbType dbType;
 		
 		public DbType DbType
 		{
-			get => this.dbType;
-		    set => this.dbType = value;
+			get { return this.dbType; }
+			set { this.dbType = value; }
 		}
 
 		#endregion
@@ -56,8 +57,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public object Value
 		{
-			get => this.value;
-		    set => this.value = value;
+			get { return this.value; }
+			set { this.value = value; }
 		}
 		
 		#endregion
@@ -68,8 +69,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public string Name
 		{
-			get => this.name;
-		    set => this.name = value;
+			get { return this.name; }
+			set { this.name = value; }
 		}
 		
 		#endregion

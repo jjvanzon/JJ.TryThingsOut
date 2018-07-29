@@ -26,8 +26,14 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		private SqlMathOperatorType sqlMathOperator;
 		public SqlMathOperatorType SqlMathOperator
 		{
-			get => this.sqlMathOperator;
-		    set => this.sqlMathOperator = value;
+			get
+			{
+				return this.sqlMathOperator;
+			}
+			set
+			{
+				this.sqlMathOperator = value;
+			}
 		}
 		#endregion
 
@@ -35,8 +41,14 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		private SqlExpression leftOperand;
 		public SqlExpression LeftOperand
 		{
-			get => this.leftOperand;
-		    set => this.leftOperand = value;
+			get
+			{
+				return this.leftOperand;
+			}
+			set
+			{
+				this.leftOperand = value;
+			}
 		}
 		#endregion
 
@@ -44,8 +56,14 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		private SqlExpression rightOperand;
 		public SqlExpression RightOperand
 		{
-			get => this.rightOperand;
-		    set => this.rightOperand = value;
+			get
+			{
+				return this.rightOperand;
+			}
+			set
+			{
+				this.rightOperand = value;
+			}
 		}
 		#endregion
 

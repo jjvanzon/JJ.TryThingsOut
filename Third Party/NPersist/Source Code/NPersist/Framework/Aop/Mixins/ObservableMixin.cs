@@ -33,6 +33,9 @@ namespace Puzzle.NPersist.Framework.Aop.Mixins
 			}
 		}
 
-		public ArrayList GetEventListeners() => m_EventListeners;
+		public ArrayList GetEventListeners()
+		{
+			return m_EventListeners;
+		}
 	}
 }

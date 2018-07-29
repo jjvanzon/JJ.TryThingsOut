@@ -22,19 +22,22 @@ namespace Puzzle.NPersist.Framework.EventArguments
 		{
 		}
 
-		public ExceptionCancelEventArgs(Exception exception) : base() => m_Exception = exception;
-
-	    public Exception Exception
+		public ExceptionCancelEventArgs(Exception exception) : base()
 		{
-			get => m_Exception;
-	        set => m_Exception = value;
-	    }
+			m_Exception = exception;
+		}
+
+		public Exception Exception
+		{
+			get { return m_Exception; }
+			set { m_Exception = value; }
+		}
 
 		
 		public bool Cancel
 		{
-			get => m_Cancel;
-		    set => m_Cancel = value;
+			get { return m_Cancel; }
+			set { m_Cancel = value; }
 		}
 
 	}

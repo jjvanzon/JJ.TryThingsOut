@@ -24,6 +24,7 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 			sqlSelectClause.SqlSelectListItems.Add(this);
 		}
 		
-		public SqlSelectClause SqlSelectClause => this.Parent as SqlSelectClause;
+		public SqlSelectClause SqlSelectClause { get { return this.Parent as SqlSelectClause; } }
+
 	}
 }

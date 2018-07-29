@@ -36,8 +36,8 @@ namespace Puzzle.NPersist.Framework.Remoting.Marshaling
 		
 		public string Type
 		{
-			get => this.type;
-		    set => this.type = value;
+			get { return this.type; }
+			set { this.type = value; }
 		}
 		
 		#endregion
@@ -48,46 +48,46 @@ namespace Puzzle.NPersist.Framework.Remoting.Marshaling
 		
 		public string OriginalType
 		{
-			get => this.originalType;
-		    set => this.originalType = value;
+			get { return this.originalType; }
+			set { this.originalType = value; }
 		}
 		
 		#endregion
 
 		public string Name
 		{
-			get => this.name;
-		    set => this.name = value;
+			get{ return this.name; } 
+			set{ this.name = value; }
 		}
 		
 		public bool IsNull
 		{
-			get => this.isNull;
-		    set => this.isNull = value;
+			get{ return this.isNull; } 
+			set{ this.isNull = value; }
 		}
 		
 		public bool WasNull
 		{
-			get => this.wasNull;
-		    set => this.wasNull = value;
+			get{ return this.wasNull; } 
+			set{ this.wasNull = value; }
 		}
 
 		public bool HasOriginal
 		{
-			get => this.hasOriginal;
-		    set => this.hasOriginal = value;
+			get{ return this.hasOriginal; } 
+			set{ this.hasOriginal = value; }
 		}
 
 		public MarshalReferenceValue Value
 		{
-			get => this.value;
-		    set => this.value = value;
+			get{ return this.value; } 
+			set{ this.value = value; }
 		}
 		
 		public MarshalReferenceValue OriginalValue
 		{
-			get => this.originalValue;
-		    set => this.originalValue = value;
+			get{ return this.originalValue; } 
+			set{ this.originalValue = value; }
 		}
 
 	

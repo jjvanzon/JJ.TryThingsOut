@@ -12,7 +12,10 @@ namespace Puzzle.NCore.Framework.Text.PatternMatchers
 {
     public class RangePatternMatcher : PatternMatcherBase
     {
-        public override string[] DefaultPrefixes => new string[] {StartChar.ToString()};
+        public override string[] DefaultPrefixes
+        {
+            get { return new string[] {StartChar.ToString()}; }
+        }
 
         #region Property STARTCHAR
 
@@ -20,8 +23,8 @@ namespace Puzzle.NCore.Framework.Text.PatternMatchers
 
         public virtual char StartChar
         {
-            get => startChar;
-            set => startChar = value;
+            get { return startChar; }
+            set { startChar = value; }
         }
 
         #endregion
@@ -32,8 +35,8 @@ namespace Puzzle.NCore.Framework.Text.PatternMatchers
 
         public virtual char EndChar
         {
-            get => endChar;
-            set => endChar = value;
+            get { return endChar; }
+            set { endChar = value; }
         }
 
         #endregion
@@ -44,8 +47,8 @@ namespace Puzzle.NCore.Framework.Text.PatternMatchers
 
         public virtual char EscapeChar
         {
-            get => escapeChar;
-            set => escapeChar = value;
+            get { return escapeChar; }
+            set { escapeChar = value; }
         }
 
         #endregion

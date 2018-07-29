@@ -22,13 +22,23 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 	{
 		#region Constructors
 
-		private SqlUpdateStatement() : base() => SetupClauses();
+		private SqlUpdateStatement() : base()
+		{
+			SetupClauses();
+		}
 
-	    public SqlUpdateStatement(ISourceMap sourceMap) : base(sourceMap) => SetupClauses();
+		public SqlUpdateStatement(ISourceMap sourceMap) : base(sourceMap)
+		{
+			SetupClauses();
+		}
 
-	    public SqlUpdateStatement(string databaseName) : base(databaseName) => SetupClauses();
+		public SqlUpdateStatement(string databaseName) : base(databaseName)
+		{
+			SetupClauses();
+		}
 
-	    private void SetupClauses()
+
+		private void SetupClauses()
 		{
 			this.sqlUpdateClause = new SqlUpdateClause(this);
 			this.sqlFromClause = new SqlFromClause(this);
@@ -43,8 +53,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlUpdateClause SqlUpdateClause
 		{
-			get => this.sqlUpdateClause;
-		    set => this.sqlUpdateClause = value;
+			get { return this.sqlUpdateClause; }
+			set { this.sqlUpdateClause = value; }
 		}
 		
 		#endregion
@@ -55,8 +65,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlFromClause SqlFromClause
 		{
-			get => this.sqlFromClause;
-		    set => this.sqlFromClause = value;
+			get { return this.sqlFromClause; }
+			set { this.sqlFromClause = value; }
 		}
 		
 		#endregion
@@ -67,8 +77,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlWhereClause SqlWhereClause
 		{
-			get => this.sqlWhereClause;
-		    set => this.sqlWhereClause = value;
+			get { return this.sqlWhereClause; }
+			set { this.sqlWhereClause = value; }
 		}
 		
 		#endregion
@@ -79,8 +89,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public IList SqlColumnList
 		{
-			get => this.sqlColumnList;
-		    set => this.sqlColumnList = value;
+			get { return this.sqlColumnList; }
+			set { this.sqlColumnList = value; }
 		}
 		
 		#endregion
@@ -91,15 +101,18 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public IList ValueList
 		{
-			get => this.valueList;
-		    set => this.valueList = value;
+			get { return this.valueList; }
+			set { this.valueList = value; }
 		}
 		
 		#endregion
 
-		public void AddSqlColumnAndValue(SqlColumnAlias sqlColumnAlias, SqlExpression sqlExpression) => AddSqlColumnAndValue(sqlColumnAlias.SqlColumn, sqlExpression);
+		public void AddSqlColumnAndValue(SqlColumnAlias sqlColumnAlias, SqlExpression sqlExpression)
+		{
+			AddSqlColumnAndValue(sqlColumnAlias.SqlColumn, sqlExpression);
+		}
 
-	    public void AddSqlColumnAndValue(SqlColumn sqlColumn, SqlExpression sqlExpression)
+		public void AddSqlColumnAndValue(SqlColumn sqlColumn, SqlExpression sqlExpression)
 		{
 			this.sqlColumnList.Add(sqlColumn);
 			this.valueList.Add(sqlExpression);

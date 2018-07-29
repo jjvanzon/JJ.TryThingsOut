@@ -33,19 +33,22 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlExpression SqlExpression
 		{
-			get => this.sqlExpression;
-		    set => this.sqlExpression = value;
+			get { return this.sqlExpression; }
+			set { this.sqlExpression = value; }
 		}
 
-		public SqlDatabase SqlDatabase => this.Parent as SqlDatabase;
+		public SqlDatabase SqlDatabase { get { return this.Parent as SqlDatabase; } }
 
-	    #region Property  Alias
+		#region Property  Alias
 		
 		private string alias;
 		
-		public string Alias => this.alias;
-
-	    #endregion
+		public string Alias
+		{
+			get { return this.alias; }
+		}
+		
+		#endregion
 
 		
 		public override void Accept(ISqlVisitor visitor)

@@ -32,9 +32,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 	public class DomainMap : MapBase, IDomainMap
 	{
 		
-		public override void Accept(IMapVisitor visitor) => visitor.Visit(this);
+		public override void Accept(IMapVisitor visitor)
+		{
+			visitor.Visit(this);
+		}
 
-	    #region Private Member Variables
+		#region Private Member Variables
 
 		private ArrayList m_ClassMaps = new ArrayList();
 		private ArrayList m_SourceMaps = new ArrayList();
@@ -84,9 +87,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 		{
 		}
 
-		public DomainMap(string name) : base() => m_name = name;
+		public DomainMap(string name) : base()
+		{
+			m_name = name;
+		}
 
-	    #endregion
+		#endregion
 
 		#region Serialization
 
@@ -95,9 +101,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 //			return (DomainMap) Load(path, null);
 //		}
 
-		public static IDomainMap Load(string path) => Load(path, null);
-
-	    public static IDomainMap Load(Assembly asm, string name, IMapSerializer mapSerializer)
+		public static IDomainMap Load(string path)
+		{
+			return Load(path, null);
+		}
+		
+		public static IDomainMap Load(Assembly asm, string name, IMapSerializer mapSerializer)
 		{
 			IDomainMap domainMap;
 
@@ -147,9 +156,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return domainMap;
 		}
 
-		public static IDomainMap Load(string path, IMapSerializer mapSerializer) => Load(path, mapSerializer, true,true);
+		public static IDomainMap Load(string path, IMapSerializer mapSerializer)
+		{
+			return Load(path, mapSerializer, true,true);
+		}
 
-	    public static IDomainMap Load(string path, IMapSerializer mapSerializer, bool useCache,bool validate)
+		public static IDomainMap Load(string path, IMapSerializer mapSerializer, bool useCache,bool validate)
 		{
 			IDomainMap domainMap;
 			StreamReader reader = null;
@@ -209,9 +221,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return domainMap;
 		}
 
-		public static IDomainMap LoadFromAttributes(Assembly asm) => LoadFromAttributes(asm, true, true);
+		public static IDomainMap LoadFromAttributes(Assembly asm)
+		{
+			return LoadFromAttributes(asm, true, true);
+		}
 
-	    public static IDomainMap LoadFromAttributes(Assembly asm, bool useCache,bool validate)
+		public static IDomainMap LoadFromAttributes(Assembly asm, bool useCache,bool validate)
 		{
 			IDomainMap domainMap = new DomainMap();
 
@@ -322,9 +337,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return domainMap;
 		}
 
-		public static IDomainMap LoadFromXml(string xml, IMapSerializer mapSerializer) => DomainMap.LoadFromXml(xml,mapSerializer,true,true);
+		public static IDomainMap LoadFromXml(string xml, IMapSerializer mapSerializer)
+		{
+			return DomainMap.LoadFromXml(xml,mapSerializer,true,true);
+		}
 
-	    public static void RecalculateModel(IDomainMap domainMap)
+        public static void RecalculateModel(IDomainMap domainMap)
         {
             GenerateInversePropeties(domainMap);
             CalculateTableModel(domainMap);
@@ -520,11 +538,17 @@ namespace Puzzle.NPersist.Framework.Mapping
 //		}
 
 
-		public virtual void Save() => Save("", null);
+		public virtual void Save()
+		{
+			Save("", null);
+		}
 
-	    public virtual void Save(string path) => Save(path, null);
+		public virtual void Save(string path)
+		{
+			Save(path, null);
+		}
 
-	    public virtual void Save(string path, IMapSerializer mapSerializer)
+		public virtual void Save(string path, IMapSerializer mapSerializer)
 		{
 			if (path == "")
 			{
@@ -568,9 +592,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 			m_LastSavedToPath = path;
 		}
 
-		public virtual void Setup() => SetupBiDirectionalRelationships();
+		public virtual void Setup()
+		{
+			SetupBiDirectionalRelationships();
+		}
 
-	    private void SetupBiDirectionalRelationships()
+		private void SetupBiDirectionalRelationships()
 		{
 			foreach (IClassMap classMap in m_ClassMaps)
 			{
@@ -618,8 +645,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 		[XmlArrayItem(typeof (ClassMap))]
 		public virtual ArrayList ClassMaps
 		{
-			get => m_ClassMaps;
-		    set => m_ClassMaps = value;
+			get { return m_ClassMaps; }
+			set { m_ClassMaps = value; }
 		}
 
 		public IList GetPersistentClassMaps()
@@ -823,15 +850,21 @@ namespace Puzzle.NPersist.Framework.Mapping
 		[XmlArrayItem(typeof (SourceMap))]
 		public virtual ArrayList SourceMaps
 		{
-			get => m_SourceMaps;
-		    set => m_SourceMaps = value;
+			get { return m_SourceMaps; }
+			set { m_SourceMaps = value; }
 		}
 
-		public virtual ISourceMap GetSourceMap() => GetSourceMap(m_Source);
+		public virtual ISourceMap GetSourceMap()
+		{
+			return GetSourceMap(m_Source);
+		}
 
-	    public virtual void SetSourceMap(ISourceMap SourceMap) => m_Source = SourceMap.Name;
+		public virtual void SetSourceMap(ISourceMap SourceMap)
+		{
+			m_Source = SourceMap.Name;
+		}
 
-	    public virtual ISourceMap GetSourceMap(string findName)
+		public virtual ISourceMap GetSourceMap(string findName)
 		{
 			if (findName == null) { return null; }
 			if (findName == "") { return null; }
@@ -849,8 +882,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 		[XmlArrayItem(typeof (CodeMap))]
 		public virtual ArrayList CodeMaps
 		{
-			get => m_CodeMaps;
-		    set => m_CodeMaps = value;
+			get { return m_CodeMaps; }
+			set { m_CodeMaps = value; }
 		}
 
 		public virtual ICodeMap GetCodeMap(CodeLanguage codeLanguage)
@@ -888,57 +921,69 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public override string Name
 		{
-			get => m_name;
-		    set => m_name = value;
+			get { return m_name; }
+			set { m_name = value; }
 		}
 
 		[XmlArrayItem(typeof (string))]
 		public virtual ArrayList SourceListMapPaths
 		{
-			get => m_SourceListMapPaths;
-		    set => m_SourceListMapPaths = value;
+			get { return m_SourceListMapPaths; }
+			set { m_SourceListMapPaths = value; }
 		}
 
 		public virtual ArrayList ClassListMapPaths
 		{
-			get => m_ClassListMapPaths;
-		    set => m_ClassListMapPaths = value;
+			get { return m_ClassListMapPaths; }
+			set { m_ClassListMapPaths = value; }
 		}
 
 		public virtual string Source
 		{
-			get => m_Source;
-		    set => m_Source = value;
+			get { return m_Source; }
+			set { m_Source = value; }
 		}
 
 
 		public virtual MergeBehaviorType MergeBehavior
 		{
-			get => m_MergeBehavior;
-		    set => m_MergeBehavior = value;
+			get { return m_MergeBehavior; }
+			set { m_MergeBehavior = value; }
 		}
 
 		public virtual RefreshBehaviorType RefreshBehavior
 		{
-			get => m_RefreshBehavior;
-		    set => m_RefreshBehavior = value;
+			get { return m_RefreshBehavior; }
+			set { m_RefreshBehavior = value; }
 		}
 
 		public virtual LoadBehavior ListCountLoadBehavior
 		{
-			get => m_ListCountLoadBehavior;
-		    set => m_ListCountLoadBehavior = value;
+			get { return m_ListCountLoadBehavior; }
+			set { m_ListCountLoadBehavior = value; }
 		}
 
-		public virtual string GetLastSavedToPath() => m_LastSavedToPath;
+		public virtual string GetLastSavedToPath()
+		{
+			return m_LastSavedToPath;
+		}
 
-	    public virtual void SetLastSavedToPath(string value) => m_LastSavedToPath = value;
+		public virtual void SetLastSavedToPath(string value)
+		{
+			m_LastSavedToPath = value;
+		}
 
-	    public virtual string GetLoadedFromPath() => m_LoadedFromPath;
+		public virtual string GetLoadedFromPath()
+		{
+			return m_LoadedFromPath;
+		}
 
-	    public virtual void SetLoadedFromPath(string value) => m_LoadedFromPath = value;
+		public virtual void SetLoadedFromPath(string value)
+		{
+			m_LoadedFromPath = value;
+		}
 
-	    public virtual ArrayList GetNamespaceClassMaps(string name)
+		public virtual ArrayList GetNamespaceClassMaps(string name)
 		{
 			ArrayList classMaps = new ArrayList();
 			string ns;
@@ -981,16 +1026,16 @@ namespace Puzzle.NPersist.Framework.Mapping
 		{
 			//[DebuggerHidden()]
 			//[DebuggerStepThrough()]
-			get => m_IsReadOnly;
-		    //[DebuggerHidden()]
+			get { return m_IsReadOnly; }
+			//[DebuggerHidden()]
 			//[DebuggerStepThrough()]
-			set => m_IsReadOnly = value;
+			set { m_IsReadOnly = value; }
 		}
 
 		public virtual string RootNamespace
 		{
-			get => m_RootNamespace;
-		    set => m_RootNamespace = value;
+			get { return m_RootNamespace; }
+			set { m_RootNamespace = value; }
 		}
 
 
@@ -998,95 +1043,95 @@ namespace Puzzle.NPersist.Framework.Mapping
 		{
 			//[DebuggerHidden()]
 			//[DebuggerStepThrough()]
-			get => m_FieldPrefix;
-		    //[DebuggerHidden()]
+			get { return m_FieldPrefix; }
+			//[DebuggerHidden()]
 			//[DebuggerStepThrough()]
-			set => m_FieldPrefix = value;
+			set { m_FieldPrefix = value; }
 		}
 
 		public virtual FieldNameStrategyType FieldNameStrategy
 		{
 			//[DebuggerHidden()]
 			//[DebuggerStepThrough()]
-			get => m_FieldNameStrategy;
-		    //[DebuggerHidden()]
+			get { return m_FieldNameStrategy; }
+			//[DebuggerHidden()]
 			//[DebuggerStepThrough()]
-			set => m_FieldNameStrategy = value;
+			set { m_FieldNameStrategy = value; }
 		}
 
 		public virtual string InheritsTransientClass
 		{
-			get => m_InheritsTransientClass;
-		    set => m_InheritsTransientClass = value;
+			get { return m_InheritsTransientClass; }
+			set { m_InheritsTransientClass = value; }
 		}
 
 		[XmlArrayItem(typeof (string))]
 		public virtual ArrayList ImplementsInterfaces
 		{
-			get => m_ImplementsInterfaces;
-		    set => m_ImplementsInterfaces = value;
+			get { return m_ImplementsInterfaces; }
+			set { m_ImplementsInterfaces = value; }
 		}
 
 		[XmlArrayItem(typeof (string))]
 		public virtual ArrayList ImportsNamespaces
 		{
-			get => m_ImportsNamespaces;
-		    set => m_ImportsNamespaces = value;
+			get { return m_ImportsNamespaces; }
+			set { m_ImportsNamespaces = value; }
 		}
 
 		public virtual bool VerifyCSharpReservedWords
 		{
-			get => m_VerifyCSharpReservedWords;
-		    set => m_VerifyCSharpReservedWords = value;
+			get { return m_VerifyCSharpReservedWords; }
+			set { m_VerifyCSharpReservedWords = value; }
 		}
 
 		public virtual bool VerifyVbReservedWords
 		{
-			get => m_VerifyVbReservedWords;
-		    set => m_VerifyVbReservedWords = value;
+			get { return m_VerifyVbReservedWords; }
+			set { m_VerifyVbReservedWords = value; }
 		}
 
 		public virtual bool VerifyDelphiReservedWords
 		{
-			get => m_VerifyDelphiReservedWords;
-		    set => m_VerifyDelphiReservedWords = value;
+			get { return m_VerifyDelphiReservedWords; }
+			set { m_VerifyDelphiReservedWords = value; }
 		}
 
 		public virtual OptimisticConcurrencyBehaviorType UpdateOptimisticConcurrencyBehavior
 		{
-			get => m_UpdateOptimisticConcurrencyBehavior;
-		    set => m_UpdateOptimisticConcurrencyBehavior = value;
+			get { return m_UpdateOptimisticConcurrencyBehavior; }
+			set { m_UpdateOptimisticConcurrencyBehavior = value; }
 		}
 
 		public virtual OptimisticConcurrencyBehaviorType DeleteOptimisticConcurrencyBehavior
 		{
-			get => m_DeleteOptimisticConcurrencyBehavior;
-		    set => m_DeleteOptimisticConcurrencyBehavior = value;
+			get { return m_DeleteOptimisticConcurrencyBehavior; }
+			set { m_DeleteOptimisticConcurrencyBehavior = value; }
 		}
 
 		public MapSerializer MapSerializer
 		{
-			get => m_MapSerializer;
-		    set => m_MapSerializer = value;
+			get { return m_MapSerializer; }
+			set { m_MapSerializer = value; }
 		}
 
 		public virtual string AssemblyName
 		{
-			get => m_AssemblyName;
-		    set => m_AssemblyName = value;
+			get { return m_AssemblyName; }
+			set { m_AssemblyName = value; }
 		}
 
 		public virtual LoadBehavior LoadBehavior
 		{
-			get => m_LoadBehavior;
-		    set => m_LoadBehavior = value;
+			get { return m_LoadBehavior; }
+			set { m_LoadBehavior = value; }
 		}
 
 		
 		public virtual CodeLanguage CodeLanguage
 		{
-			get => m_CodeLanguage;
-		    set => m_CodeLanguage = value;
+			get { return m_CodeLanguage; }
+			set { m_CodeLanguage = value; }
 		}
 
 		public virtual string GetAssemblyName()
@@ -1133,9 +1178,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return listPropertyMaps;
 		}
 
-		public virtual ArrayList GetPropertyMapsForColumn(IColumnMap columnMap) => GetPropertyMapsForColumn(columnMap, false);
+		public virtual ArrayList GetPropertyMapsForColumn(IColumnMap columnMap)
+		{
+			return GetPropertyMapsForColumn(columnMap, false);
+		}
 
-	    public virtual ArrayList GetPropertyMapsForColumn(IColumnMap columnMap, bool noIdColumns)
+		public virtual ArrayList GetPropertyMapsForColumn(IColumnMap columnMap, bool noIdColumns)
 		{
 			ArrayList listPropertyMaps = new ArrayList();
 			bool found = false;
@@ -1187,27 +1235,27 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public ValidationMode ValidationMode
 		{
-			get => this.m_ValidationMode;
-		    set => this.m_ValidationMode = value;
+			get { return this.m_ValidationMode; }
+			set { this.m_ValidationMode = value; }
 		}
 
 		
 		public long TimeToLive
 		{
-			get => this.m_TimeToLive;
-		    set => this.m_TimeToLive = value;
+			get { return this.m_TimeToLive; }
+			set { this.m_TimeToLive = value; }
 		}
 		
 		public TimeToLiveBehavior TimeToLiveBehavior
 		{
-			get => this.m_TimeToLiveBehavior;
-		    set => this.m_TimeToLiveBehavior = value;
+			get { return this.m_TimeToLiveBehavior; }
+			set { this.m_TimeToLiveBehavior = value; }
 		}
 
         public DeadlockStrategy DeadlockStrategy
         {
-            get => m_DeadlockStrategy;
-            set => m_DeadlockStrategy = value;
+            get { return m_DeadlockStrategy; }
+            set { m_DeadlockStrategy = value; }
         }
 
 		#endregion
@@ -1220,8 +1268,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual string DocSource
 		{
-			get => m_DocSource;
-		    set => m_DocSource = value;
+			get { return m_DocSource; }
+			set { m_DocSource = value; }
 		}
 		
 		public virtual ISourceMap GetDocSourceMap()
@@ -1232,9 +1280,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return GetSourceMap(m_Source);
 		}
 
-		public virtual void SetDocSourceMap(ISourceMap SourceMap) => m_DocSource = SourceMap.Name;
+		public virtual void SetDocSourceMap(ISourceMap SourceMap)
+		{
+			m_DocSource = SourceMap.Name;
+		}
 
-	    #endregion
+		#endregion
 
 		#region Cloning
 
@@ -1600,17 +1651,23 @@ namespace Puzzle.NPersist.Framework.Mapping
 		[XmlIgnore()]
 		public virtual bool Dirty
 		{
-			get => m_Dirty;
-		    set => m_Dirty = value;
+			get { return m_Dirty; }
+			set
+			{
+				m_Dirty = value;
+			}
 		}
 
 		#endregion
 
 		#region IMap
 
-		public override string GetKey() => this.Name;
+		public override string GetKey()
+		{
+			return this.Name;
+		}
 
-	    #endregion
+		#endregion
 
 		#region IFixate
 

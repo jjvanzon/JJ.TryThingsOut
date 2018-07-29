@@ -30,8 +30,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public IList SqlSelectListItems
 		{
-			get => this.sqlSelectListItems;
-		    set => this.sqlSelectListItems = value;
+			get { return this.sqlSelectListItems; }
+			set { this.sqlSelectListItems = value; }
 		}
 
 		#endregion
@@ -62,11 +62,18 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 			return AddSqlAllColumnsInTableSelectListItem(sqlTableAliasReference) ;
 		}
 
-		public SqlAllColumnsInTableSelectListItem AddSqlAllColumnsInTableSelectListItem(SqlTableAliasReference sqlTableAliasReference) => new SqlAllColumnsInTableSelectListItem(this, sqlTableAliasReference);
+		public SqlAllColumnsInTableSelectListItem AddSqlAllColumnsInTableSelectListItem(SqlTableAliasReference sqlTableAliasReference)
+		{
+			return new SqlAllColumnsInTableSelectListItem(this, sqlTableAliasReference) ;
+		}
 
-	    public SqlAllColumnsSelectListItem AddSqlAllColumnsSelectListItem() => new SqlAllColumnsSelectListItem(this);
+		public SqlAllColumnsSelectListItem AddSqlAllColumnsSelectListItem()
+		{
+			return new SqlAllColumnsSelectListItem(this) ;
+		}
 
-	    public SqlAliasSelectListItem AddSqlAliasSelectListItem(string name, string tableName)
+
+		public SqlAliasSelectListItem AddSqlAliasSelectListItem(string name, string tableName)
 		{
 			SqlColumnAlias sqlColumnAlias = this.SqlStatement.GetSqlColumnAlias(name, tableName);
 			return AddSqlAliasSelectListItem(sqlColumnAlias) ;
@@ -78,11 +85,18 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 			return AddSqlAliasSelectListItem(sqlColumnAlias) ;
 		}
 
-		public SqlAliasSelectListItem AddSqlAliasSelectListItem(SqlColumnAlias sqlColumnAlias) => new SqlAliasSelectListItem(this, sqlColumnAlias);
+		public SqlAliasSelectListItem AddSqlAliasSelectListItem(SqlColumnAlias sqlColumnAlias)
+		{
+			return new SqlAliasSelectListItem(this, sqlColumnAlias) ;
+		}
 
-	    public SqlAliasSelectListItem AddSqlAliasSelectListItem(SqlExpressionAlias sqlExpressionAlias) => new SqlAliasSelectListItem( this, sqlExpressionAlias);
 
-	    public SqlAliasSelectListItem AddSqlAliasSelectListItem(SqlExpression sqlExpression)
+		public SqlAliasSelectListItem AddSqlAliasSelectListItem(SqlExpressionAlias sqlExpressionAlias)
+		{
+			return new SqlAliasSelectListItem( this, sqlExpressionAlias) ;
+		}
+
+		public SqlAliasSelectListItem AddSqlAliasSelectListItem(SqlExpression sqlExpression)
 		{
 			SqlExpressionAlias sqlExpressionAlias = new SqlExpressionAlias(this.SqlStatement.SqlDatabase, sqlExpression, "");
 			return new SqlAliasSelectListItem( this, sqlExpressionAlias) ;
@@ -96,9 +110,12 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 			return new SqlAliasSelectListItem( this, sqlExpressionAlias) ;
 		}
 
-		public SqlExpressionSelectListItem AddSqlExpressionSelectListItem() => new SqlExpressionSelectListItem(this);
+		public SqlExpressionSelectListItem AddSqlExpressionSelectListItem()
+		{
+			return new SqlExpressionSelectListItem(this) ;
+		}
 
-	    #endregion
+		#endregion
 
 		#region Property  Distinct
 		
@@ -106,8 +123,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public bool Distinct
 		{
-			get => this.distinct;
-		    set => this.distinct = value;
+			get { return this.distinct; }
+			set { this.distinct = value; }
 		}
 		
 		#endregion

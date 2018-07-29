@@ -15,8 +15,14 @@ namespace Puzzle.NCore.Framework.Text.PatternMatchers
     /// </summary>
     public class PatternMatcherBase : IPatternMatcher
     {
-        public virtual int Match(string textToMatch, int matchAtIndex) => 0;
+        public virtual int Match(string textToMatch, int matchAtIndex)
+        {
+            return 0;
+        }
 
-        public virtual string[] DefaultPrefixes => null;
+        public virtual string[] DefaultPrefixes
+        {
+            get { return null; }
+        }
     }
 }

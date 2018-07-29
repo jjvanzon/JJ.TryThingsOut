@@ -36,8 +36,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public NullValueHelperMixin NullValueHelperMixin
 		{
-			get => this.nullValueHelperMixin;
-		    set => this.nullValueHelperMixin = value;
+			get { return this.nullValueHelperMixin; }
+			set { this.nullValueHelperMixin = value; }
 		}
 		
 		#endregion
@@ -48,8 +48,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public IdentityHelperMixin IdentityHelperMixin
 		{
-			get => this.identityHelperMixin;
-		    set => this.identityHelperMixin = value;
+			get { return this.identityHelperMixin; }
+			set { this.identityHelperMixin = value; }
 		}
 		
 		#endregion
@@ -60,8 +60,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public OriginalValueHelperMixin OriginalValueHelperMixin
 		{
-			get => this.originalValueHelperMixin;
-		    set => this.originalValueHelperMixin = value;
+			get { return this.originalValueHelperMixin; }
+			set { this.originalValueHelperMixin = value; }
 		}
 		
 		#endregion
@@ -72,8 +72,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public UpdatedPropertyTrackerMixin UpdatedPropertyTrackerMixin
 		{
-			get => this.updatedPropertyTrackerMixin;
-		    set => this.updatedPropertyTrackerMixin = value;
+			get { return this.updatedPropertyTrackerMixin; }
+			set { this.updatedPropertyTrackerMixin = value; }
 		}
 		
 		#endregion
@@ -84,8 +84,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public ObjectStatusHelperMixin ObjectStatusHelperMixin 
 		{
-			get => this.objectStatusHelperMixin;
-		    set => this.objectStatusHelperMixin  = value;
+			get { return this.objectStatusHelperMixin ; }
+			set { this.objectStatusHelperMixin  = value; }
 		}
 		
 		#endregion
@@ -96,68 +96,155 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public ValueHelperMixin ValueHelperMixin
 		{
-			get => this.valueHelperMixin;
-		    set => this.valueHelperMixin = value;
+			get { return this.valueHelperMixin; }
+			set { this.valueHelperMixin = value; }
 		}
 		
 		#endregion
 
-		public ObjectStatus GetObjectStatus() => this.objectStatusHelperMixin.GetObjectStatus();
+		public ObjectStatus GetObjectStatus()
+		{
+			return this.objectStatusHelperMixin.GetObjectStatus();
+		}
 
-	    public bool GetUpdatedStatus(string propertyName) => this.updatedPropertyTrackerMixin.GetUpdatedStatus(propertyName);
+		public bool GetUpdatedStatus(string propertyName)
+		{
+			return this.updatedPropertyTrackerMixin.GetUpdatedStatus(propertyName);
+		}
 
-	    public void SetUpdatedStatus(string propertyName, bool value) => this.updatedPropertyTrackerMixin.SetUpdatedStatus(propertyName, value);
+		public void SetUpdatedStatus(string propertyName, bool value)
+		{
+			this.updatedPropertyTrackerMixin.SetUpdatedStatus(propertyName, value);
+		}
 
-	    public bool GetNullValueStatus(string propertyName) => this.nullValueHelperMixin.GetNullValueStatus(propertyName);
+		public bool GetNullValueStatus(string propertyName)
+		{
+			return this.nullValueHelperMixin.GetNullValueStatus(propertyName);
+		}
 
-	    public void SetNullValueStatus(string propertyName, bool value) => this.nullValueHelperMixin.SetNullValueStatus(propertyName, value);
+		public void SetNullValueStatus(string propertyName, bool value)
+		{
+			this.nullValueHelperMixin.SetNullValueStatus(propertyName, value);
+		}
 
-	    public object GetOriginalPropertyValue(string propertyName) => this.originalValueHelperMixin.GetOriginalPropertyValue(propertyName);
+		public object GetOriginalPropertyValue(string propertyName)
+		{
+			return this.originalValueHelperMixin.GetOriginalPropertyValue(propertyName);
+		}
 
-	    public void SetOriginalPropertyValue(string propertyName, object value) => this.originalValueHelperMixin.SetOriginalPropertyValue(propertyName, value);
+		public void SetOriginalPropertyValue(string propertyName, object value)
+		{
+			this.originalValueHelperMixin.SetOriginalPropertyValue(propertyName, value);
+		}
 
-	    public void RemoveOriginalValues(string propertyName) => this.originalValueHelperMixin.RemoveOriginalValues(propertyName);
+		public void RemoveOriginalValues(string propertyName)
+		{
+			this.originalValueHelperMixin.RemoveOriginalValues(propertyName);
+		}
 
-	    public bool HasOriginalValues() => this.originalValueHelperMixin.HasOriginalValues();
+		public bool HasOriginalValues()
+		{
+			return this.originalValueHelperMixin.HasOriginalValues();
+		}
 
-	    public object GetPropertyValue(string propertyName) => this.valueHelperMixin.GetPropertyValue(propertyName);
+		public object GetPropertyValue(string propertyName)
+		{
+			return this.valueHelperMixin.GetPropertyValue(propertyName);
+		}
 
-	    public void SetPropertyValue(string propertyName, object value) => this.valueHelperMixin.SetPropertyValue(propertyName, value);
+		public void SetPropertyValue(string propertyName, object value)
+		{
+			this.valueHelperMixin.SetPropertyValue(propertyName, value);
+		}
 
-	    public void RemovePropertyValues(string propertyName) => this.valueHelperMixin.RemovePropertyValues(propertyName);
+		public void RemovePropertyValues(string propertyName)
+		{
+			this.valueHelperMixin.RemovePropertyValues(propertyName);
+		}
 
-	    public bool HasPropertyValues() => this.valueHelperMixin.HasPropertyValues();
+		public bool HasPropertyValues()
+		{
+			return this.valueHelperMixin.HasPropertyValues();
+		}
 
-	    public void Restore(object obj) => throw new IAmOpenSourcePleaseImplementMeException();
+		public void Restore(object obj)
+		{
+			throw new IAmOpenSourcePleaseImplementMeException();
+		}
 
-	    public bool HasPropertyValues(string propertyName) => this.valueHelperMixin.HasPropertyValues(propertyName);
+		public bool HasPropertyValues(string propertyName)
+		{
+			return this.valueHelperMixin.HasPropertyValues(propertyName);
+		}
 
-	    public bool HasOriginalValues(string propertyName) => this.originalValueHelperMixin.HasOriginalValues(propertyName);
+		public bool HasOriginalValues(string propertyName)
+		{
+			return this.originalValueHelperMixin.HasOriginalValues(propertyName);
+		}
 
-	    public void SetNullValueStatus(bool value) => this.nullValueHelperMixin.SetNullValueStatus(value);
+		public void SetNullValueStatus(bool value)
+		{
+			this.nullValueHelperMixin.SetNullValueStatus(value);
+		}
 
-	    public void ClearUpdatedStatuses() => this.updatedPropertyTrackerMixin.ClearUpdatedStatuses();
+		public void ClearUpdatedStatuses()
+		{
+			this.updatedPropertyTrackerMixin.ClearUpdatedStatuses();
+		}
 
-	    public void SetObjectStatus(ObjectStatus value) => this.objectStatusHelperMixin.SetObjectStatus(value);
+		public void SetObjectStatus(ObjectStatus value)
+		{
+			this.objectStatusHelperMixin.SetObjectStatus(value);
+		}
 
-	    public string GetIdentity() => identityHelperMixin.GetIdentity();
+        public string GetIdentity()
+        {
+            return identityHelperMixin.GetIdentity();
+        }
 
-	    public void SetIdentity(string identity) => identityHelperMixin.SetIdentity(identity);
+        public void SetIdentity(string identity)
+        {
+            identityHelperMixin.SetIdentity(identity);
+        }
 
-	    public bool HasIdentityKeyParts() => identityHelperMixin.HasIdentityKeyParts();
+        public bool HasIdentityKeyParts()
+        {
+            return identityHelperMixin.HasIdentityKeyParts();
+        }
 
-	    public IList GetIdentityKeyParts() => identityHelperMixin.GetIdentityKeyParts();
+        public IList GetIdentityKeyParts()
+        {
+            return identityHelperMixin.GetIdentityKeyParts();
+        }
 
-	    public bool HasKeyStruct() => identityHelperMixin.HasKeyStruct();
+        public bool HasKeyStruct()
+        {
+            return identityHelperMixin.HasKeyStruct();
+        }
 
-	    public KeyStruct GetKeyStruct() => identityHelperMixin.GetKeyStruct();
+        public KeyStruct GetKeyStruct()
+        {
+            return identityHelperMixin.GetKeyStruct();
+        }
 
-	    public void SetKeyStruct(KeyStruct keyStruct) => identityHelperMixin.SetKeyStruct(keyStruct);
+        public void SetKeyStruct(KeyStruct keyStruct)
+        {
+            identityHelperMixin.SetKeyStruct(keyStruct);
+        }
 
-	    public void Reset() => identityHelperMixin.Reset();
+		public void Reset()
+		{
+			identityHelperMixin.Reset();
+		}
 
-	    public Guid GetTransactionGuid() => identityHelperMixin.GetTransactionGuid();
+		public Guid GetTransactionGuid()
+		{
+			return identityHelperMixin.GetTransactionGuid();
+		}
 
-	    public void SetTransactionGuid(Guid value) => identityHelperMixin.SetTransactionGuid(value);
-	}
+		public void SetTransactionGuid(Guid value)
+		{
+			identityHelperMixin.SetTransactionGuid(value);
+		}
+    }
 }

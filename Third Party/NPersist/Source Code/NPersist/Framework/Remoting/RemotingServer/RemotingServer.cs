@@ -31,11 +31,17 @@ namespace Puzzle.NPersist.Framework.Remoting
 		{
 		}
 
-		public RemotingServer(IContextFactory contextFactory) => this.contextFactory = contextFactory;
+		public RemotingServer(IContextFactory contextFactory)
+		{
+			this.contextFactory = contextFactory;
+		}
 
-	    public RemotingServer(IFormatter formater) => this.formater = formater;
+		public RemotingServer(IFormatter formater)
+		{
+			this.formater = formater;
+		}
 
-	    public RemotingServer(IContextFactory contextFactory, IFormatter formater)
+		public RemotingServer(IContextFactory contextFactory, IFormatter formater)
 		{
 			this.contextFactory = contextFactory;
 			this.formater = formater;
@@ -61,16 +67,16 @@ namespace Puzzle.NPersist.Framework.Remoting
 		
 		public IContextFactory ContextFactory
 		{
-			get => this.contextFactory;
-		    set => this.contextFactory = value;
+			get { return this.contextFactory; }
+			set { this.contextFactory = value; }
 		}
 
 		private IFormatter formater = null;
 		
 		public IFormatter Formatter
 		{
-			get => this.formater;
-		    set => this.formater = value;
+			get { return this.formater; }
+			set { this.formater = value; }
 		}
 
 		#region Property  Compressor 
@@ -79,8 +85,8 @@ namespace Puzzle.NPersist.Framework.Remoting
 		
 		public IWebServiceCompressor Compressor 
 		{
-			get => this.compressor;
-		    set => this.compressor  = value;
+			get { return this.compressor ; }
+			set { this.compressor  = value; }
 		}
 		
 		#endregion
@@ -91,8 +97,8 @@ namespace Puzzle.NPersist.Framework.Remoting
 		
 		public bool UseCompression
 		{
-			get => this.useCompression;
-		    set => this.useCompression = value;
+			get { return this.useCompression; }
+			set { this.useCompression = value; }
 		}
 		
 		#endregion
@@ -129,9 +135,12 @@ namespace Puzzle.NPersist.Framework.Remoting
 			else
 				return serialized;			}
 
-		public object LoadObjectByKey(string type, string keyPropertyName, object keyValue, string domainKey) => null;
+		public object LoadObjectByKey(string type, string keyPropertyName, object keyValue, string domainKey)
+		{
+			return null;			
+		}
 
-	    public object CommitUnitOfWork(object obj, string domainKey)
+		public object CommitUnitOfWork(object obj, string domainKey)
 		{
 			if (useCompression &&  this.compressor != null)
 			{

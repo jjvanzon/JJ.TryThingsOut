@@ -20,9 +20,15 @@ namespace Puzzle.NAspect.Framework
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true, Inherited = true)]
     public class RequiresMixinAttribute : Attribute
     {
-        public RequiresMixinAttribute(Type type) => this.types.Add(type);
+        public RequiresMixinAttribute(Type type)
+        {
+            this.types.Add(type);
+        }
 
-        public RequiresMixinAttribute(IList types) => this.types = types;
+        public RequiresMixinAttribute(IList types)
+        {
+            this.types = types;
+        }
 
         public RequiresMixinAttribute(params Type[] types)
         {
@@ -31,6 +37,11 @@ namespace Puzzle.NAspect.Framework
         }
 
         private IList types = new ArrayList();
-        public virtual IList Types => types;
+        public virtual IList Types
+        {
+            get { return types; }
+        }
+
+
     }
 }

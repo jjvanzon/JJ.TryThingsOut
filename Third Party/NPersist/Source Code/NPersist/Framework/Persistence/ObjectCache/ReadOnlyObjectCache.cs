@@ -27,9 +27,12 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		private Hashtable objectCache = new Hashtable() ;
 		
-		public Hashtable ObjectCache => this.objectCache;
-
-	    #endregion
+		public Hashtable ObjectCache
+		{
+			get { return this.objectCache; }
+		}
+		
+		#endregion
 
 		#region Property  MaxSize
 		
@@ -37,8 +40,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public long MaxSize
 		{
-			get => this.maxSize;
-		    set => this.maxSize = value;
+			get { return this.maxSize; }
+			set { this.maxSize = value; }
 		}
 		
 		#endregion
@@ -49,8 +52,8 @@ namespace Puzzle.NPersist.Framework.Persistence
 		
 		public DateTime CreatedTime
 		{
-			get => this.createdTime;
-		    set => this.createdTime = value;
+			get { return this.createdTime; }
+			set { this.createdTime = value; }
 		}
 		
 		#endregion

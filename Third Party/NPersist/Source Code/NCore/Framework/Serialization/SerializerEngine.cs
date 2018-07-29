@@ -15,7 +15,10 @@ namespace Puzzle.NCore.Runtime.Serialization
         public ObjectBase Root;
         private int objectID = 0;
 
-        private int GetObjectID() => objectID++;
+        private int GetObjectID()
+        {
+            return objectID++;
+        }
 
         public void Serialize(Stream output, object graph)
         {
@@ -40,7 +43,10 @@ namespace Puzzle.NCore.Runtime.Serialization
         }
 
 
-        private void BuildSerilizationGraph(object graph) => Root = GetObject(graph);
+        private void BuildSerilizationGraph(object graph)
+        {
+            Root = GetObject(graph);
+        }
 
         public ObjectBase GetObject(object item)
         {
@@ -117,7 +123,10 @@ namespace Puzzle.NCore.Runtime.Serialization
             return current;
         }
 
-        private static bool IsNonSerialized(FieldInfo field) => field.GetCustomAttributes(typeof (NonSerializedAttribute), true).Length > 0;
+        private static bool IsNonSerialized(FieldInfo field)
+        {
+            return field.GetCustomAttributes(typeof (NonSerializedAttribute), true).Length > 0;
+        }
 
         private void RegisterObject(ObjectBase current, object item)
         {

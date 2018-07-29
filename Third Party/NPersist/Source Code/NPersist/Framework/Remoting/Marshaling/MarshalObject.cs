@@ -32,37 +32,37 @@ namespace Puzzle.NPersist.Framework.Remoting.Marshaling
 
 		public string Type
 		{
-			get => this.type;
-		    set => this.type = value;
+			get { return this.type; } 
+			set { this.type = value; }
 		}
 
 		public string TempId
 		{
-			get => this.tempId;
-		    set => this.tempId = value;
+			get { return this.tempId; }
+			set { this.tempId = value; }
 		}
 
 		[XmlArrayItem(typeof(MarshalProperty))] public IList Properties 
 		{
-			get => this.properties;
-		    set => this.properties = value;
+			get { return this.properties; } 
+			set { this.properties = value; }
 		}
 
 				[XmlArrayItem(typeof(MarshalList))] public IList Lists {
-					get => this.lists;
-				    set => this.lists = value;
+					get { return this.lists; } 
+					set { this.lists = value; }
 				}
 
 		[XmlArrayItem(typeof(MarshalReference))] public IList References 
 		{
-			get => this.references;
-		    set => this.references = value;
+			get { return this.references; } 
+			set { this.references = value; }
 		}
 
 		[XmlArrayItem(typeof(MarshalReferenceList))] public IList ReferenceLists 
 		{
-			get => this.referenceLists;
-		    set => this.referenceLists = value;
+			get { return this.referenceLists; } 
+			set { this.referenceLists = value; }
 		}
 
 

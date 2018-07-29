@@ -30,37 +30,58 @@ namespace Puzzle.NAspect.Framework
         /// <param name="invocation">MethodInvocation that should be wrapped</param>
         [DebuggerHidden]
         [DebuggerStepThrough]
-        public BeforeMethodInvocation(MethodInvocation invocation) => this.invocation = invocation;
+        public BeforeMethodInvocation(MethodInvocation invocation)
+        {
+            this.invocation = invocation;
+        }
 
         /// <summary>
         /// Untyped list of InterceptedParameter instances.
         /// </summary>
-        public IList Parameters => invocation.Parameters;
+        public IList Parameters
+        {
+            get { return invocation.Parameters; }
+        }
 
         /// <summary>
         /// The intercepted method. (in the dynamic proxy)
         /// </summary>
-        public MethodBase Method => invocation.Method;
+        public MethodBase Method
+        {
+            get { return invocation.Method; }
+        }
 
         /// <summary>
         /// The object on which the method was invoked.
         /// </summary>
-        public IAopProxy Target => invocation.Target;
+        public IAopProxy Target
+        {
+            get { return invocation.Target; }
+        }
 
         /// <summary>
         /// The return type of the method (if available, ctors do not have a return type).
         /// </summary>
-        public Type ReturnType => invocation.ReturnType;
+        public Type ReturnType
+        {
+            get { return invocation.ReturnType; }
+        }
 
         /// <summary>
         /// Returns the absolute signature of the call.
         /// </summary>
-        public string Signature => invocation.Signature;
+        public string Signature
+        {
+            get { return invocation.Signature; }
+        }
 
         /// <summary>
         /// Returns the value signature of the call.
         /// parameter values are represented with ".ToString()"
         /// </summary>
-        public string ValueSignature => invocation.ValueSignature;
+        public string ValueSignature
+        {
+            get { return invocation.ValueSignature; }
+        }
     }
 }

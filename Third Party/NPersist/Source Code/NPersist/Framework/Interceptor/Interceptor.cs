@@ -34,8 +34,8 @@ namespace Puzzle.NPersist.Framework.BaseClasses
 	
 		public Notification Notification
 		{
-			get => this.notification;
-		    set => this.notification = value;
+			get { return this.notification; }
+			set { this.notification = value; }
 		}
 
 		public virtual void NotifyPropertyGet(object obj, string propertyName)
@@ -454,10 +454,16 @@ namespace Puzzle.NPersist.Framework.BaseClasses
 		
 		private bool isDisposed;
 		
-		public bool IsDisposed => this.isDisposed;
+		public bool IsDisposed
+		{
+			get { return this.isDisposed; }
+		}
+		
+		#endregion
 
-	    #endregion
-
-		public void Dispose() => this.isDisposed = true;
+		public void Dispose()
+		{
+			this.isDisposed = true;
+		}
 	}
 }

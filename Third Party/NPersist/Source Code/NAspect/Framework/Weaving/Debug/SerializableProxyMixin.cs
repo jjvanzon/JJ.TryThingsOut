@@ -194,7 +194,10 @@ namespace Puzzle.NAspect.Framework
         /// Assigns the proxy to the mixin.
         /// </summary>
         /// <param name="target">The proxy</param>
-        public void SetProxy(IAopProxy target) => this.target = target;
+        public void SetProxy(IAopProxy target)
+        {
+            this.target = target;
+        }
 
         #endregion
     }

@@ -20,8 +20,14 @@ namespace Puzzle.NPersist.Framework.EventArguments
 		{
 		}
 
-		public ContextEventArgs(IContext ctx) : base() => m_EventContext = ctx;
+		public ContextEventArgs(IContext ctx) : base()
+		{
+			m_EventContext = ctx;
+		}
 
-	    public IContext EventContext => m_EventContext;
+		public IContext EventContext
+		{
+			get { return m_EventContext; }
+		}
 	}
 }

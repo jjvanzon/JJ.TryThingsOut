@@ -32,38 +32,38 @@ namespace Puzzle.NPersist.Framework.Remoting.Marshaling
 
 		public string Name
 		{
-			get => this.name;
-		    set => this.name = value;
+			get{ return this.name; } 
+			set{ this.name = value; }
 		}
 		
 		public bool IsNull
 		{
-			get => this.isNull;
-		    set => this.isNull = value;
+			get{ return this.isNull; } 
+			set{ this.isNull = value; }
 		}
 		
 		public bool WasNull
 		{
-			get => this.wasNull;
-		    set => this.wasNull = value;
+			get{ return this.wasNull; } 
+			set{ this.wasNull = value; }
 		}
 
 		public string Value
 		{
-			get => this.value;
-		    set => this.value = value;
+			get{ return this.value; } 
+			set{ this.value = value; }
 		}
 		
 		public string OriginalValue
 		{
-			get => this.originalValue;
-		    set => this.originalValue = value;
+			get{ return this.originalValue; } 
+			set{ this.originalValue = value; }
 		}
 
 		public bool HasOriginal
 		{
-			get => this.hasOriginal;
-		    set => this.hasOriginal = value;
+			get { return this.hasOriginal; }
+			set { this.hasOriginal = value; }
 		}
 
 	}

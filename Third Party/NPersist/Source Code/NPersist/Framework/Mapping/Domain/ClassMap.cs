@@ -25,11 +25,17 @@ namespace Puzzle.NPersist.Framework.Mapping
 	public class ClassMap : MapBase, IClassMap
 	{
 
-		public override void Accept(IMapVisitor visitor) => visitor.Visit(this);
+		public override void Accept(IMapVisitor visitor)
+		{
+			visitor.Visit(this);
+		}
+		
+		public override IMap GetParent()
+		{
+			return m_DomainMap;
+		}
 
-	    public override IMap GetParent() => m_DomainMap;
-
-	    #region Private Member Variables
+		#region Private Member Variables
 
 		private ArrayList m_PropertyMaps = new ArrayList();
 		private ArrayList m_CodeMaps = new ArrayList();
@@ -85,17 +91,20 @@ namespace Puzzle.NPersist.Framework.Mapping
 		{
 		}
 
-		public ClassMap(string name) : base() => m_name = name;
+		public ClassMap(string name) : base()
+		{
+			m_name = name;
+		}
 
-	    #endregion
+		#endregion
 
 		#region Object/Relational Mapping
 
 		[XmlIgnore()]
 		public virtual IDomainMap DomainMap
 		{
-			get => m_DomainMap;
-		    set
+			get { return m_DomainMap; }
+			set
 			{
 				if (m_DomainMap != null)
 				{
@@ -121,8 +130,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 		[XmlArrayItem(typeof (PropertyMap))]
 		public virtual ArrayList PropertyMaps
 		{
-			get => m_PropertyMaps;
-		    set => m_PropertyMaps = value;
+			get { return m_PropertyMaps; }
+			set { m_PropertyMaps = value; }
 		}
 
 				
@@ -175,8 +184,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 		[XmlArrayItem(typeof (CodeMap))]
 		public virtual ArrayList CodeMaps
 		{
-			get => m_CodeMaps;
-		    set => m_CodeMaps = value;
+			get { return m_CodeMaps; }
+			set { m_CodeMaps = value; }
 		}
 
 		public virtual ICodeMap GetCodeMap(CodeLanguage codeLanguage)
@@ -215,8 +224,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 		[XmlArrayItem(typeof (EnumValueMap))]
 		public virtual ArrayList EnumValueMaps
 		{
-			get => m_EnumValueMaps;
-		    set => m_EnumValueMaps = value;
+			get { return m_EnumValueMaps; }
+			set { m_EnumValueMaps = value; }
 		}
 
 		//[DebuggerStepThrough()]
@@ -281,8 +290,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public override string Name
 		{
-			get => m_name;
-		    set => m_name = value;
+			get { return m_name; }
+			set { m_name = value; }
 		}
 
 		private bool fixedGetSource = false;
@@ -315,7 +324,7 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 				return source;
 			}
-			set => m_Source = value;
+			set { m_Source = value; }
 		}
 
 		private bool fixedGetSourceMap = false;
@@ -346,9 +355,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return sourceMap;
 		}
 
-		public virtual void SetSourceMap(ISourceMap value) => m_Source = value.Name;
+		public virtual void SetSourceMap(ISourceMap value)
+		{
+			m_Source = value.Name;
+		}
 
-	    private bool fixedGetTable = false;
+		private bool fixedGetTable = false;
 		private string fixedValueGetTable = null;
 
 		public virtual string Table
@@ -378,7 +390,7 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 				return table;
 			}
-			set => m_Table = value;
+			set { m_Table = value; }
 		}
 
 						
@@ -416,9 +428,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return tableMap;
 		}
 
-		public virtual void SetTableMap(ITableMap value) => m_Table = value.Name;
+		public virtual void SetTableMap(ITableMap value)
+		{
+			m_Table = value.Name;
+		}
 
-	    private bool fixedGetPrimaryPropertyMaps = false;
+		private bool fixedGetPrimaryPropertyMaps = false;
 		private ArrayList fixedValueGetPrimaryPropertyMaps = null;
 
 		public virtual ArrayList GetPrimaryPropertyMaps()
@@ -894,8 +909,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual string IdentitySeparator
 		{
-			get => m_IdentitySeparator;
-		    set => m_IdentitySeparator = value;
+			get { return m_IdentitySeparator; }
+			set { m_IdentitySeparator = value; }
 		}
 
 		private bool fixedGetIdentitySeparator = false;
@@ -932,8 +947,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual string KeySeparator
 		{
-			get => m_KeySeparator;
-		    set => m_KeySeparator = value;
+			get { return m_KeySeparator; }
+			set { m_KeySeparator = value; }
 		}
 
 		private bool fixedGetKeySeparator = false;
@@ -970,14 +985,14 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual string TypeValue
 		{
-			get => m_TypeValue;
-		    set => m_TypeValue = value;
+			get { return m_TypeValue; }
+			set { m_TypeValue = value; }
 		}
 
 		public virtual string TypeColumn
 		{
-			get => m_TypeColumn;
-		    set => m_TypeColumn = value;
+			get { return m_TypeColumn; }
+			set { m_TypeColumn = value; }
 		}
 
 		private bool fixedGetTypeColumnMap = false;
@@ -1004,30 +1019,33 @@ namespace Puzzle.NPersist.Framework.Mapping
 			return typeColumnMap ;
 		}
 
-		public virtual void SetTypeColumnMap(IColumnMap value) => m_TypeColumn = value.Name;
-
-	    public virtual MergeBehaviorType MergeBehavior
+		public virtual void SetTypeColumnMap(IColumnMap value)
 		{
-			get => m_MergeBehavior;
-	        set => m_MergeBehavior = value;
-	    }
+			m_TypeColumn = value.Name;
+		}
+
+		public virtual MergeBehaviorType MergeBehavior
+		{
+			get { return m_MergeBehavior; }
+			set { m_MergeBehavior = value; }
+		}
 
 		public virtual RefreshBehaviorType RefreshBehavior
 		{
-			get => m_RefreshBehavior;
-		    set => m_RefreshBehavior = value;
+			get { return m_RefreshBehavior; }
+			set { m_RefreshBehavior = value; }
 		}
 
 		public virtual LoadBehavior ListCountLoadBehavior
 		{
-			get => m_ListCountLoadBehavior;
-		    set => m_ListCountLoadBehavior = value;
+			get { return m_ListCountLoadBehavior; }
+			set { m_ListCountLoadBehavior = value; }
 		}
 
 		public virtual bool IsAbstract
 		{
-			get => m_IsAbstract;
-		    set => m_IsAbstract = value;
+			get { return m_IsAbstract; }
+			set { m_IsAbstract = value; }
 		}
 
 		private bool fixedGetAllPropertyMaps = false;
@@ -1256,8 +1274,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual string InheritsClass
 		{
-			get => m_InheritsClass;
-		    set
+			get { return m_InheritsClass; }
+			set
 			{
 				if (DomainMap != null)
 				{
@@ -1288,8 +1306,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public ClassType ClassType
 		{
-			get => this.m_ClassType;
-		    set => this.m_ClassType = value;
+			get { return this.m_ClassType; }
+			set { this.m_ClassType = value; }
 		}
 
 		public void UpdateName(string newName)
@@ -1431,8 +1449,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual InheritanceType InheritanceType
 		{
-			get => m_InheritanceType;
-		    set => m_InheritanceType = value;
+			get { return m_InheritanceType; }
+			set { m_InheritanceType = value; }
 		}
 
 		public virtual IPropertyMap MustGetPropertyMapForColumnMap(IColumnMap columnMap)
@@ -1721,76 +1739,76 @@ namespace Puzzle.NPersist.Framework.Mapping
 			}
 			//[DebuggerHidden()]
 			//[DebuggerStepThrough()]
-			set => m_IsReadOnly = value;
+			set { m_IsReadOnly = value; }
 		}
 
 		public virtual string InheritsTransientClass
 		{
-			get => m_InheritsTransientClass;
-		    set => m_InheritsTransientClass = value;
+			get { return m_InheritsTransientClass; }
+			set { m_InheritsTransientClass = value; }
 		}
 
 		[XmlArrayItem(typeof (string))]
 		public virtual ArrayList ImplementsInterfaces
 		{
-			get => m_ImplementsInterfaces;
-		    set => m_ImplementsInterfaces = value;
+			get { return m_ImplementsInterfaces; }
+			set { m_ImplementsInterfaces = value; }
 		}
 
 		[XmlArrayItem(typeof (string))]
 		public virtual ArrayList ImportsNamespaces
 		{
-			get => m_ImportsNamespaces;
-		    set => m_ImportsNamespaces = value;
+			get { return m_ImportsNamespaces; }
+			set { m_ImportsNamespaces = value; }
 		}
 
 		public virtual OptimisticConcurrencyBehaviorType UpdateOptimisticConcurrencyBehavior
 		{
-			get => m_UpdateOptimisticConcurrencyBehavior;
-		    set => m_UpdateOptimisticConcurrencyBehavior = value;
+			get { return m_UpdateOptimisticConcurrencyBehavior; }
+			set { m_UpdateOptimisticConcurrencyBehavior = value; }
 		}
 
 		public virtual OptimisticConcurrencyBehaviorType DeleteOptimisticConcurrencyBehavior
 		{
-			get => m_DeleteOptimisticConcurrencyBehavior;
-		    set => m_DeleteOptimisticConcurrencyBehavior = value;
+			get { return m_DeleteOptimisticConcurrencyBehavior; }
+			set { m_DeleteOptimisticConcurrencyBehavior = value; }
 		}
 
 		public virtual string AssemblyName
 		{
-			get => m_AssemblyName;
-		    set => m_AssemblyName = value;
+			get { return m_AssemblyName; }
+			set { m_AssemblyName = value; }
 		}
 
 				
 		public ValidationMode ValidationMode
 		{
-			get => this.m_ValidationMode;
-		    set => this.m_ValidationMode = value;
+			get { return this.m_ValidationMode; }
+			set { this.m_ValidationMode = value; }
 		}
 
 		public virtual string ValidateMethod
 		{
-			get => m_ValidateMethod;
-		    set => m_ValidateMethod = value;
+			get { return m_ValidateMethod; }
+			set { m_ValidateMethod = value; }
 		}
 
 		public virtual string LoadSpan
 		{
-			get => m_LoadSpan;
-		    set => m_LoadSpan = value;
+			get { return m_LoadSpan; }
+			set { m_LoadSpan = value; }
 		}
 
 		public long TimeToLive
 		{
-			get => this.m_TimeToLive;
-		    set => this.m_TimeToLive = value;
+			get { return this.m_TimeToLive; }
+			set { this.m_TimeToLive = value; }
 		}
 		
 		public TimeToLiveBehavior TimeToLiveBehavior
 		{
-			get => this.m_TimeToLiveBehavior;
-		    set => this.m_TimeToLiveBehavior = value;
+			get { return this.m_TimeToLiveBehavior; }
+			set { this.m_TimeToLiveBehavior = value; }
 		}
 		
 		public long GetTimeToLive()
@@ -1809,8 +1827,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public LoadBehavior LoadBehavior
 		{
-			get => this.m_LoadBehavior;
-		    set => this.m_LoadBehavior = value;
+			get { return this.m_LoadBehavior; }
+			set { this.m_LoadBehavior = value; }
 		}
 
 		public LoadBehavior GetLoadBehavior()
@@ -1895,8 +1913,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual string CommitRegions
 		{
-			get => commitRegions;
-		    set => commitRegions = value;
+			get { return commitRegions; }
+			set { commitRegions = value; }
 		}
 
 		private bool fixedGetCommitRegions = false;
@@ -1930,8 +1948,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual string SourceClass
 		{
-			get => m_SourceClass;
-		    set => m_SourceClass = value;
+			get { return m_SourceClass; }
+			set { m_SourceClass = value; }
 		}
 
 		public virtual IClassMap GetSourceClassMap()
@@ -1961,14 +1979,14 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		public virtual string DocSource
 		{
-			get => m_DocSource;
-		    set => m_DocSource = value;
+			get { return m_DocSource; }
+			set { m_DocSource = value; }
 		}
 
 		public virtual string DocElement
 		{
-			get => m_DocElement;
-		    set => m_DocElement = value;
+			get { return m_DocElement; }
+			set { m_DocElement = value; }
 		}
 		
 		public virtual string  GetDocElement()
@@ -1981,8 +1999,8 @@ namespace Puzzle.NPersist.Framework.Mapping
 		
 		public virtual string DocRoot
 		{
-			get => m_DocRoot;
-		    set => m_DocRoot = value;
+			get { return m_DocRoot; }
+			set { m_DocRoot = value; }
 		}
 				
 		public virtual string GetDocRoot()
@@ -2005,19 +2023,22 @@ namespace Puzzle.NPersist.Framework.Mapping
 			}
 		}
 
-		public virtual void SetDocSourceMap(ISourceMap value) => m_DocSource = value.Name;
-
-	    public virtual DocClassMapMode DocClassMapMode
+		public virtual void SetDocSourceMap(ISourceMap value)
 		{
-			get => m_DocClassMapMode;
-	        set => m_DocClassMapMode = value;
-	    }
+			m_DocSource = value.Name;
+		}
+		
+		public virtual DocClassMapMode DocClassMapMode
+		{
+			get { return m_DocClassMapMode; }
+			set { m_DocClassMapMode = value; }
+		}
 
 		
 		public virtual string DocParentProperty
 		{
-			get => m_DocParentProperty;
-		    set => m_DocParentProperty = value;
+			get { return m_DocParentProperty; }
+			set { m_DocParentProperty = value; }
 		}
 
 				
@@ -2431,9 +2452,12 @@ namespace Puzzle.NPersist.Framework.Mapping
 
 		#region IMap
 
-		public override string GetKey() => m_DomainMap.Name + "." + this.Name;
+		public override string GetKey()
+		{
+			return m_DomainMap.Name + "." + this.Name;
+		}
 
-	    #endregion
+		#endregion
 
 		#region IFixate
 

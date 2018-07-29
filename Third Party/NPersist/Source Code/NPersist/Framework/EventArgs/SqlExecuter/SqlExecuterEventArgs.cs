@@ -42,26 +42,26 @@ namespace Puzzle.NPersist.Framework.EventArguments
 
 		public string Sql
 		{
-			get => m_Sql;
-		    set => m_Sql = value;
+			get { return m_Sql; }
+			set { m_Sql = value; }
 		}
 
 		public IDataSource DataSource
 		{
-			get => m_DataSource;
-		    set => m_DataSource = value;
+			get { return m_DataSource; }
+			set { m_DataSource = value; }
 		}
 
 		public IList Parameters
 		{
-			get => m_Parameters;
-		    set => m_Parameters = value;
+			get { return m_Parameters; }
+			set { m_Parameters = value; }
 		}
 
 		public bool PostPoned
 		{
-			get => m_PostPoned;
-		    set => m_PostPoned = value;
+			get { return m_PostPoned; }
+			set { m_PostPoned = value; }
 		}
 
 	}

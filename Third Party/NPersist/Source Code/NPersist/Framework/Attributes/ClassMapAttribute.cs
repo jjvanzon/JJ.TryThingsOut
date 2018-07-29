@@ -61,122 +61,122 @@ namespace Puzzle.NPersist.Framework.Attributes
 
 		public virtual string Source
 		{
-			get => m_Source;
-		    set => m_Source = value;
+			get { return m_Source; }
+			set { m_Source = value; }
 		}
 
 		public virtual string Table
 		{
-			get => m_Table;
-		    set => m_Table = value;
+			get { return m_Table; }
+			set { m_Table = value; }
 		}
 
 		public virtual string IdentitySeparator
 		{
-			get => m_IdentitySeparator;
-		    set => m_IdentitySeparator = value;
+			get { return m_IdentitySeparator; }
+			set { m_IdentitySeparator = value; }
 		}
 
 		public virtual string KeySeparator
 		{
-			get => m_KeySeparator;
-		    set => m_KeySeparator = value;
+			get { return m_KeySeparator; }
+			set { m_KeySeparator = value; }
 		}
 
 		public virtual string TypeValue
 		{
-			get => m_TypeValue;
-		    set => m_TypeValue = value;
+			get { return m_TypeValue; }
+			set { m_TypeValue = value; }
 		}
 
 		public virtual string TypeColumn
 		{
-			get => m_TypeColumn;
-		    set => m_TypeColumn = value;
+			get { return m_TypeColumn; }
+			set { m_TypeColumn = value; }
 		}
 
 		public virtual MergeBehaviorType MergeBehavior
 		{
-			get => m_MergeBehavior;
-		    set => m_MergeBehavior = value;
+			get { return m_MergeBehavior; }
+			set { m_MergeBehavior = value; }
 		}
 
 		public virtual RefreshBehaviorType RefreshBehavior
 		{
-			get => m_RefreshBehavior;
-		    set => m_RefreshBehavior = value;
+			get { return m_RefreshBehavior; }
+			set { m_RefreshBehavior = value; }
 		}
 
 		public virtual LoadBehavior ListCountLoadBehavior
 		{
-			get => m_ListCountLoadBehavior;
-		    set => m_ListCountLoadBehavior = value;
+			get { return m_ListCountLoadBehavior; }
+			set { m_ListCountLoadBehavior = value; }
 		}
 
 		public virtual InheritanceType InheritanceType
 		{
-			get => m_InheritanceType;
-		    set => m_InheritanceType = value;
+			get { return m_InheritanceType; }
+			set { m_InheritanceType = value; }
 		}
 
 		public virtual bool IsReadOnly
 		{
-			get => m_IsReadOnly;
-		    set => m_IsReadOnly = value;
+			get { return m_IsReadOnly; }
+			set { m_IsReadOnly = value; }
 		}
 
 		public virtual OptimisticConcurrencyBehaviorType UpdateOptimisticConcurrencyBehavior
 		{
-			get => m_UpdateOptimisticConcurrencyBehavior;
-		    set => m_UpdateOptimisticConcurrencyBehavior = value;
+			get { return m_UpdateOptimisticConcurrencyBehavior; }
+			set { m_UpdateOptimisticConcurrencyBehavior = value; }
 		}
 
 		public virtual OptimisticConcurrencyBehaviorType DeleteOptimisticConcurrencyBehavior
 		{
-			get => m_DeleteOptimisticConcurrencyBehavior;
-		    set => m_DeleteOptimisticConcurrencyBehavior = value;
+			get { return m_DeleteOptimisticConcurrencyBehavior; }
+			set { m_DeleteOptimisticConcurrencyBehavior = value; }
 		}
 				
 		public ValidationMode ValidationMode
 		{
-			get => this.m_ValidationMode;
-		    set => this.m_ValidationMode = value;
+			get { return this.m_ValidationMode; }
+			set { this.m_ValidationMode = value; }
 		}
 
 		public virtual string ValidateMethod
 		{
-			get => m_ValidateMethod;
-		    set => m_ValidateMethod = value;
+			get { return m_ValidateMethod; }
+			set { m_ValidateMethod = value; }
 		}
 
 		public virtual string LoadSpan
 		{
-			get => m_LoadSpan;
-		    set => m_LoadSpan = value;
+			get { return m_LoadSpan; }
+			set { m_LoadSpan = value; }
 		}
 
 		public long TimeToLive
 		{
-			get => this.m_TimeToLive;
-		    set => this.m_TimeToLive = value;
+			get { return this.m_TimeToLive; }
+			set { this.m_TimeToLive = value; }
 		}
 		
 		public TimeToLiveBehavior TimeToLiveBehavior
 		{
-			get => this.m_TimeToLiveBehavior;
-		    set => this.m_TimeToLiveBehavior = value;
+			get { return this.m_TimeToLiveBehavior; }
+			set { this.m_TimeToLiveBehavior = value; }
 		}
 
 		public LoadBehavior LoadBehavior
 		{
-			get => this.m_LoadBehavior;
-		    set => this.m_LoadBehavior = value;
+			get { return this.m_LoadBehavior; }
+			set { this.m_LoadBehavior = value; }
 		}
 
 		public virtual string CommitRegions
 		{
-			get => commitRegions;
-		    set => commitRegions = value;
+			get { return commitRegions; }
+			set { commitRegions = value; }
 		}
 
 		#endregion
@@ -185,8 +185,8 @@ namespace Puzzle.NPersist.Framework.Attributes
 
 		public virtual string SourceClass
 		{
-			get => m_SourceClass;
-		    set => m_SourceClass = value;
+			get { return m_SourceClass; }
+			set { m_SourceClass = value; }
 		}
 
 		#endregion
@@ -195,33 +195,33 @@ namespace Puzzle.NPersist.Framework.Attributes
 
 		public virtual string DocSource
 		{
-			get => m_DocSource;
-		    set => m_DocSource = value;
+			get { return m_DocSource; }
+			set { m_DocSource = value; }
 		}
 
 		public virtual string DocElement
 		{
-			get => m_DocElement;
-		    set => m_DocElement = value;
+			get { return m_DocElement; }
+			set { m_DocElement = value; }
 		}
 		
 		public virtual string DocRoot
 		{
-			get => m_DocRoot;
-		    set => m_DocRoot = value;
+			get { return m_DocRoot; }
+			set { m_DocRoot = value; }
 		}
 		
 		public virtual DocClassMapMode DocClassMapMode
 		{
-			get => m_DocClassMapMode;
-		    set => m_DocClassMapMode = value;
+			get { return m_DocClassMapMode; }
+			set { m_DocClassMapMode = value; }
 		}
 
 		
 		public virtual string DocParentProperty
 		{
-			get => m_DocParentProperty;
-		    set => m_DocParentProperty = value;
+			get { return m_DocParentProperty; }
+			set { m_DocParentProperty = value; }
 		}
 
 		#endregion

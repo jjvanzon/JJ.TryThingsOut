@@ -18,18 +18,24 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 	/// </summary>
 	public class SqlAliasSelectListItem : SqlSelectListItem
 	{
-		public SqlAliasSelectListItem(SqlSelectClause sqlSelectClause, SqlColumnAlias sqlColumnAlias) : base(sqlSelectClause) => this.sqlColumnAlias = sqlColumnAlias;
+		public SqlAliasSelectListItem(SqlSelectClause sqlSelectClause, SqlColumnAlias sqlColumnAlias) : base(sqlSelectClause)
+		{
+			this.sqlColumnAlias = sqlColumnAlias;
+		}
 
-	    public SqlAliasSelectListItem(SqlSelectClause sqlSelectClause, SqlExpressionAlias sqlExpressionAlias) : base(sqlSelectClause) => this.sqlExpressionAlias = sqlExpressionAlias;
+		public SqlAliasSelectListItem(SqlSelectClause sqlSelectClause, SqlExpressionAlias sqlExpressionAlias) : base(sqlSelectClause)
+		{
+			this.sqlExpressionAlias = sqlExpressionAlias;
+		}
 
-	    #region Property  SqlColumnAlias 
+		#region Property  SqlColumnAlias 
 		
 		private SqlColumnAlias sqlColumnAlias ;
 		
 		public SqlColumnAlias SqlColumnAlias 
 		{
-			get => this.sqlColumnAlias;
-		    set => this.sqlColumnAlias  = value;
+			get { return this.sqlColumnAlias ; }
+			set { this.sqlColumnAlias  = value; }
 		}
 		
 		#endregion
@@ -40,8 +46,8 @@ namespace Puzzle.NPersist.Framework.Sql.Dom
 		
 		public SqlExpressionAlias SqlExpressionAlias
 		{
-			get => this.sqlExpressionAlias;
-		    set => this.sqlExpressionAlias = value;
+			get { return this.sqlExpressionAlias; }
+			set { this.sqlExpressionAlias = value; }
 		}
 		
 		#endregion

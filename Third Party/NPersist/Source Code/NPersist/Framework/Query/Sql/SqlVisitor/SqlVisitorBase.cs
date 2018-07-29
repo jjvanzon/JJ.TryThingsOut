@@ -29,14 +29,17 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 		
 		private StringBuilder sqlBuilder = new StringBuilder() ;
 		
-		public string Sql => this.sqlBuilder.ToString();
-
-	    #endregion
+		public string Sql
+		{
+			get { return this.sqlBuilder.ToString() ; }
+		}
+		
+		#endregion
 
 		public StringBuilder SqlBuilder
 		{
-			get => this.sqlBuilder;
-		    set => this.sqlBuilder = value;
+			get { return this.sqlBuilder; }
+			set { this.sqlBuilder = value; }
 		}
 
 		#region Template
@@ -47,8 +50,8 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 		
 		public virtual string LeftEncapsulator
 		{
-			get => this.leftEncapsulator;
-		    set => this.leftEncapsulator = value;
+			get { return this.leftEncapsulator; }
+			set { this.leftEncapsulator = value; }
 		}
 		
 		#endregion
@@ -59,8 +62,8 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 		
 		public virtual string RightEncapsulator
 		{
-			get => this.rightEncapsulator;
-		    set => this.rightEncapsulator = value;
+			get { return this.rightEncapsulator; }
+			set { this.rightEncapsulator = value; }
 		}
 		
 		#endregion
@@ -71,8 +74,8 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 		
 		public virtual string ColumnAliasKeyword
 		{
-			get => this.columnAliasKeyword;
-		    set => this.columnAliasKeyword = value;
+			get { return this.columnAliasKeyword; }
+			set { this.columnAliasKeyword = value; }
 		}
 		
 		#endregion
@@ -83,8 +86,8 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 		
 		public virtual string TableAliasKeyword
 		{
-			get => this.tableAliasKeyword;
-		    set => this.tableAliasKeyword = value;
+			get { return this.tableAliasKeyword; }
+			set { this.tableAliasKeyword = value; }
 		}
 		
 		#endregion
@@ -251,9 +254,12 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 				sqlBuilder.Append(" " + this.ColumnAliasKeyword + Encapsulate(alias));
 		}
 
-		public virtual void Visiting(SqlAllColumnsSelectListItem allColumnsSelectListItem) => sqlBuilder.Append("*");
+		public virtual void Visiting(SqlAllColumnsSelectListItem allColumnsSelectListItem)
+		{
+			sqlBuilder.Append("*");
+		}
 
-	    public virtual void Visiting(SqlAllColumnsInTableSelectListItem allColumnsInTableSelectListItem)
+		public virtual void Visiting(SqlAllColumnsInTableSelectListItem allColumnsInTableSelectListItem)
 		{
 		}
 
@@ -279,11 +285,17 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 			sqlBuilder.Append(Encapsulate(alias));
 		}
 
-		public virtual void Visiting(SqlTableAliasReference tableAliasReference) => sqlBuilder.Append(EncapsulateTable(tableAliasReference.SqlTableAlias.Alias));
+		public virtual void Visiting(SqlTableAliasReference tableAliasReference)
+		{
+			sqlBuilder.Append(EncapsulateTable(tableAliasReference.SqlTableAlias.Alias));
+		}
 
-	    public virtual void Visiting(SqlExpressionAliasReference expressionAliasReference) => sqlBuilder.Append(Encapsulate(expressionAliasReference.SqlExpressionAlias.Alias));
+		public virtual void Visiting(SqlExpressionAliasReference expressionAliasReference)
+		{
+			sqlBuilder.Append(Encapsulate(expressionAliasReference.SqlExpressionAlias.Alias));			
+		}
 
-	    public virtual void Visiting(SqlAliasTableSource aliasTableSource)
+		public virtual void Visiting(SqlAliasTableSource aliasTableSource)
 		{
 			//
 		}
@@ -403,15 +415,27 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 				inPredicateItem.SqlSelectStatement.Accept(this); 
 		}
 
-		public virtual void Visiting(SqlBooleanLiteral booleanLiteral) => sqlBuilder.Append(EncapsulateBoolean(FormatBoolean(booleanLiteral.BooleanValue)));
+		public virtual void Visiting(SqlBooleanLiteral booleanLiteral)
+		{
+			sqlBuilder.Append(EncapsulateBoolean(FormatBoolean(booleanLiteral.BooleanValue)));						
+		}
 
-	    public virtual void Visiting(SqlNumericLiteral numericLiteral) => sqlBuilder.Append(EncapsulateNumeric(FormatNumeric(numericLiteral.DecimalValue)));
+		public virtual void Visiting(SqlNumericLiteral numericLiteral)
+		{
+			sqlBuilder.Append(EncapsulateNumeric(FormatNumeric(numericLiteral.DecimalValue)));						
+		}
 
-	    public virtual void Visiting(SqlStringLiteral stringLiteral) => sqlBuilder.Append(EncapsulateString(FormatString(stringLiteral.StringValue)));
+		public virtual void Visiting(SqlStringLiteral stringLiteral)
+		{
+			sqlBuilder.Append(EncapsulateString(FormatString(stringLiteral.StringValue)));			
+		}
 
-	    public virtual void Visiting(SqlDateTimeLiteral dateTimeLiteral) => sqlBuilder.Append(EncapsulateDateTime(FormatDateTime(dateTimeLiteral.DateTimeValue)));
+		public virtual void Visiting(SqlDateTimeLiteral dateTimeLiteral)
+		{
+			sqlBuilder.Append(EncapsulateDateTime(FormatDateTime(dateTimeLiteral.DateTimeValue)));			
+		}
 
-	    public virtual void Visiting(SqlCompareOperator compareOperator)
+		public virtual void Visiting(SqlCompareOperator compareOperator)
 		{
 			switch (compareOperator.SqlCompareOperatorType)
 			{
@@ -474,9 +498,12 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 			sqlBuilder.Append(", ");
 		}
 
-		public virtual void Visiting(SqlParameter parameter) => sqlBuilder.Append(parameter.GetName());
+		public virtual void Visiting(SqlParameter parameter)
+		{
+			sqlBuilder.Append(parameter.GetName());			
+		}
 
-	    public void Visiting(SqlDistinctFunction distinctFunction)
+		public void Visiting(SqlDistinctFunction distinctFunction)
 		{
 			if (distinctFunction.SqlExpression != null)
 			{
@@ -573,9 +600,12 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 			
 		}
 
-		public virtual void Visiting(SqlDeleteClause deleteClause) => sqlBuilder.Append("Delete");
+		public virtual void Visiting(SqlDeleteClause deleteClause)
+		{
+			sqlBuilder.Append("Delete");				
+		}
 
-	    public virtual void Visiting(SqlInsertStatement insertStatement)
+		public virtual void Visiting(SqlInsertStatement insertStatement)
 		{
 			insertStatement.SqlInsertClause.Accept(this);
 			if (insertStatement.DefaultValues)
@@ -604,13 +634,22 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 			}
 		}
 
-		public virtual void Visiting(SqlInsertClause insertClause) => sqlBuilder.Append("Insert Into " + EncapsulateTable(insertClause.SqlTable.Name));
+		public virtual void Visiting(SqlInsertClause insertClause)
+		{
+			sqlBuilder.Append("Insert Into " + EncapsulateTable(insertClause.SqlTable.Name));
+		}
 
-	    public virtual void Visiting(SqlNullValue nullValue) => sqlBuilder.Append("Null");
+		public virtual void Visiting(SqlNullValue nullValue)
+		{
+			sqlBuilder.Append("Null");			
+		}
 
-	    public virtual void Visiting(SqlDefaultValue defaultValue) => sqlBuilder.Append("Default");
+		public virtual void Visiting(SqlDefaultValue defaultValue)
+		{
+			sqlBuilder.Append("Default");			
+		}
 
-	    public virtual void Visiting(SqlUpdateStatement updateStatement)
+		public virtual void Visiting(SqlUpdateStatement updateStatement)
 		{
 			updateStatement.SqlUpdateClause.Accept(this);
 			sqlBuilder.Append(" Set ");
@@ -630,9 +669,14 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 			updateStatement.SqlWhereClause.Accept(this);			
 		}
 
-		public virtual void Visiting(SqlUpdateClause updateClause) => sqlBuilder.Append("Update " + EncapsulateTable(updateClause.SqlTable.Name));
+		public virtual void Visiting(SqlUpdateClause updateClause)
+		{
+			sqlBuilder.Append("Update " + EncapsulateTable(updateClause.SqlTable.Name));
+			
+		}
 
-	    public virtual void Visiting(SqlJoinTableSource sqlJoinTableSource)
+
+		public virtual void Visiting(SqlJoinTableSource sqlJoinTableSource)
 		{
 			switch (sqlJoinTableSource.SqlJoinType)
 			{
@@ -747,15 +791,27 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 			
 		}
 
-		public virtual void Visited(SqlAllColumnsSelectListItem allColumnsSelectListItem) => sqlBuilder.Append(", ");
+		public virtual void Visited(SqlAllColumnsSelectListItem allColumnsSelectListItem)
+		{
+			sqlBuilder.Append(", ");
+		}
 
-	    public virtual void Visited(SqlAllColumnsInTableSelectListItem allColumnsInTableSelectListItem) => sqlBuilder.Append(".*, ");
+		public virtual void Visited(SqlAllColumnsInTableSelectListItem allColumnsInTableSelectListItem)
+		{
+			sqlBuilder.Append(".*, ");
+		}
 
-	    public virtual void Visited(SqlAliasSelectListItem aliasSelectListItem) => sqlBuilder.Append(", ");
+		public virtual void Visited(SqlAliasSelectListItem aliasSelectListItem)
+		{
+			sqlBuilder.Append(", ");
+		}
 
-	    public virtual void Visited(SqlExpressionSelectListItem expressionSelectListItem) => sqlBuilder.Append(", ");
+		public virtual void Visited(SqlExpressionSelectListItem expressionSelectListItem)
+		{
+			sqlBuilder.Append(", ");
+		}
 
-	    public virtual void Visited(SqlColumnAliasReference columnAliasReference)
+		public virtual void Visited(SqlColumnAliasReference columnAliasReference)
 		{
 			//
 		}
@@ -967,9 +1023,13 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
 
 		#endregion
 
-		protected virtual string Encapsulate(string content) => this.LeftEncapsulator + content + this.RightEncapsulator;
+		protected virtual string Encapsulate(string content)
+		{
+			return this.LeftEncapsulator + content + this.RightEncapsulator;		
+		}
 
-	    protected virtual string EncapsulateTable(string content)
+
+        protected virtual string EncapsulateTable(string content)
         {
             string[] parts = content.Split(".".ToCharArray());
             StringBuilder result = new StringBuilder();
@@ -979,20 +1039,45 @@ namespace Puzzle.NPersist.Framework.Sql.Visitor
             return result.ToString();
         }
 
-		protected virtual string EncapsulateString(string content) => "'" + content + "'";
+		protected virtual string EncapsulateString(string content)
+		{
+			return "'" + content + "'";								
+		}
 
-	    protected virtual string EncapsulateDateTime(string content) => "'" + content + "'";
+		protected virtual string EncapsulateDateTime(string content)
+		{
+			return "'" + content + "'";								
+		}
 
-	    protected virtual string EncapsulateBoolean(string content) => content;
+		protected virtual string EncapsulateBoolean(string content)
+		{
+			return content;								
+		}
 
-	    protected virtual string EncapsulateNumeric(string content) => content;
+		protected virtual string EncapsulateNumeric(string content)
+		{
+			return content;								
+		}
 
-	    protected virtual string FormatString(string content) => content.Replace("'", "''");
+		protected virtual string FormatString(string content)
+		{
+			return content.Replace("'", "''");								
+		}
 
-	    protected virtual string FormatDateTime(DateTime content) => content.ToString("yyyy-MM-dd HH:mm:ss");
+		protected virtual string FormatDateTime(DateTime content)
+		{
+			return content.ToString("yyyy-MM-dd HH:mm:ss");								
+		}
 
-	    protected virtual string FormatBoolean(bool content) => content.ToString(System.Globalization.CultureInfo.InvariantCulture);
+		protected virtual string FormatBoolean(bool content)
+		{
+			return content.ToString(System.Globalization.CultureInfo.InvariantCulture);								
+		}
 
-	    protected virtual string FormatNumeric(decimal content) => content.ToString(System.Globalization.CultureInfo.InvariantCulture);
+		protected virtual string FormatNumeric(decimal content)
+		{
+			return content.ToString(System.Globalization.CultureInfo.InvariantCulture);								
+		}
+
 	}
 }

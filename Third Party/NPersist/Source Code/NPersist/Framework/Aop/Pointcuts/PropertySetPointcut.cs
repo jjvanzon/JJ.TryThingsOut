@@ -30,9 +30,18 @@ namespace Puzzle.NPersist.Framework.Aop
             return arr;
         }
 
-        public PropertySetPointcut(IContext context) => this.context = context;
+        public PropertySetPointcut(IContext context)
+        {
+            this.context = context;
+        }
 
-        public IList Interceptors => interceptors;
+        public IList Interceptors
+        {
+            get
+            {
+                return interceptors;
+            }
+        }
 
         public bool IsMatch(MethodBase method, Type type)
         {
@@ -51,13 +60,22 @@ namespace Puzzle.NPersist.Framework.Aop
         private IList targets = new ArrayList();
         public IList Targets
         {
-            get => targets;
-            set => targets = value;
+            get
+            {
+                return targets; ;
+            }
+            set
+            {
+                targets = value;
+            }
         }
 
         public string Name
         {
-            get => "";
+            get
+            {
+                return "";
+            }
             set
             {
                 ;
