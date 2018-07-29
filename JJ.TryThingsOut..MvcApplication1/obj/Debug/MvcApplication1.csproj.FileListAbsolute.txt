@@ -1,5 +1,0 @@
-C:\Documents and Settings\Jan-Joost van Zon\Desktop\MvcApplication1\bin\MvcApplication1.dll
-C:\Documents and Settings\Jan-Joost van Zon\Desktop\MvcApplication1\bin\MvcApplication1.pdb
-C:\Documents and Settings\Jan-Joost van Zon\Desktop\MvcApplication1\obj\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\Jan-Joost van Zon\Desktop\MvcApplication1\obj\Debug\MvcApplication1.dll
-C:\Documents and Settings\Jan-Joost van Zon\Desktop\MvcApplication1\obj\Debug\MvcApplication1.pdb

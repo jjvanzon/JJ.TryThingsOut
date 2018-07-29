@@ -1,8 +1,0 @@
-D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model.EntityFrameworkMappings.Original\bin\Debug\TryEntityFramework.Model.EntityFrameworkMappings.Original.dll.config
-D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model.EntityFrameworkMappings.Original\bin\Debug\TryEntityFramework.Model.EntityFrameworkMappings.Original.dll
-D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model.EntityFrameworkMappings.Original\bin\Debug\TryEntityFramework.Model.EntityFrameworkMappings.Original.pdb
-D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model.EntityFrameworkMappings.Original\bin\Debug\EntityFramework.dll
-D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model.EntityFrameworkMappings.Original\bin\Debug\EntityFramework.xml
-D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model.EntityFrameworkMappings.Original\obj\Debug\TryEntityFramework.Model.EntityFrameworkMappings.Original.csprojResolveAssemblyReference.cache
-D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model.EntityFrameworkMappings.Original\obj\Debug\TryEntityFramework.Model.EntityFrameworkMappings.Original.dll
-D:\JJ\Dev\1. Products\2. Code\3. Try Things Out\TryEntityFramework\TryEntityFramework.Model.EntityFrameworkMappings.Original\obj\Debug\TryEntityFramework.Model.EntityFrameworkMappings.Original.pdb
