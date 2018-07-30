@@ -57,6 +57,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helpers\CollectionExtensions_Recursive_Ancestors.cs" />
+    <Compile Include="Helpers\ExceptionHelper.cs" />
+    <Compile Include="Helpers\AssertInconclusiveHelper.cs" />
     <Compile Include="Test_EntityFrameworkMappings_Temp.cs" />
     <Compile Include="Test_EntityFrameworkMappings.cs" />
     <Compile Include="Test_EntityFrameworkMappings_Original.cs" />
