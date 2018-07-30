@@ -8,7 +8,10 @@ namespace TryEntityFramework.Model.EntityFrameworkMappings.Temp
         public TryEntityFrameworkDBEntities(string nameOrConnectionString)
             : base(nameOrConnectionString) { }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder) => throw new UnintentionalCodeFirstException();
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }
 
         public DbSet<Thing> Things { get; set; }
     }
