@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -50,6 +51,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helpers\AssertInconclusiveHelper.cs" />
+    <Compile Include="Helpers\CollectionExtensions_Recursive_Ancestors.cs" />
+    <Compile Include="Helpers\ExceptionHelper.cs" />
     <Compile Include="TryNPersistTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

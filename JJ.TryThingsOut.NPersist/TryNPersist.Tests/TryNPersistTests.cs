@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Puzzle.NPersist.Framework;
 using TryNPersist.Model;
-using Puzzle.NPersist.Framework.Mapping;
+
 
 namespace TryNPersist.Tests
 {
@@ -16,7 +15,7 @@ namespace TryNPersist.Tests
             using (IContext context = GetContext())
             {
                 //Ask the context to create a new employee
-                Thing entity = (Thing)context.CreateObject(typeof(Thing));
+                var entity = (Thing)context.CreateObject(typeof(Thing));
 
                 entity.Name = "Thing1";
 
@@ -28,14 +27,14 @@ namespace TryNPersist.Tests
 
         private IContext GetContext()
         {
-
             //Create a context object passing the assembly
             //containing the domain model to the constructor
-            string mapName = "TryNPersist.Model.TryNPersist.npersist";
+            var mapName = "TryNPersist.Model.TryNPersist.npersist";
             IContext context = new Context(typeof(Thing).Assembly, mapName);
 
             //Set the connection string to the database
-            context.SetConnectionString(@"Data Source=.\SQLEXPRESS;Initial Catalog=TryNPersistDB_DEV;User ID=development;Password=development;Persist Security Info=True");
+            context.SetConnectionString(
+                @"Data Source=.\SQLEXPRESS;Initial Catalog=TryNPersistDB_DEV;User ID=development;Password=development;Persist Security Info=True");
 
             //return the new context
             return context;
@@ -56,6 +55,5 @@ namespace TryNPersist.Tests
         //    //return the new context
         //    return context;
         //}
-
     }
 }
