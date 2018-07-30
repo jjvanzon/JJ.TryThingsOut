@@ -17,18 +17,6 @@ namespace TryNPersist.Tests.Helpers
             return destHashSet;
         }
 
-        public static IEnumerable<T> SelectAncestors<T>(this T sourceItem, Func<T, T> selector)
-        {
-            if (sourceItem == null) throw new ArgumentNullException(nameof(sourceItem));
-            if (selector == null) throw new ArgumentNullException(nameof(selector));
-
-            var destHashSet = new HashSet<T>();
-
-            SelectAncestors(sourceItem, selector, destHashSet);
-
-            return destHashSet;
-        }
-
         private static void SelectAncestors<T>(T sourceItem, Func<T, T> selector, HashSet<T> destHashSet)
         {
             T ancestor = sourceItem;

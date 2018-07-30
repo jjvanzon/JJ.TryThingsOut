@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Puzzle.NPersist.Framework.Exceptions;
@@ -38,18 +37,6 @@ namespace TryNPersist.Tests.Helpers
             catch (TargetInvocationException ex) when (ex.InnerException is MappingException)
             {
                 AssertNPersistInconclusive(ex);
-            }
-            catch (SqlException ex)
-            {
-                AssertInconclusive(ex);
-            }
-            catch (Exception ex) when (ex.InnerException is SqlException)
-            {
-                AssertInconclusive(ex);
-            }
-            catch (Exception ex) when (ExceptionHelper.HasExceptionOrInnerExceptionsOfType<SqlException>(ex))
-            {
-                AssertInconclusive(ex);
             }
             catch (Exception ex) when (ExceptionHelper.HasExceptionOrInnerExceptionsOfType<TimeoutException>(ex))
             {

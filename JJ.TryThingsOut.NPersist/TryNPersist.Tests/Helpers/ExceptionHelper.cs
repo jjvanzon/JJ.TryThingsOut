@@ -33,20 +33,6 @@ namespace TryNPersist.Tests.Helpers
             return message;
         }
 
-        public static Exception GetInnermostException(Exception exception)
-        {
-            const int maxIterations = 100;
-
-            int i = 0;
-            while (exception.InnerException != null && i < maxIterations)
-            {
-                exception = exception.InnerException;
-                i++;
-            }
-
-            return exception;
-        }
-
         public static bool HasExceptionOrInnerExceptionsOfType<T>(Exception exception)
         {
             if (exception == null) throw new ArgumentNullException(nameof(exception));

@@ -1,7 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Puzzle.NPersist.Framework;
 using TryNPersist.Model;
+using TryNPersist.Tests.Helpers;
 
+// ReSharper disable UnusedVariable
 
 namespace TryNPersist.Tests
 {
@@ -10,20 +12,22 @@ namespace TryNPersist.Tests
     {
         [TestMethod]
         public void Test_TryNPersist_Create()
-        {
-            //Create a context object
-            using (IContext context = GetContext())
-            {
-                //Ask the context to create a new employee
-                var entity = (Thing)context.CreateObject(typeof(Thing));
+            => AssertInconclusiveHelper.WithConnectionInconclusiveAssertion(
+                () =>
+                {
+                    //Create a context object
+                    using (IContext context = GetContext())
+                    {
+                        //Ask the context to create a new employee
+                        var entity = (Thing)context.CreateObject(typeof(Thing));
 
-                entity.Name = "Thing1";
+                        entity.Name = "Thing1";
 
-                context.Commit();
+                        context.Commit();
 
-                string id = entity.Id.ToString();
-            }
-        }
+                        string id = entity.Id.ToString();
+                    }
+                });
 
         private IContext GetContext()
         {
