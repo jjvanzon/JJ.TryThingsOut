@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "JJ.TryThingsOut.WindowsInstaller", "JJ.TryThingsOut.WindowsInstaller.vdproj", "{1738B56D-E36D-4D40-A8B6-AA65B39F53BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1738B56D-E36D-4D40-A8B6-AA65B39F53BF}.Debug|Default.ActiveCfg = Debug
+		{1738B56D-E36D-4D40-A8B6-AA65B39F53BF}.Debug|Default.Build.0 = Debug
+		{1738B56D-E36D-4D40-A8B6-AA65B39F53BF}.Release|Default.ActiveCfg = Release
+		{1738B56D-E36D-4D40-A8B6-AA65B39F53BF}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F71BE2A-D0AC-47B6-988F-47010C3960BF}
+	EndGlobalSection
+EndGlobal
