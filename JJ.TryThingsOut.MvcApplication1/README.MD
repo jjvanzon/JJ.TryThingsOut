@@ -1,3 +1,5 @@
+Vergelijking web tech op werk met MVC
+
 - Database
    > Zelfde
 - Model
@@ -44,9 +46,9 @@
 
 -----
 
-www.typhone.nl/accessoires/nokia/1200
-www.typhone.nl/module/8/merk/3
-www.typhone.nl/accessoires/nokia
+www.xxx.nl/accessoires/nokia/1200
+www.xxx.nl/module/8/merk/3
+www.xxx.nl/accessoires/nokia
 
 -----
 
