@@ -18,13 +18,28 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
+  <PropertyGroup Label="WiXDesignerProperties">
+    <MakeProjectLocalizable>True</MakeProjectLocalizable>
+    <CurrentUILanguage>0</CurrentUILanguage>
+    <SupportedUILanguages>1043</SupportedUILanguages>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StandardUI_neutral.wxl" />
+    <EmbeddedResource Include="StandardUI_nl-NL.wxl" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
   <Target Name="EnsureWixToolsetInstalled" Condition=" '$(WixTargetsImported)' != 'true' ">
     <Error Text="The WiX Toolset v3.11 (or newer) build tools must be installed to build this project. To download the WiX Toolset, see http://wixtoolset.org/releases/" />
+  </Target>
+  <Target Name="AfterBuild">
+    <RemoveDir Directories="$(IntermediateOutputPath)Harvested MST" Condition="'$(OutputType)'=='Package' OR '$(OutputType)'=='Module'" />
+    <MakeDir Directories="$(IntermediateOutputPath)Harvested MST" Condition="'$(OutputType)'=='Package' OR '$(OutputType)'=='Module'" />
+    <Exec Command="&quot;$(Wix)Bin\torch.exe&quot; -nologo -serr f &quot;$(OutputPath)$(OutputName).msi&quot; &quot;$(OutputPath)nl-NL\$(OutputName).msi&quot; -o &quot;$(IntermediateOutputPath)Harvested MST\nl-NL.mst&quot;" IgnoreExitCode="false" WorkingDirectory="$(MSBuildProjectDirectory)" Condition="('$(OutputType)'=='Package' OR '$(OutputType)'=='Module') AND Exists('$(OutputPath)$(OutputName).msi') AND Exists('$(OutputPath)nl-NL\$(OutputName).msi')" />
+    <Exec Command="&quot;$(MSBuildProjectDirectory)\Resources\vdwtool.exe&quot; -nologo -noconsole &quot;$(OutputPath)$(OutputName).msi&quot; &quot;$(IntermediateOutputPath)Harvested MST\nl-NL.mst&quot;" IgnoreExitCode="false" WorkingDirectory="$(MSBuildProjectDirectory)" Condition="('$(OutputType)'=='Package' OR '$(OutputType)'=='Module') AND Exists('$(OutputPath)$(OutputName).msi') AND Exists('$(IntermediateOutputPath)Harvested MST\nl-NL.mst')" />
   </Target>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
