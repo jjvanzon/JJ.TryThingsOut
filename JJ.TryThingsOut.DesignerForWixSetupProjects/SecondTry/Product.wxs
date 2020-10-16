@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="*" Name="JJ.TryThingsOut.DesignerForWixSetupProjects.SecondTry" Language="!(loc.ID)" Version="1.0.0.0" Manufacturer="" UpgradeCode="c6d5363b-7fac-4915-aa6f-cdca259a7210">
+  <Product Id="*" Name="JJ.TryThingsOut.DesignerForWixSetupProjects.SecondTry" Language="!(loc.ID)" Version="1.0.0.0" Manufacturer="Jan Joost van Zon" UpgradeCode="c6d5363b-7fac-4915-aa6f-cdca259a7210">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Languages="0,1043" />
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate />

@@ -61,7 +61,7 @@
   <String Id="StdUI_ButtonFinish"><![CDATA[&Finish]]></String>
   <!-- WelcomeDlg Dialog -->
   <String Id="StdUI_Welcome_Title"><![CDATA[[ProductName]]]></String>
-  <String Id="StdUI_Welcome_CopyrightWarningText"><![CDATA[WARNING: This computer program is protected by copyright law and international treaties. Unauthorized duplication or distribution of this program, or any portion of it, may result in severe civil or criminal penalties, and will be prosecuted to the maximum extent possible under the law.]]></String>
+  <String Id="StdUI_Welcome_CopyrightWarningText"><![CDATA[WAARSCHUWING: This computer program is protected by copyright law and international treaties. Unauthorized duplication or distribution of this program, or any portion of it, may result in severe civil or criminal penalties, and will be prosecuted to the maximum extent possible under the law.]]></String>
   <String Id="StdUI_Welcome_BannerText"><![CDATA[Welcome to the [ProductName] Setup Wizard]]></String>
   <String Id="StdUI_Welcome_WelcomeText"><![CDATA[The installer will guide you through the steps required to install [ProductName] on your computer.
 
