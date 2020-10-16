@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "JJ.TryThingsOut.DesignerForVisualStudioWixSetupProjects", "JJ.TryThingsOut.DesignerForVisualStudioWixSetupProjects.wixproj", "{176234FD-A370-426D-A655-0F828734BAB8}"
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "JJ.TryThingsOut.DesignerForWixSetupProjects.FirstTry", "FirstTry\JJ.TryThingsOut.DesignerForWixSetupProjects.FirstTry.wixproj", "{176234FD-A370-426D-A655-0F828734BAB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
