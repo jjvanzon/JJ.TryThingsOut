@@ -25,10 +25,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Product.wxs" />
+    <Compile Include="StandardUI.wxs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="StandardUI_neutral.wxl" />
     <EmbeddedResource Include="StandardUI_nl-NL.wxl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\vdwtool.exe" />
+    <Content Include="Resources\WiXDefBannerBitmap.bmp" />
+    <Content Include="Resources\WiXNewFolderBtn.ico" />
+    <Content Include="Resources\WiXUpFolderBtn.ico" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />

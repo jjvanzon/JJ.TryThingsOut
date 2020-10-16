@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment Id="WelcomeDlg">
+    <UI Id="WelcomeDlg">
+      <Dialog Id="WelcomeForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_Welcome_Title)">
+        <Control Id="NextButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Welcome_ButtonNext)" TabSkip="no" Default="yes">
+          <Publish Event="EndDialog" Value="Return"><![CDATA[WelcomeForm_NextArgs=""]]></Publish>
+          <Publish Event="NewDialog" Value="[WelcomeForm_NextArgs]"><![CDATA[WelcomeForm_NextArgs<>""]]></Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Welcome_ButtonCancel)" TabSkip="no" Cancel="yes">
+          <Publish Event="SpawnDialog" Value="Cancel" />
+        </Control>
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Welcome_ButtonBack)" TabSkip="no">
+          <Condition Action="disable"><![CDATA[WelcomeForm_PrevArgs=""]]></Condition>
+          <Condition Action="enable"><![CDATA[WelcomeForm_PrevArgs<>""]]></Condition>
+          <Publish Event="NewDialog" Value="[WelcomeForm_PrevArgs]"><![CDATA[WelcomeForm_PrevArgs<>""]]></Publish>
+        </Control>
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="CopyrightWarningText" Type="Text" X="9" Y="186" Width="354" Height="66" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Welcome_CopyrightWarningText)" TabSkip="yes" NoPrefix="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_Welcome_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="WelcomeText" Type="Text" X="9" Y="63" Width="354" Height="114" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Welcome_WelcomeText)" TabSkip="yes" NoPrefix="yes" />
+      </Dialog>
+    </UI>
+    <InstallUISequence>
+      <Show Dialog="WelcomeForm" Sequence="1001"><![CDATA[Installed="" AND NOT RESUME]]></Show>
+    </InstallUISequence>
+  </Fragment>
+  <Fragment Id="FinishedDlg">
+    <UI Id="FinishedDlg">
+      <Dialog Id="FinishedForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_Finished_Title)">
+        <Control Id="CloseButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Finished_ButtonClose)" TabSkip="no" Default="yes" Cancel="yes">
+          <Publish Event="EndDialog" Value="Return"><![CDATA[1]]></Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Finished_ButtonCancel)" TabSkip="no" Disabled="yes" />
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Finished_ButtonBack)" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_Finished_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="BodyTextRemove" Type="Text" X="9" Y="63" Width="354" Height="138" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Finished_BodyTextRemove)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE<>""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE=""]]></Condition>
+        </Control>
+        <Control Id="UpdateText" Type="Text" X="9" Y="216" Width="354" Height="36" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Finished_UpdateText)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE=""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE<>""]]></Condition>
+        </Control>
+        <Control Id="BodyText" Type="Text" X="9" Y="63" Width="354" Height="138" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Finished_BodyText)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE=""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE<>""]]></Condition>
+        </Control>
+      </Dialog>
+    </UI>
+    <InstallUISequence>
+      <Show Dialog="FinishedForm" OnExit="success" />
+    </InstallUISequence>
+  </Fragment>
+  <Fragment Id="AdminWelcomeDlg">
+    <UI Id="AdminWelcomeDlg">
+      <Dialog Id="AdminWelcomeForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_AdminWelcome_Title)">
+        <Control Id="NextButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminWelcome_ButtonNext)" TabSkip="no" Default="yes">
+          <Publish Event="EndDialog" Value="Return"><![CDATA[AdminWelcomeForm_NextArgs=""]]></Publish>
+          <Publish Event="NewDialog" Value="[AdminWelcomeForm_NextArgs]"><![CDATA[AdminWelcomeForm_NextArgs<>""]]></Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminWelcome_ButtonCancel)" TabSkip="no" Cancel="yes">
+          <Publish Event="SpawnDialog" Value="Cancel" />
+        </Control>
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminWelcome_ButtonBack)" TabSkip="no">
+          <Condition Action="disable"><![CDATA[AdminWelcomeForm_PrevArgs=""]]></Condition>
+          <Condition Action="enable"><![CDATA[AdminWelcomeForm_PrevArgs<>""]]></Condition>
+          <Publish Event="NewDialog" Value="[AdminWelcomeForm_PrevArgs]"><![CDATA[AdminWelcomeForm_PrevArgs<>""]]></Publish>
+        </Control>
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_AdminWelcome_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="CopyrightWarningText" Type="Text" X="9" Y="186" Width="354" Height="66" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminWelcome_CopyrightWarningText)" TabSkip="yes" NoPrefix="yes" />
+        <Control Id="WelcomeText" Type="Text" X="9" Y="63" Width="354" Height="114" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminWelcome_WelcomeText)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[Installed="" AND NOT RESUME]]></Condition>
+          <Condition Action="hide"><![CDATA[Installed<>"" OR RESUME]]></Condition>
+        </Control>
+      </Dialog>
+    </UI>
+    <AdminUISequence>
+      <Show Dialog="AdminWelcomeForm" Sequence="1001"><![CDATA[Installed="" AND NOT RESUME]]></Show>
+    </AdminUISequence>
+  </Fragment>
+  <Fragment Id="AdminFinishedDlg">
+    <UI Id="AdminFinishedDlg">
+      <Dialog Id="AdminFinishedForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_AdminFinished_Title)">
+        <Control Id="CloseButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminFinished_ButtonClose)" TabSkip="no" Default="yes" Cancel="yes">
+          <Publish Event="EndDialog" Value="Return"><![CDATA[1]]></Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminFinished_ButtonCancel)" TabSkip="no" Disabled="yes" />
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminFinished_ButtonBack)" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_AdminFinished_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="BodyTextInstall" Type="Text" X="9" Y="63" Width="354" Height="180" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminFinished_BodyTextInstall)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE=""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE<>""]]></Condition>
+        </Control>
+        <Control Id="BodyText" Type="Text" X="9" Y="63" Width="354" Height="180" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminFinished_BodyText)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE<>""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE=""]]></Condition>
+        </Control>
+      </Dialog>
+    </UI>
+    <AdminUISequence>
+      <Show Dialog="AdminFinishedForm" OnExit="success" />
+    </AdminUISequence>
+  </Fragment>
+</Wix>

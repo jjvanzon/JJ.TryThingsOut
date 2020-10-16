@@ -7,6 +7,361 @@
     <Feature Id="ProductFeature" Title="JJ.TryThingsOut.DesignerForWixSetupProjects.SecondTry" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>
+    <InstallUISequence>
+      <Custom Action="ERRCA_UIANDADVERTISED" Sequence="5"><![CDATA[ProductState=1]]></Custom>
+      <Custom Action="VSDCA_FolderForm_AllUsers" Sequence="997"><![CDATA[Installed="" AND NOT RESUME AND ALLUSERS=1]]></Custom>
+      <Custom Action="DIRCA_TARGETDIR" Before="CostInitialize"><![CDATA[TARGETDIR = ""]]></Custom>
+      <Show Dialog="UserExitForm" OnExit="cancel" />
+      <Show Dialog="FatalErrorForm" OnExit="error"><![CDATA[NOT HideFatalErrorForm]]></Show>
+      <Show Dialog="MaintenanceForm" Sequence="999"><![CDATA[Installed<>""]]></Show>
+      <Show Dialog="ResumeForm" Sequence="998"><![CDATA[Installed="" AND RESUME]]></Show>
+    </InstallUISequence>
+    <CustomAction Id="VSDCA_FolderForm_AllUsers" Property="FolderForm_AllUsers" Value="ALL" />
+    <CustomAction Id="DIRCA_TARGETDIR" Property="TARGETDIR" Value="[ProgramFilesFolder][Manufacturer]\[ProductName]" Execute="firstSequence" />
+    <AdminUISequence>
+      <Custom Action="DIRCA_TARGETDIR" Before="CostInitialize"><![CDATA[TARGETDIR = ""]]></Custom>
+      <Show Dialog="AdminUserExitForm" OnExit="cancel" />
+      <Show Dialog="AdminFatalErrorForm" OnExit="error"><![CDATA[NOT HideFatalErrorForm]]></Show>
+      <Show Dialog="AdminMaintenanceForm" Sequence="999"><![CDATA[Installed<>""]]></Show>
+      <Show Dialog="AdminResumeForm" Sequence="998"><![CDATA[Installed="" AND RESUME]]></Show>
+    </AdminUISequence>
+    <InstallExecuteSequence>
+      <Custom Action="DIRCA_TARGETDIR" Before="CostInitialize"><![CDATA[TARGETDIR = ""]]></Custom>
+    </InstallExecuteSequence>
+    <UIRef Id="WelcomeDlg" />
+    <UIRef Id="FinishedDlg" />
+    <UIRef Id="AdminWelcomeDlg" />
+    <UIRef Id="AdminFinishedDlg" />
+    <UI Id="Base">
+      <Property Id="VSDNETURLMSG" Value="!(loc.StdUI_VSDNETURLMSG)" />
+      <Property Id="VSDIISMSG" Value="!(loc.StdUI_VSDIISMSG)" />
+      <Property Id="VSDUIANDADVERTISED" Value="!(loc.StdUI_VSDUIANDADVERTISED)" />
+      <Property Id="VSDNETMSG" Value="!(loc.StdUI_VSDNETMSG)" />
+      <Property Id="VSDINVALIDURLMSG" Value="!(loc.StdUI_VSDINVALIDURLMSG)" />
+      <Property Id="VSDVERSIONMSG" Value="!(loc.StdUI_VSDVERSIONMSG)" />
+    </UI>
+    <CustomAction Id="ERRCA_UIANDADVERTISED" Error="[VSDUIANDADVERTISED]" />
+    <UI Id="BasicDialogs">
+      <Binary Id="NewFldrBtn" SourceFile="Resources\WiXNewFolderBtn.ico" />
+      <Binary Id="UpFldrBtn" SourceFile="Resources\WiXUpFolderBtn.ico" />
+      <Property Id="ErrorDialog" Value="ErrorDialog" />
+      <Property Id="SFF_UpFldrBtn" Value="UpFldrBtn" />
+      <Property Id="SFF_NewFldrBtn" Value="NewFldrBtn" />
+      <TextStyle Id="VSI_MS_Sans_Serif13.0_0_0" FaceName="MS Sans Serif" Size="9" Red="0" Green="0" Blue="0" />
+      <TextStyle Id="VSI_MS_Sans_Serif16.0_1_0" FaceName="MS Sans Serif" Size="12" Red="0" Green="0" Blue="0" Bold="yes" />
+      <TextStyle Id="VSI_MS_Shell_Dlg13.0_0_0" FaceName="MS Shell Dlg" Size="9" Red="0" Green="0" Blue="0" />
+      <Dialog Id="Cancel" X="50" Y="50" Width="271" Height="78" Title="!(loc.StdUI_Cancel_Title)" NoMinimize="yes">
+        <Control Id="NoButton" Type="PushButton" X="198" Y="48" Width="65" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Cancel_NoButton)" TabSkip="no" Default="yes" Cancel="yes">
+          <Publish Event="EndDialog" Value="Return" />
+        </Control>
+        <Control Id="YesButton" Type="PushButton" X="126" Y="48" Width="65" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Cancel_YesButton)" TabSkip="no">
+          <Publish Event="EndDialog" Value="Exit" />
+        </Control>
+        <Control Id="BodyText" Type="Text" X="6" Y="9" Width="258" Height="24" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Cancel_BodyText)" TabSkip="yes" NoPrefix="yes" />
+      </Dialog>
+      <Dialog Id="ConfirmRemoveDialog" X="50" Y="50" Width="271" Height="78" Title="!(loc.StdUI_ConfirmRemove_Title)" NoMinimize="yes">
+        <Control Id="NoButton" Type="PushButton" X="198" Y="48" Width="65" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_ConfirmRemove_NoButton)" TabSkip="no" Default="yes" Cancel="yes">
+          <Publish Property="WelcomeForm_ConfirmRemove" Value="No" />
+          <Publish Event="EndDialog" Value="Return" />
+        </Control>
+        <Control Id="YesButton" Type="PushButton" X="126" Y="48" Width="65" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_ConfirmRemove_YesButton)" TabSkip="no">
+          <Publish Property="WelcomeForm_ConfirmRemove" Value="Yes" />
+          <Publish Event="EndDialog" Value="Return" />
+        </Control>
+        <Control Id="BodyText" Type="Text" X="6" Y="9" Width="258" Height="24" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_ConfirmRemove_BodyText)" TabSkip="yes" NoPrefix="yes" />
+      </Dialog>
+      <Dialog Id="DiskCost" X="50" Y="50" Width="361" Height="192" Title="!(loc.StdUI_DiskCost_Title)" NoMinimize="yes" TrackDiskSpace="yes">
+        <Control Id="OKButton" Type="PushButton" X="288" Y="165" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_DiskCost_OKButton)" TabSkip="no" Default="yes" Cancel="yes">
+          <Publish Event="EndDialog" Value="Return" />
+        </Control>
+        <Control Id="VolumeCostList1" Type="VolumeCostList" X="6" Y="39" Width="348" Height="114" Text="{\VSI_MS_Sans_Serif13.0_0_0}{116}{80}{80}{80}{80}" TabSkip="no" Sunken="yes" Removable="yes" Fixed="yes" Remote="yes" />
+        <Control Id="AvailableBodyText" Type="Text" X="6" Y="9" Width="348" Height="24" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_DiskCost_AvailableBodyText)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[OutOfDiskSpace<>1]]></Condition>
+          <Condition Action="hide"><![CDATA[OutOfDiskSpace=1]]></Condition>
+        </Control>
+        <Control Id="RequiredBodyText" Type="Text" X="6" Y="9" Width="348" Height="24" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_DiskCost_RequiredBodyText)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[OutOfDiskSpace=1]]></Condition>
+          <Condition Action="hide"><![CDATA[OutOfDiskSpace<>1]]></Condition>
+        </Control>
+      </Dialog>
+      <Dialog Id="FilesInUse" X="50" Y="50" Width="361" Height="177" Title="!(loc.StdUI_FilesInUse_Title)" NoMinimize="yes">
+        <Control Id="RetryButton" Type="PushButton" X="99" Y="150" Width="81" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_FilesInUse_RetryButton)" TabSkip="no" Default="yes">
+          <Publish Event="EndDialog" Value="Retry" />
+        </Control>
+        <Control Id="ContinueButton" Type="PushButton" X="186" Y="150" Width="81" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_FilesInUse_ContinueButton)" TabSkip="no">
+          <Publish Event="EndDialog" Value="Ignore" />
+        </Control>
+        <Control Id="ExitButton" Type="PushButton" X="273" Y="150" Width="81" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_FilesInUse_ExitButton)" TabSkip="no" Cancel="yes">
+          <Publish Event="EndDialog" Value="Exit" />
+        </Control>
+        <Control Id="ListFilesInUse" Type="ListBox" X="6" Y="51" Width="348" Height="90" Property="FileInUseProcess" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiFilesInUse" TabSkip="no" Sunken="yes" Sorted="yes" />
+        <Control Id="InstallBodyText" Type="Text" X="6" Y="9" Width="345" Height="36" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_FilesInUse_InstallBodyText)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE=""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE<>""]]></Condition>
+        </Control>
+        <Control Id="RemoveBodyText" Type="Text" X="6" Y="9" Width="345" Height="36" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_FilesInUse_RemoveBodyText)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE<>""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE=""]]></Condition>
+        </Control>
+      </Dialog>
+      <Dialog Id="SelectFolderDialog" X="50" Y="50" Width="313" Height="223" Title="!(loc.StdUI_SelectFolder_Title)" NoMinimize="yes">
+        <Control Id="OKButton" Type="PushButton" X="168" Y="198" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_SelectFolder_OKButton)" TabSkip="no" Default="yes">
+          <Publish Event="SetTargetPath" Value="[SelectFolderDialog_Property]">1</Publish>
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="240" Y="198" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_ButtonCancel)" TabSkip="no" Cancel="yes">
+          <Publish Event="Reset" Value="{}">1</Publish>
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+        <Control Id="BrowseText" Type="Text" X="6" Y="9" Width="60" Height="12" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_SelectFolder_BrowseText)" TabSkip="no" />
+        <Control Id="FolderCombo" Type="DirectoryCombo" X="66" Y="6" Width="198" Height="120" Property="SelectFolderDialog_Property" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiDirectoryCombo" TabSkip="no" Indirect="yes" Removable="yes" Fixed="yes" Remote="yes" RAMDisk="yes" Floppy="yes" />
+        <Control Id="FolderUpButton" Type="PushButton" X="270" Y="6" Width="18" Height="18" Text="[SFF_UpFldrBtn]" TabSkip="no" IconSize="16" FixedSize="yes" Icon="yes">
+          <Publish Event="DirectoryListUp" Value="{}">1</Publish>
+        </Control>
+        <Control Id="NewFolderButton" Type="PushButton" X="288" Y="6" Width="18" Height="18" Text="[SFF_NewFldrBtn]" TabSkip="no" IconSize="16" FixedSize="yes" Icon="yes">
+          <Publish Event="DirectoryListNew" Value="{}">1</Publish>
+        </Control>
+        <Control Id="FolderList" Type="DirectoryList" X="6" Y="30" Width="300" Height="129" Property="SelectFolderDialog_Property" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiDirectoryList" TabSkip="no" Sunken="yes" Indirect="yes" />
+        <Control Id="FolderText" Type="Text" X="6" Y="171" Width="60" Height="12" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_SelectFolder_FolderText)" TabSkip="no" />
+        <Control Id="FolderPathEdit" Type="PathEdit" X="66" Y="168" Width="240" Height="18" Property="SelectFolderDialog_Property" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiPathEdit" TabSkip="no" Sunken="yes" Indirect="yes" />
+      </Dialog>
+      <Dialog Id="ErrorDialog" X="50" Y="50" Width="330" Height="101" Title="!(loc.StdUI_Error_Title)" ErrorDialog="yes">
+        <Control Id="ErrorText" Type="Text" X="6" Y="9" Width="318" Height="48" Text="{\VSI_MS_Sans_Serif13.0_0_0}" TabSkip="no" Disabled="yes" NoPrefix="yes" />
+        <Control Id="Y" Type="PushButton" X="240" Y="72" Width="81" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Error_Y)" TabSkip="yes">
+          <Publish Event="EndDialog" Value="ErrorYes" />
+        </Control>
+        <Control Id="A" Type="PushButton" X="0" Y="72" Width="81" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Error_A)" TabSkip="yes">
+          <Publish Event="EndDialog" Value="ErrorAbort" />
+        </Control>
+        <Control Id="C" Type="PushButton" X="42" Y="72" Width="81" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Error_C)" TabSkip="yes">
+          <Publish Event="EndDialog" Value="ErrorCancel" />
+        </Control>
+        <Control Id="I" Type="PushButton" X="81" Y="72" Width="81" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Error_I)" TabSkip="yes">
+          <Publish Event="EndDialog" Value="ErrorIgnore" />
+        </Control>
+        <Control Id="N" Type="PushButton" X="120" Y="72" Width="81" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Error_N)" TabSkip="yes">
+          <Publish Event="EndDialog" Value="ErrorNo" />
+        </Control>
+        <Control Id="O" Type="PushButton" X="159" Y="72" Width="81" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Error_O)" TabSkip="yes">
+          <Publish Event="EndDialog" Value="ErrorOk" />
+        </Control>
+        <Control Id="R" Type="PushButton" X="198" Y="72" Width="81" Height="21" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Error_R)" TabSkip="yes">
+          <Publish Event="EndDialog" Value="ErrorRetry" />
+        </Control>
+      </Dialog>
+    </UI>
+    <UI Id="UserInterface">
+      <Binary Id="DefBannerBitmap" SourceFile="Resources\WiXDefBannerBitmap.bmp" />
+      <Property Id="DefaultUIFont" Value="VsdDefaultUIFont.524F4245_5254_5341_4C45_534153783400" />
+      <TextStyle Id="VsdDefaultUIFont.524F4245_5254_5341_4C45_534153783400" FaceName="MS Sans Serif" Size="9" Red="0" Green="0" Blue="0" />
+      <UIText Id="MenuLocal">!(loc.StdUI_MenuLocal)</UIText>
+      <UIText Id="SelParentCostNegNeg">!(loc.StdUI_SelParentCostNegNeg)</UIText>
+      <UIText Id="SelNetworkNetwork">!(loc.StdUI_SelNetworkNetwork)</UIText>
+      <UIText Id="SelNetworkLocal">!(loc.StdUI_SelNetworkLocal)</UIText>
+      <UIText Id="SelNetworkAdvertise">!(loc.StdUI_SelNetworkAdvertise)</UIText>
+      <UIText Id="SelNetworkAbsent">!(loc.StdUI_SelNetworkAbsent)</UIText>
+      <UIText Id="SelAbsentAbsent">!(loc.StdUI_SelAbsentAbsent)</UIText>
+      <UIText Id="ScriptInProgress">!(loc.StdUI_ScriptInProgress)</UIText>
+      <UIText Id="MenuCD">!(loc.StdUI_MenuCD)</UIText>
+      <UIText Id="SelChildCostNeg">!(loc.StdUI_SelChildCostNeg)</UIText>
+      <UIText Id="SelCDLocal">!(loc.StdUI_SelCDLocal)</UIText>
+      <UIText Id="MenuAbsent">!(loc.StdUI_MenuAbsent)</UIText>
+      <UIText Id="SelCDAdvertise">!(loc.StdUI_SelCDAdvertise)</UIText>
+      <UIText Id="MenuAllNetwork">!(loc.StdUI_MenuAllNetwork)</UIText>
+      <UIText Id="SelLocalNetwork">!(loc.StdUI_SelLocalNetwork)</UIText>
+      <UIText Id="SelAdvertiseNetwork">!(loc.StdUI_SelAdvertiseNetwork)</UIText>
+      <UIText Id="MenuAllLocal">!(loc.StdUI_MenuAllLocal)</UIText>
+      <UIText Id="SelAdvertiseLocal">!(loc.StdUI_SelAdvertiseLocal)</UIText>
+      <UIText Id="MenuAllCD">!(loc.StdUI_MenuAllCD)</UIText>
+      <UIText Id="SelCDAbsent">!(loc.StdUI_SelCDAbsent)</UIText>
+      <UIText Id="MenuAdvertise">!(loc.StdUI_MenuAdvertise)</UIText>
+      <UIText Id="SelAdvertiseCD">!(loc.StdUI_SelAdvertiseCD)</UIText>
+      <UIText Id="bytes">!(loc.StdUI_bytes)</UIText>
+      <UIText Id="SelAdvertiseAdvertise">!(loc.StdUI_SelAdvertiseAdvertise)</UIText>
+      <UIText Id="AbsentPath" />
+      <UIText Id="MB">!(loc.StdUI_MB)</UIText>
+      <UIText Id="SelAdvertiseAbsent">!(loc.StdUI_SelAdvertiseAbsent)</UIText>
+      <UIText Id="KB">!(loc.StdUI_KB)</UIText>
+      <UIText Id="GB">!(loc.StdUI_GB)</UIText>
+      <UIText Id="SelAbsentNetwork">!(loc.StdUI_SelAbsentNetwork)</UIText>
+      <UIText Id="SelAbsentCD">!(loc.StdUI_SelAbsentCD)</UIText>
+      <UIText Id="SelAbsentAdvertise">!(loc.StdUI_SelAbsentAdvertise)</UIText>
+      <UIText Id="SelAbsentLocal">!(loc.StdUI_SelAbsentLocal)</UIText>
+      <UIText Id="SelCDCD">!(loc.StdUI_SelCDCD)</UIText>
+      <UIText Id="NewFolder">!(loc.StdUI_NewFolder)</UIText>
+      <UIText Id="MenuNetwork">!(loc.StdUI_MenuNetwork)</UIText>
+      <UIText Id="SelLocalCD">!(loc.StdUI_SelLocalCD)</UIText>
+      <UIText Id="SelLocalAbsent">!(loc.StdUI_SelLocalAbsent)</UIText>
+      <UIText Id="SelCostPending">!(loc.StdUI_SelCostPending)</UIText>
+      <UIText Id="SelLocalLocal">!(loc.StdUI_SelLocalLocal)</UIText>
+      <UIText Id="SelChildCostPos">!(loc.StdUI_SelChildCostPos)</UIText>
+      <UIText Id="SelLocalAdvertise">!(loc.StdUI_SelLocalAdvertise)</UIText>
+      <UIText Id="SelParentCostNegPos">!(loc.StdUI_SelParentCostNegPos)</UIText>
+      <UIText Id="SelParentCostPosNeg">!(loc.StdUI_SelParentCostPosNeg)</UIText>
+      <UIText Id="SelParentCostPosPos">!(loc.StdUI_SelParentCostPosPos)</UIText>
+      <UIText Id="TimeRemaining">!(loc.StdUI_TimeRemaining)</UIText>
+      <UIText Id="VolumeCostAvailable">!(loc.StdUI_VolumeCostAvailable)</UIText>
+      <UIText Id="VolumeCostDifference">!(loc.StdUI_VolumeCostDifference)</UIText>
+      <UIText Id="VolumeCostRequired">!(loc.StdUI_VolumeCostRequired)</UIText>
+      <UIText Id="VolumeCostSize">!(loc.StdUI_VolumeCostSize)</UIText>
+      <UIText Id="VolumeCostVolume">!(loc.StdUI_VolumeCostVolume)</UIText>
+    </UI>
+    <UI Id="FinishDialogs">
+      <Property Id="MaintenanceForm_Action" Value="Repair" />
+      <RadioButtonGroup Property="MaintenanceForm_Action">
+        <RadioButton Height="17" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_MaintenanceAction_Repair)" Value="Repair" Width="348" X="0" Y="0" />
+        <RadioButton Height="17" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_MaintenanceAction_Remove)" Value="Remove" Width="348" X="0" Y="18" />
+      </RadioButtonGroup>
+      <Dialog Id="UserExitForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_UserExit_Title)">
+        <Control Id="CloseButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_UserExit_ButtonClose)" TabSkip="no" Default="yes" Cancel="yes">
+          <Publish Event="EndDialog" Value="Return"><![CDATA[1]]></Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_UserExit_ButtonCancel)" TabSkip="no" Disabled="yes" />
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_UserExit_ButtonBack)" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_UserExit_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="BodyTextRemove" Type="Text" X="9" Y="63" Width="354" Height="180" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_UserExit_BodyTextRemove)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE<>""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE=""]]></Condition>
+        </Control>
+        <Control Id="BodyTextInstall" Type="Text" X="18" Y="63" Width="342" Height="24" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_UserExit_BodyTextInstall)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE=""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE<>""]]></Condition>
+        </Control>
+      </Dialog>
+      <Dialog Id="FatalErrorForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_FatalError_Title)">
+        <Control Id="CloseButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_FatalError_ButtonClose)" TabSkip="no" Default="yes" Cancel="yes">
+          <Publish Event="EndDialog" Value="Return"><![CDATA[1]]></Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_FatalError_ButtonCancel)" TabSkip="no" Disabled="yes" />
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_FatalError_ButtonBack)" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_FatalError_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="BodyTextRemove" Type="Text" X="9" Y="63" Width="354" Height="180" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_FatalError_BodyTextRemove)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE=""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE<>""]]></Condition>
+        </Control>
+        <Control Id="BodyTextInstall" Type="Text" X="9" Y="63" Width="354" Height="180" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_FatalError_BodyTextInstall)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE<>""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE=""]]></Condition>
+        </Control>
+      </Dialog>
+      <Dialog Id="MaintenanceForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_Maintenance_Title)">
+        <Control Id="FinishButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Maintenance_ButtonFinish)" TabSkip="no" Default="yes">
+          <Publish Property="REINSTALL" Value="ALL"><![CDATA[MaintenanceForm_Action="Repair"]]></Publish>
+          <Publish Event="Reinstall" Value="ALL"><![CDATA[MaintenanceForm_Action="Repair"]]></Publish>
+          <Publish Property="REMOVE" Value="ALL"><![CDATA[MaintenanceForm_Action="Remove"]]></Publish>
+          <Publish Event="Remove" Value="ALL"><![CDATA[MaintenanceForm_Action="Remove"]]></Publish>
+          <Publish Event="EndDialog" Value="Return"><![CDATA[1]]></Publish>
+        </Control>
+        <Control Id="RepairRadioGroup" Type="RadioButtonGroup" X="18" Y="108" Width="348" Height="48" Property="MaintenanceForm_Action" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiRadioButtonGroup" TabSkip="no" />
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Maintenance_ButtonCancel)" TabSkip="no" Cancel="yes">
+          <Publish Event="SpawnDialog" Value="Cancel" />
+        </Control>
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Maintenance_ButtonBack)" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_Maintenance_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="BodyText" Type="Text" X="9" Y="63" Width="354" Height="42" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Maintenance_BodyText)" TabSkip="yes" NoPrefix="yes" />
+      </Dialog>
+      <Dialog Id="ResumeForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_Resume_Title)">
+        <Control Id="FinishButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Resume_ButtonFinish)" TabSkip="no" Default="yes">
+          <Publish Event="EndDialog" Value="Return"><![CDATA[1]]></Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Resume_ButtonCancel)" TabSkip="no" Cancel="yes">
+          <Publish Event="SpawnDialog" Value="Cancel" />
+        </Control>
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Resume_ButtonBack)" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_Resume_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="BodyText" Type="Text" X="9" Y="63" Width="354" Height="180" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_Resume_BodyText)" TabSkip="yes" NoPrefix="yes" />
+      </Dialog>
+    </UI>
+    <UI Id="AdminFinishDialogs">
+      <Property Id="AdminMaintenanceForm_Action" Value="Repair" />
+      <RadioButtonGroup Property="AdminMaintenanceForm_Action">
+        <RadioButton Height="17" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminMaintenanceAction_Repair)" Value="Repair" Width="348" X="0" Y="0" />
+        <RadioButton Height="17" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminMaintenanceAction_Remove)" Value="Remove" Width="348" X="0" Y="18" />
+      </RadioButtonGroup>
+      <Dialog Id="AdminUserExitForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_AdminUserExit_Title)">
+        <Control Id="CloseButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminUserExit_ButtonClose)" TabSkip="no" Default="yes" Cancel="yes">
+          <Publish Event="EndDialog" Value="Return"><![CDATA[1]]></Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminUserExit_ButtonCancel)" TabSkip="no" Disabled="yes" />
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminUserExit_ButtonBack)" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_AdminUserExit_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="BodyTextInstall" Type="Text" X="18" Y="63" Width="342" Height="24" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminUserExit_BodyTextInstall)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE=""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE<>""]]></Condition>
+        </Control>
+        <Control Id="BodyTextRemove" Type="Text" X="9" Y="63" Width="354" Height="180" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminUserExit_BodyTextRemove)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE<>""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE=""]]></Condition>
+        </Control>
+      </Dialog>
+      <Dialog Id="AdminFatalErrorForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_AdminFatalError_Title)">
+        <Control Id="CloseButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminFatalError_ButtonClose)" TabSkip="no" Default="yes" Cancel="yes">
+          <Publish Event="EndDialog" Value="Return"><![CDATA[1]]></Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminFatalError_ButtonCancel)" TabSkip="no" Disabled="yes" />
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminFatalError_ButtonBack)" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_AdminFatalError_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="BodyTextInstall" Type="Text" X="9" Y="63" Width="354" Height="180" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminFatalError_BodyTextInstall)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE<>""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE=""]]></Condition>
+        </Control>
+        <Control Id="BodyTextRemove" Type="Text" X="9" Y="63" Width="354" Height="180" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminFatalError_BodyTextRemove)" TabSkip="yes" NoPrefix="yes">
+          <Condition Action="show"><![CDATA[REMOVE=""]]></Condition>
+          <Condition Action="hide"><![CDATA[REMOVE<>""]]></Condition>
+        </Control>
+      </Dialog>
+      <Dialog Id="AdminMaintenanceForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_AdminMaintenance_Title)">
+        <Control Id="FinishButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminMaintenance_ButtonFinish)" TabSkip="no" Default="yes">
+          <Publish Property="REINSTALL" Value="ALL"><![CDATA[AdminMaintenanceForm_Action="Repair"]]></Publish>
+          <Publish Event="Reinstall" Value="ALL"><![CDATA[AdminMaintenanceForm_Action="Repair"]]></Publish>
+          <Publish Property="REMOVE" Value="ALL"><![CDATA[AdminMaintenanceForm_Action="Remove"]]></Publish>
+          <Publish Event="Remove" Value="ALL"><![CDATA[AdminMaintenanceForm_Action="Remove"]]></Publish>
+          <Publish Event="EndDialog" Value="Return"><![CDATA[1]]></Publish>
+        </Control>
+        <Control Id="RepairRadioGroup" Type="RadioButtonGroup" X="18" Y="108" Width="348" Height="48" Property="AdminMaintenanceForm_Action" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiRadioButtonGroup" TabSkip="no" />
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminMaintenance_ButtonCancel)" TabSkip="no" Cancel="yes">
+          <Publish Event="SpawnDialog" Value="Cancel" />
+        </Control>
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminMaintenance_ButtonBack)" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_AdminMaintenance_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="BodyText" Type="Text" X="9" Y="63" Width="354" Height="42" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminMaintenance_BodyText)" TabSkip="yes" NoPrefix="yes" />
+      </Dialog>
+      <Dialog Id="AdminResumeForm" X="50" Y="50" Width="373" Height="287" Title="!(loc.StdUI_AdminResume_Title)">
+        <Control Id="FinishButton" Type="PushButton" X="300" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminResume_ButtonFinish)" TabSkip="no" Default="yes">
+          <Publish Event="EndDialog" Value="Return"><![CDATA[1]]></Publish>
+        </Control>
+        <Control Id="CancelButton" Type="PushButton" X="156" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminResume_ButtonCancel)" TabSkip="no" Cancel="yes">
+          <Publish Event="SpawnDialog" Value="Cancel" />
+        </Control>
+        <Control Id="PreviousButton" Type="PushButton" X="228" Y="261" Width="66" Height="18" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminResume_ButtonBack)" TabSkip="no" Disabled="yes" />
+        <Control Id="BannerBmp" Type="Bitmap" X="0" Y="0" Width="375" Height="52" Text="DefBannerBitmap" TabSkip="no" Disabled="yes" />
+        <Control Id="Line1" Type="Line" X="0" Y="52" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="Line2" Type="Line" X="0" Y="252" Width="375" Height="6" Text="{\VSI_MS_Sans_Serif13.0_0_0}MsiHorizontalLine" TabSkip="yes" Disabled="yes" />
+        <Control Id="BannerText" Type="Text" X="9" Y="9" Width="306" Height="33" Text="{\VSI_MS_Sans_Serif16.0_1_0}!(loc.StdUI_AdminResume_BannerText)" TabSkip="yes" Transparent="yes" NoPrefix="yes" />
+        <Control Id="BodyText" Type="Text" X="9" Y="63" Width="354" Height="180" Text="{\VSI_MS_Sans_Serif13.0_0_0}!(loc.StdUI_AdminResume_BodyText)" TabSkip="yes" NoPrefix="yes" />
+      </Dialog>
+    </UI>
   </Product>
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
