@@ -31,9 +31,12 @@
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CreateEmbedLangTransform.cmd" />
+    <Content Include="CreateEmbedLangTransform.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="CreateLocalizedInstallerAllLanguages.cmd" />
     <Content Include="MsiTran.exe" />
+    <Content Include="PostBuild.bat" />
     <Content Include="Readme.md" />
     <Content Include="wilangid.vbs" />
     <Content Include="wisubstg.vbs" />
@@ -45,7 +48,7 @@
   </Target>
   <PropertyGroup>
     <PostBuildEvent>cd "$(ProjectDir)"
-call CreateLocalizedInstallerAllLanguages.cmd</PostBuildEvent>
+PostBuild.bat $(OutDir)</PostBuildEvent>
   </PropertyGroup>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.

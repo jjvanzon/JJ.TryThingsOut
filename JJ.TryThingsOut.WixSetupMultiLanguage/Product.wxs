@@ -4,10 +4,10 @@
 
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Languages="0,1043"/>
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
 
-		<Feature Id="ProductFeature" Title="MyInstaller" Level="1">
+    <Feature Id="ProductFeature" Title="MyInstaller" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
 		</Feature>
 
