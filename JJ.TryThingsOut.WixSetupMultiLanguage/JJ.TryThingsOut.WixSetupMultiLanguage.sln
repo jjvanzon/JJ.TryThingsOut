@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "JJ.TryThingsOut.WixSetupMultiLanguage", "JJ.TryThingsOut.WixSetupMultiLanguage\JJ.TryThingsOut.WixSetupMultiLanguage.wixproj", "{03ECD11E-ABBD-422C-85B8-C50AB0FD7DFE}"
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "MyInstaller", "MyInstaller.wixproj", "{03ECD11E-ABBD-422C-85B8-C50AB0FD7DFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

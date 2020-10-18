@@ -1,0 +1,4 @@
+if not exist FinalMasterInstaller md FinalMasterInstaller
+copy MyInstaller.msi FinalMasterInstaller
+call CreateEmbedLangTransform.cmd MyInstaller neutral 0
+call CreateEmbedLangTransform.cmd MyInstaller nl_nl 1043

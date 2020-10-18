@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="JJ.TryThingsOut.WixSetupMultiLanguage" Language="1033" Version="1.0.0.0" Manufacturer="Jan Joost van Zon" UpgradeCode="c2cd04aa-fb34-495c-91a7-7c495988c6b7">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+	<Product Id="09A04341-BE03-4F61-8EBA-114A3CDD66C3" Name="MyInstaller" Language="0" Version="1.0.0.0" Manufacturer="Jan Joost van Zon" UpgradeCode="c2cd04aa-fb34-495c-91a7-7c495988c6b7">
+
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Languages="0,1043"/>
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate />
 
-		<Feature Id="ProductFeature" Title="JJ.TryThingsOut.WixSetupMultiLanguage" Level="1">
+		<Feature Id="ProductFeature" Title="MyInstaller" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
 		</Feature>
 
@@ -20,7 +21,7 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="JJ.TryThingsOut.WixSetupMultiLanguage" />
+				<Directory Id="INSTALLFOLDER" Name="MyInstaller" />
 			</Directory>
 		</Directory>
 	</Fragment>

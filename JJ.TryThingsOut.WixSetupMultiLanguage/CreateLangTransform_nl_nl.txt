@@ -1,0 +1,16 @@
+Microsoft (R) Windows Script Host Version 5.8
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Msi API Error 80004005: OpenDatabase,DatabasePath,OpenMode
+1: 2203 2: MyInstaller_nl_nl.msi 3: -2147287038 
+Error 110. Error Opening Base Database
+Microsoft (R) Windows Script Host Version 5.8
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Msi API Error 80004005: OpenDatabase,DatabasePath,OpenMode
+1: 2203 2: FinalMasterInstaller\MyInstaller.msi 3: -2147287038 
+Microsoft (R) Windows Script Host Version 5.8
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Msi API Error 80004005: OpenDatabase,DatabasePath,OpenMode
+1: 2203 2: FinalMasterInstaller\MyInstaller.msi 3: -2147287038 
