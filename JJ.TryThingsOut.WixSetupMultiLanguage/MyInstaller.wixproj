@@ -34,12 +34,20 @@
     <Content Include="CreateEmbedLangTransform.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="CreateLocalizedInstallerAllLanguages.cmd" />
-    <Content Include="MsiTran.exe" />
+    <Content Include="CreateLocalizedInstallerAllLanguages.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MsiTran.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="PostBuild.bat" />
     <Content Include="Readme.md" />
-    <Content Include="wilangid.vbs" />
-    <Content Include="wisubstg.vbs" />
+    <Content Include="wilangid.vbs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wisubstg.vbs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
