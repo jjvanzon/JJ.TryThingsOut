@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="09A04341-BE03-4F61-8EBA-114A3CDD66C3" Name="MyInstaller" Language="0" Version="1.0.0.0" Manufacturer="Jan Joost van Zon" UpgradeCode="c2cd04aa-fb34-495c-91a7-7c495988c6b7">
+	<Product Id="09A04341-BE03-4F61-8EBA-114A3CDD66C3" Name="MyInstaller" Language="1033" Version="1.0.0.0" Manufacturer="Jan Joost van Zon" UpgradeCode="c2cd04aa-fb34-495c-91a7-7c495988c6b7">
 
-    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Languages="0,1043,19"/>
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Languages="0,1033,1043"/>
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate />
@@ -16,7 +16,11 @@
 
     <!-- Reference to standard UI WixUI_InstallDir -->
     <UIRef Id="WixUI_InstallDir" />
-	</Product>
+
+    <!-- For localized messages? -->
+    <!--<UIRef Id="WixUI_ErrorProgressText" />-->
+
+  </Product>
 
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
