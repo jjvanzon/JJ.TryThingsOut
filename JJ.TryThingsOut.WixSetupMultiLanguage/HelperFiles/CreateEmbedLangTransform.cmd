@@ -21,7 +21,7 @@ rem Embed the transform in the final master installer using WiSubStg.vbs
 echo "cscript wisubstg.vbs %MsiFileName% %LangString%\Mst.mst %LangNumber%
 cscript wisubstg.vbs %MsiFileName% %LangString%\Mst.mst %LangNumber%
 
-rem Not sure why this should be called. Reports which languages are in the install?
+rem Not sure why this should be called. Seems to report the tranform names (language numbers) that would now be in the install.
 echo "cscript wisubstg.vbs %MsiFileName%
 cscript wisubstg.vbs %MsiFileName% 
 

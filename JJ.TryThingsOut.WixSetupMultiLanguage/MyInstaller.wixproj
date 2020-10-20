@@ -33,27 +33,20 @@
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CreateEmbedLangTransform.cmd">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="CreateLocalizedInstallerAllLanguages.cmd">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="MsiTran.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="HelperFiles\CreateEmbedLangTransform.cmd" />
+    <Content Include="HelperFiles\CreateLocalizedInstallerAllLanguages.cmd" />
+    <Content Include="HelperFiles\MsiTran.exe" />
+    <Content Include="HelperFiles\wilangid.vbs" />
+    <Content Include="HelperFiles\wisubstg.vbs" />
     <Content Include="PostBuild.bat" />
     <Content Include="Readme.md" />
-    <Content Include="wilangid.vbs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="wisubstg.vbs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyInstaller.en-us.wxl" />
     <EmbeddedResource Include="MyInstaller.nl-nl.wxl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HelperFiles" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />

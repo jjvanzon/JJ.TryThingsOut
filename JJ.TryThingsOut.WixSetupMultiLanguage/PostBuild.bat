@@ -8,20 +8,20 @@ set OutDir=%1
 
 rem COPYING HELPER FILES
 rem (Giving project files the properties Build Action = Content and Copy to Output Directory = Always did not seem copy them to the bin (sub-)folder.)
-echo "copy CreateEmbedLangTransform.cmd %OutDir%"
-copy CreateEmbedLangTransform.cmd %OutDir%
+echo "copy HelperFiles\CreateEmbedLangTransform.cmd %OutDir%"
+copy HelperFiles\CreateEmbedLangTransform.cmd %OutDir%
 
-echo "copy CreateLocalizedInstallerAllLanguages.cmd %OutDir%"
-copy CreateLocalizedInstallerAllLanguages.cmd %OutDir%
+echo "copy HelperFiles\CreateLocalizedInstallerAllLanguages.cmd %OutDir%"
+copy HelperFiles\CreateLocalizedInstallerAllLanguages.cmd %OutDir%
 
-echo "copy MsiTran.exe %OutDir%"
-copy MsiTran.exe %OutDir%
+echo "copy HelperFiles\MsiTran.exe %OutDir%"
+copy HelperFiles\MsiTran.exe %OutDir%
 
-echo "copy wilangid.vbs %OutDir%"
-copy wilangid.vbs %OutDir%
+echo "copy HelperFiles\wilangid.vbs %OutDir%"
+copy HelperFiles\wilangid.vbs %OutDir%
 
-echo "copy wisubstg.vbs %OutDir%"
-copy wisubstg.vbs %OutDir%
+echo "copy HelperFiles\wisubstg.vbs %OutDir%"
+copy HelperFiles\wisubstg.vbs %OutDir%
 
 echo "cd %OutDir%"
 cd %OutDir%

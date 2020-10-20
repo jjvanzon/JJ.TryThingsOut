@@ -7,6 +7,8 @@ copy en-us\MyInstaller.msi MyInstaller.msi
 echo "call CreateEmbedLangTransform.cmd MyInstaller.msi nl-nl 1043"
 call CreateEmbedLangTransform.cmd MyInstaller.msi nl-nl 1043
 
+rem echo "call CreateEmbedLangTransform.cmd MyInstaller.msi nl 19"
+rem call CreateEmbedLangTransform.cmd MyInstaller.msi nl 19
+
 rem call CreateEmbedLangTransform.cmd MyInstaller.msi en-us 1033
 rem call CreateEmbedLangTransform.cmd MyInstaller.msi neutral 0
-rem call CreateEmbedLangTransform.cmd MyInstaller.msi nl 19
