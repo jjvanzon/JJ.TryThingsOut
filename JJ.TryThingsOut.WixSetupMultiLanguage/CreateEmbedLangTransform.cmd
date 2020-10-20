@@ -1,25 +1,26 @@
 rem Current directory is meant to be Visual Studio's OutDir variable (like "bin\Debug\").
 
-echo "set MsiName=%1"
-set MsiName=%1
+echo "set MsiFileName=%1"
+set MsiFileName=%1
 
-echo "set lang=%2"
-set lang=%2
+echo "set LangString=%2"
+set LangString=%2
 
-echo "set langcode=%3"
-set langcode=%3
+echo "set LangNumber=%3"
+set LangNumber=%3
 
-echo "copy %MsiName%.msi %MsiName%_%lang%.msi"
-copy %MsiName%.msi %MsiName%_%lang%.msi
+rem Modify the MSI so it contains a different ProductLanguage using WiLangId.vbs
+rem echo "cscript WiLangId.vbs %LangString%\%MsiFileName% Product %LangNumber%
+rem cscript WiLangId.vbs %LangString%\%MsiFileName% Product %LangNumber% 
 
-echo "cscript WiLangId.vbs %MsiName%_%lang%.msi Product %langcode% > CreateLangTransform_%lang%.txt"
-cscript WiLangId.vbs %MsiName%_%lang%.msi Product %langcode% > CreateLangTransform_%lang%.txt
+rem Create a transform that captures the difference between the two MSIs using MSITran.exe
+echo "MsiTran.exe -g %MsiFileName% %LangString%\%MsiFileName% %LangString%\Mst.mst
+MsiTran.exe -g %MsiFileName% %LangString%\%MsiFileName% %LangString%\Mst.mst 
 
-echo "MsiTran.exe -g %MsiName%.msi %MsiName%_%lang%.msi %lang%.mst >> CreateLangTransform_%lang%.txt"
-MsiTran.exe -g %MsiName%.msi %MsiName%_%lang%.msi %lang%.mst >> CreateLangTransform_%lang%.txt
+rem Embed the transform in the final master installer using WiSubStg.vbs
+echo "cscript wisubstg.vbs %MsiFileName% %LangString%\Mst.mst %LangNumber%
+cscript wisubstg.vbs %MsiFileName% %LangString%\Mst.mst %LangNumber%
 
-echo "cscript wisubstg.vbs %MsiName%.msi %lang%.mst %langcode% >> CreateLangTransform_%lang%.txt"
-cscript wisubstg.vbs %MsiName%.msi %lang%.mst %langcode% >> CreateLangTransform_%lang%.txt
-
-echo "cscript wisubstg.vbs %MsiName%.msi >> CreateLangTransform_%lang%.txt"
-cscript wisubstg.vbs %MsiName%.msi >> CreateLangTransform_%lang%.txt
+rem Reports which languages are in the install? Not sure.
+rem echo "cscript wisubstg.vbs %MsiFileName%
+rem cscript wisubstg.vbs %MsiFileName% 

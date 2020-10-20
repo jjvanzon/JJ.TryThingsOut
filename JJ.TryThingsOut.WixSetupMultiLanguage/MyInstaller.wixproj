@@ -52,8 +52,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyInstaller.en_us.wxl" />
-    <EmbeddedResource Include="MyInstaller.nl_nl.wxl" />
+    <EmbeddedResource Include="MyInstaller.en-us.wxl" />
+    <EmbeddedResource Include="MyInstaller.nl-nl.wxl" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
