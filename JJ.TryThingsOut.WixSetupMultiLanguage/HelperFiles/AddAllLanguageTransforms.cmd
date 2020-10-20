@@ -4,8 +4,8 @@ rem Copy en_us => base installer.
 echo "copy en-us\MyInstaller.msi MyInstaller.msi"
 copy en-us\MyInstaller.msi MyInstaller.msi
 
-echo "call CreateEmbedLangTransform.cmd MyInstaller.msi nl-nl 1043"
-call CreateEmbedLangTransform.cmd MyInstaller.msi nl-nl 1043
+echo "call AddSingleLanguageTransform.cmd MyInstaller.msi nl-nl 1043"
+call AddSingleLanguageTransform.cmd MyInstaller.msi nl-nl 1043
 
 rem echo "call CreateEmbedLangTransform.cmd MyInstaller.msi nl 19"
 rem call CreateEmbedLangTransform.cmd MyInstaller.msi nl 19

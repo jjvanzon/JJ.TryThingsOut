@@ -8,11 +8,11 @@ set OutDir=%1
 
 rem COPYING HELPER FILES
 rem (Giving project files the properties Build Action = Content and Copy to Output Directory = Always did not seem copy them to the bin (sub-)folder.)
-echo "copy HelperFiles\CreateEmbedLangTransform.cmd %OutDir%"
-copy HelperFiles\CreateEmbedLangTransform.cmd %OutDir%
+echo "copy HelperFiles\AddSingleLanguageTransform.cmd %OutDir%"
+copy HelperFiles\AddSingleLanguageTransform.cmd %OutDir%
 
-echo "copy HelperFiles\CreateLocalizedInstallerAllLanguages.cmd %OutDir%"
-copy HelperFiles\CreateLocalizedInstallerAllLanguages.cmd %OutDir%
+echo "copy HelperFiles\AddAllLanguageTransforms.cmd %OutDir%"
+copy HelperFiles\AddAllLanguageTransforms.cmd %OutDir%
 
 echo "copy HelperFiles\MsiTran.exe %OutDir%"
 copy HelperFiles\MsiTran.exe %OutDir%
@@ -28,16 +28,16 @@ cd %OutDir%
 
 rem CALLING HELPER COMMAND
 
-echo "call CreateLocalizedInstallerAllLanguages.cmd"
-call CreateLocalizedInstallerAllLanguages.cmd
+echo "call AddAllLanguageTransforms.cmd"
+call AddAllLanguageTransforms.cmd
 
 rem DELETING HELPER FILES
 
-echo "del CreateEmbedLangTransform.cmd"
-del CreateEmbedLangTransform.cmd
+echo "del AddSingleLanguageTransform.cmd"
+del AddSingleLanguageTransform.cmd
 
-echo "del CreateLocalizedInstallerAllLanguages.cmd"
-del CreateLocalizedInstallerAllLanguages.cmd
+echo "del AddAllLanguageTransforms.cmd"
+del AddAllLanguageTransforms.cmd
 
 echo "del MsiTran.exe"
 del MsiTran.exe
