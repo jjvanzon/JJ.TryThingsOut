@@ -15,12 +15,16 @@ rem cscript WiLangId.vbs %LangString%\%MsiFileName% Product %LangNumber%
 
 rem Create a transform that captures the difference between the two MSIs using MSITran.exe
 echo "MsiTran.exe -g %MsiFileName% %LangString%\%MsiFileName% %LangString%\Mst.mst
-MsiTran.exe -g %MsiFileName% %LangString%\%MsiFileName% %LangString%\Mst.mst 
+MsiTran.exe -g %MsiFileName% %LangString%\%MsiFileName% %LangString%\Mst.mst
 
 rem Embed the transform in the final master installer using WiSubStg.vbs
 echo "cscript wisubstg.vbs %MsiFileName% %LangString%\Mst.mst %LangNumber%
 cscript wisubstg.vbs %MsiFileName% %LangString%\Mst.mst %LangNumber%
 
-rem Reports which languages are in the install? Not sure.
-rem echo "cscript wisubstg.vbs %MsiFileName%
-rem cscript wisubstg.vbs %MsiFileName% 
+rem Not sure why this should be called. Reports which languages are in the install?
+echo "cscript wisubstg.vbs %MsiFileName%
+cscript wisubstg.vbs %MsiFileName% 
+
+rem Deleting intermediate (transform/.mst) file
+echo "del %LangString%\Mst.mst"
+del %LangString%\Mst.mst

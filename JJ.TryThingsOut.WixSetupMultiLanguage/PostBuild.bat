@@ -6,6 +6,7 @@ rem First parameter may be Visual Studio's OutDir variable, a relative path like
 echo "set OutDir=%1
 set OutDir=%1
 
+rem COPYING HELPER FILES
 rem (Giving project files the properties Build Action = Content and Copy to Output Directory = Always did not seem copy them to the bin (sub-)folder.)
 echo "copy CreateEmbedLangTransform.cmd %OutDir%"
 copy CreateEmbedLangTransform.cmd %OutDir%
@@ -25,5 +26,24 @@ copy wisubstg.vbs %OutDir%
 echo "cd %OutDir%"
 cd %OutDir%
 
+rem CALLING HELPER COMMAND
+
 echo "call CreateLocalizedInstallerAllLanguages.cmd"
 call CreateLocalizedInstallerAllLanguages.cmd
+
+rem DELETING HELPER FILES
+
+echo "del CreateEmbedLangTransform.cmd"
+del CreateEmbedLangTransform.cmd
+
+echo "del CreateLocalizedInstallerAllLanguages.cmd"
+del CreateLocalizedInstallerAllLanguages.cmd
+
+echo "del MsiTran.exe"
+del MsiTran.exe
+
+echo "del wilangid.vbs"
+del wilangid.vbs
+
+echo "del wisubstg.vbs"
+del wisubstg.vbs
