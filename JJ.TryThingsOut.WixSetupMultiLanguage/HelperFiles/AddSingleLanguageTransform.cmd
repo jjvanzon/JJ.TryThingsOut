@@ -10,8 +10,8 @@ echo "set LangNumber=%3"
 set LangNumber=%3
 
 rem Modify the MSI so it contains a different ProductLanguage using WiLangId.vbs
-rem echo "cscript WiLangId.vbs %LangString%\%MsiFileName% Product %LangNumber%
-rem cscript WiLangId.vbs %LangString%\%MsiFileName% Product %LangNumber% 
+echo "cscript WiLangId.vbs %LangString%\%MsiFileName% Product %LangNumber%
+cscript WiLangId.vbs %LangString%\%MsiFileName% Product %LangNumber% 
 
 rem Create a transform that captures the difference between the two MSIs using MSITran.exe
 echo "MsiTran.exe -g %MsiFileName% %LangString%\%MsiFileName% %LangString%\Mst.mst
