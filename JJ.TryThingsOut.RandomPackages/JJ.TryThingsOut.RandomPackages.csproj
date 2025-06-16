@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Copycat" Version="1.0.0" />
+    <PackageReference Include="Durian" Version="3.0.0" />
+    <PackageReference Include="JohnAz.CSharp.UnionTypes" Version="1.0.2" />
+    <PackageReference Include="Minerals.AutoMixins" Version="0.2.2" />
+    <PackageReference Include="PolySharp" Version="1.15.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="SoloX.GeneratorTools.Core" Version="1.0.0-alpha.44" />
+  </ItemGroup>
+
+</Project>
